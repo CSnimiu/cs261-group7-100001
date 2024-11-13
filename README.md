@@ -3,9 +3,10 @@
 Currently, this repository has 2 branches: *'main' (Default)*, *'profile'*  
 
 **--> Current completed task (project status):**
-- Login system that calls the TU API to verify identity (Backend is in progress)
-- Home page Structure
-- Profile page (Backend is in progress)
+- Login system that calls the TU API to verify identity + Logout
+- Home page
+- Profile page
+- Form pages (in progress)
   
 ### **Navigation:**  
 [Branch Structure](#branch-structure "Branch information")  
@@ -15,7 +16,7 @@ Currently, this repository has 2 branches: *'main' (Default)*, *'profile'*
 
 ## Branch Structure
 ### This is the 'main' branch
-The main branch is used as the repository for keeping track of the project's recently completed progress. As of this writing, the project is still under progress.  
+The main branch is currently the first backup branch that does not have a database system built to support it. To see the latest progress of the project, please visit [*the profile branch*](https://github.com/CSnimiu/cs261-group7-100001/tree/profile)  
 
 This branch contains 2 main folders:
 >
@@ -51,7 +52,9 @@ The last two lines of the **DockerContainer_NodeJS.dockerfile** file in `server-
 
 ***Note that:*** these commands only work properly if you build the docker file in the same location as the `frontend` and `server-setup` folders, so use the code with caution.  
 
+
 .  
 .  
 .  
-*The project will be updated continuously...*
+*The project will be updated continuously...*  
+*Please follow any updates via the `README.md` file*
