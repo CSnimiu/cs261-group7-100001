@@ -50,17 +50,7 @@ function addToDB(user) {
     localStorage.setItem('user', JSON.stringify(user)); 
 }
 
-function logout() {
-    const userConfirmed = confirm("Are you sure you want to log out?");
-            
-            // If user clicked "OK"
-    if (userConfirmed) {
-        localStorage.removeItem('user'); // ลบข้อมูลผู้ใช้ (หากมี)
-
-        window.location.href = "login.html";// เปลี่ยนเส้นทางไปยังหน้า login
-        console.log('Logging out...'); // ตรวจสอบว่าฟังก์ชันถูก
-    }
-}
+/***************(Normal logout function has been moved to alert.js)***************/
 
 // ฟังก์ชั่น logout สำหรับ session timeout logout
 function sessionTimeoutLogout() {
