@@ -7,7 +7,7 @@ const ava = ({ icon = 'logout', text = null, btnTextL = 'Cancel', btnTextR = 'Co
     alert.setAttribute('class', 'ava-alert');
     modal.appendChild(alert);
 
-    // Set alert icon and text based on the icon type
+    //set alert icon and text based on the icon type
     let avaIcon;
     if (icon === 'logout') {
         avaIcon = `<div class="ava-alert__icon"><h1>ออกจากระบบ</h1></div>`;
@@ -17,7 +17,7 @@ const ava = ({ icon = 'logout', text = null, btnTextL = 'Cancel', btnTextR = 'Co
         avaIcon = `<div class="ava-alert__icon"><h1>Sending request?</h1></div>`;
     }
 
-    // Add HTML structure and content
+    //add HTML structure and content
     alert.innerHTML = `
         ${avaIcon}
         <div class='ava-text-con'>
@@ -90,3 +90,5 @@ function send() {
 }
 
 //to-do: alert when save draft and send
+
+
