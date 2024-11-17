@@ -111,3 +111,41 @@ document.addEventListener("scroll", resetTimeout);
 
 // Start the session timeout countdown
 startTimeout();
+
+function Cancel() {
+    openCancelModal(); // Open the modal when the "ยกเลิก" button is clicked
+}
+
+function createCancelModal() {
+    const modalHtml = `
+        <div id="CancelModal" class="modal">
+            <div class="modal-content">
+                <h2>คำร้องยังไม่ได้บันทึก</h2>
+                <p>ท่านต้องการออกจากหน้าแบบฟอร์ม ใช่หรือไม่</p>
+                <button class="cancel-btn" onclick="closeCancelModal()">ยกเลิก</button>
+                <button class="confirm-btn" onclick="confirmCancel()">ยืนยัน</button>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+}
+
+function openCancelModal() {
+    const modal = document.getElementById("CancelModal");
+    if (!modal) {
+        createCancelModal(); // Create the modal if it doesn’t exist
+    }
+    document.getElementById("CancelModal").style.display = "flex";
+}
+
+function closeCancelModal() {
+    const modal = document.getElementById("CancelModal");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+function confirmCancel() {
+    window.location.href = "../main.html"; // Redirect to the main page
+    console.log("Form submission canceled...");
+}

@@ -114,6 +114,10 @@ select {
     color: white;
 }
 
+textarea::placeholder {
+    color: #ffffff;
+}
+
 textarea {
     width: 203%;
     height: 100px; 
@@ -121,7 +125,6 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     border-color: black;
-    color: #aaa;
     font-size: 14px;
     resize: none;
 }
@@ -297,6 +300,12 @@ input#otherUniversity{
     justify-content: right;
 }
 
+#input-validation {
+    color: #D41616;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .button-row{
     padding: 0px;
     margin: 0px;
@@ -309,4 +318,65 @@ input#otherUniversity{
 .just-space{
     height: 30px;
     width: 100%;
+}
+
+/******** Cancel Modal ********/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content .cancel-btn {
+    background-color: #7e7e7e;
+    color: #ffffff;
+}
+
+.modal-content .cancel-btn:hover {
+    background-color: #9b9b9b;
+}
+
+.modal-content .confirm-btn {
+    background-color: #315d36;
+    color: #ffffff;
+}
+
+.modal-content .confirm-btn:hover {
+    background-color: #34813d;
 }
