@@ -47,4 +47,12 @@ public class Form {
 	@Column(name = "note", nullable = false)
 	private String note ;
 	
+	public String getStage() {
+        return stage;
+    }
+
+    public void setStage(String stage) {
+        this.stage = stage;
+    }
+	
 }

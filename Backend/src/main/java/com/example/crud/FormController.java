@@ -13,12 +13,12 @@ public class FormController {
 	private FormRepository formRepository;
 	
 	@DeleteMapping
-	public List<Form> delAllForms(@RequestBody String Key){ //For DEV
-		if (Key == "DEV") {
+	public List<Form> delAllForms(@RequestBody Long Key){
+		if (Key == -1) {
 			formRepository.deleteAll();
 		}
 		else {
-			//Something
+			formRepository.delete(formRepository.getReferenceById(Key));
 		}
 			
 		return formRepository.findAll();
@@ -34,7 +34,13 @@ public class FormController {
 		return formRepository.save(form);
 	}
 	
-	
+	@PatchMapping("/{id},{stage}")
+	public Form patchForm(@PathVariable Long id ,@PathVariable String stage) {
+		Form target = formRepository.getReferenceById(id);
+		if (stage != null) target.setStage(stage);
 
+		return formRepository.save(target);
+	}
+	
 }
 
