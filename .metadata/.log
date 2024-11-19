@@ -1,0 +1,2541 @@
+!SESSION 2567-11-15 21:06:34.025 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.13
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-15 21:06:59.781
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-15 21:07:35.534
+!MESSAGE Logback config file: C:\Users\USER\OneDrive\Desktop\CS261\cs261-group7-100001\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.jface 2 0 2567-11-15 21:07:37.107
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-15 21:07:37.107
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2567-11-15 21:07:41.334
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.jobs 4 2 2567-11-15 21:30:05.865
+!MESSAGE An internal error occurred during: "File Transport Reader".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.osgi.framework.BundleContext.createFilter(String)" because "context" is null
+	at org.osgi.util.tracker.ServiceTracker.<init>(ServiceTracker.java:190)
+	at org.osgi.util.tracker.ServiceTracker.<init>(ServiceTracker.java:253)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient5.Activator.getLogService(Activator.java:202)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient5.Activator.log(Activator.java:213)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.hardClose(HttpClientRetrieveFileTransfer.java:200)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer$1.performFileTransfer(AbstractRetrieveFileTransfer.java:199)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2567-11-15 21:30:05.866
+!MESSAGE An internal error occurred during: "File Transport Reader".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.osgi.framework.BundleContext.createFilter(String)" because "context" is null
+	at org.osgi.util.tracker.ServiceTracker.<init>(ServiceTracker.java:190)
+	at org.osgi.util.tracker.ServiceTracker.<init>(ServiceTracker.java:253)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient5.Activator.getLogService(Activator.java:202)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient5.Activator.log(Activator.java:213)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.hardClose(HttpClientRetrieveFileTransfer.java:200)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer$1.performFileTransfer(AbstractRetrieveFileTransfer.java:199)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2567-11-15 21:30:05.868
+!MESSAGE An internal error occurred during: "Install download3".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.osgi.signedcontent.SignedContentFactory.getSignedContent(java.io.File)" because "verifierFactory" is null
+	at org.eclipse.equinox.internal.p2.artifact.repository.SignatureVerifier.verifyContent(SignatureVerifier.java:84)
+	at org.eclipse.equinox.internal.p2.artifact.repository.SignatureVerifier.verify(SignatureVerifier.java:66)
+	at org.eclipse.equinox.internal.p2.artifact.repository.SignatureVerifier.close(SignatureVerifier.java:115)
+	at org.eclipse.equinox.internal.provisional.p2.artifact.repository.processing.ProcessingStep.close(ProcessingStep.java:93)
+	at org.eclipse.equinox.internal.p2.artifact.processors.checksum.MessageDigestProcessingStep.close(MessageDigestProcessingStep.java:58)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepository.reportStatus(SimpleArtifactRepository.java:1263)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepository.downloadArtifact(SimpleArtifactRepository.java:660)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepository.getArtifact(SimpleArtifactRepository.java:796)
+	at org.eclipse.equinox.internal.p2.artifact.repository.MirrorRequest.getArtifact(MirrorRequest.java:329)
+	at org.eclipse.equinox.internal.p2.artifact.repository.MirrorRequest.transferSingle(MirrorRequest.java:299)
+	at org.eclipse.equinox.internal.p2.artifact.repository.MirrorRequest.transfer(MirrorRequest.java:232)
+	at org.eclipse.equinox.internal.p2.artifact.repository.MirrorRequest.perform(MirrorRequest.java:162)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepository.getArtifact(SimpleArtifactRepository.java:778)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.DownloadJob.run(DownloadJob.java:64)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2567-11-15 21:30:05.869
+!MESSAGE An internal error occurred during: "Install download1".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.osgi.signedcontent.SignedContentFactory.getSignedContent(java.io.File)" because "verifierFactory" is null
+	at org.eclipse.equinox.internal.p2.artifact.repository.SignatureVerifier.verifyContent(SignatureVerifier.java:84)
+	at org.eclipse.equinox.internal.p2.artifact.repository.SignatureVerifier.verify(SignatureVerifier.java:66)
+	at org.eclipse.equinox.internal.p2.artifact.repository.SignatureVerifier.close(SignatureVerifier.java:115)
+	at org.eclipse.equinox.internal.provisional.p2.artifact.repository.processing.ProcessingStep.close(ProcessingStep.java:93)
+	at org.eclipse.equinox.internal.p2.artifact.processors.checksum.MessageDigestProcessingStep.close(MessageDigestProcessingStep.java:58)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepository.reportStatus(SimpleArtifactRepository.java:1263)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepository.downloadArtifact(SimpleArtifactRepository.java:660)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepository.getArtifact(SimpleArtifactRepository.java:796)
+	at org.eclipse.equinox.internal.p2.artifact.repository.MirrorRequest.getArtifact(MirrorRequest.java:329)
+	at org.eclipse.equinox.internal.p2.artifact.repository.MirrorRequest.transferSingle(MirrorRequest.java:299)
+	at org.eclipse.equinox.internal.p2.artifact.repository.MirrorRequest.transfer(MirrorRequest.java:232)
+	at org.eclipse.equinox.internal.p2.artifact.repository.MirrorRequest.perform(MirrorRequest.java:162)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepository.getArtifact(SimpleArtifactRepository.java:778)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.DownloadJob.run(DownloadJob.java:64)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.engine 4 4 2567-11-15 21:30:05.872
+!MESSAGE An error occurred while collecting items to be installed
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2567-11-15 21:30:05.872
+!MESSAGE session context was:(profile=C__Users_USER_eclipse_CS111_eclipse, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2567-11-15 21:30:05.872
+!MESSAGE Attempt to access stopped agent: org.eclipse.equinox.internal.p2.core.ProvisioningAgent@75095002
+!STACK 0
+java.lang.IllegalStateException: Attempt to access stopped agent: org.eclipse.equinox.internal.p2.core.ProvisioningAgent@75095002
+	at org.eclipse.equinox.internal.p2.core.ProvisioningAgent.checkRunning(ProvisioningAgent.java:87)
+	at org.eclipse.equinox.internal.p2.core.ProvisioningAgent.getService(ProvisioningAgent.java:51)
+	at org.eclipse.equinox.p2.core.IProvisioningAgent.getService(IProvisioningAgent.java:86)
+	at org.eclipse.equinox.internal.p2.engine.DownloadManager.publishDownloadEvent(DownloadManager.java:137)
+	at org.eclipse.equinox.internal.p2.engine.DownloadManager.fetch(DownloadManager.java:128)
+	at org.eclipse.equinox.internal.p2.engine.DownloadManager.start(DownloadManager.java:98)
+	at org.eclipse.equinox.internal.p2.engine.phases.Collect.completePhase(Collect.java:124)
+	at org.eclipse.equinox.internal.p2.engine.Phase.postPerform(Phase.java:254)
+	at org.eclipse.equinox.internal.p2.engine.Phase.perform(Phase.java:105)
+	at org.eclipse.equinox.internal.p2.engine.PhaseSet.perform(PhaseSet.java:50)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:95)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:49)
+	at org.eclipse.equinox.p2.operations.ProvisioningSession.performProvisioningPlan(ProvisioningSession.java:175)
+	at org.eclipse.equinox.p2.operations.ProfileModificationJob.runModal(ProfileModificationJob.java:76)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:188)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2567-11-15 21:30:11.206 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.13
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-15 21:30:12.620
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-15 21:30:23.051
+!MESSAGE Logback config file: C:\Users\USER\OneDrive\Desktop\CS261\cs261-group7-100001\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.jface 2 0 2567-11-15 21:30:24.240
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-15 21:30:24.240
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2567-11-15 21:30:27.661
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2567-11-15 21:36:07.082 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.13
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product -data file:/C:/Users/USER/OneDrive/Desktop/CS261/cs261-group7-100001/ -product org.eclipse.epp.package.dsl.product
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-15 21:36:11.026
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2567-11-15 21:36:11.201
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [664]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2567-11-15 21:36:11.203
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [665]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [664]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-15 21:36:12.631
+!MESSAGE Logback config file: C:\Users\USER\OneDrive\Desktop\CS261\cs261-group7-100001\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2567-11-15 21:36:12.979
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-15 21:36:12.979
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2567-11-15 21:36:13.258
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-15 21:36:13.258
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2567-11-15 21:36:13.821
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-15 21:36:13.821
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-15 21:36:16.338
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=C:/Users/USER/OneDrive/Desktop/CS261/cs261-group7-100001/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1731681376337
+-Dlanguageserver.hover-timeout=225
+-jar
+C:\Users\USER\.p2\pool\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:36:16.340
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-15 21:36:16.349
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 11476
+
+!ENTRY org.eclipse.egit.ui 2 0 2567-11-15 21:36:17.530
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:36:17.660
+!MESSAGE Boot project ADDED: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:36:17.660
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:36:17.662
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:37:24.552
+!MESSAGE Classpath changed for project: Backend
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2567-11-15 21:45:55.939
+!MESSAGE Unknown or unsupported source locator org.eclipse.jdt.internal.launching.sourcelookup.advanced.AdvancedSourceLookupDirector
+!SESSION 2567-11-15 21:49:02.630 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.13
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-15 21:49:04.062
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2567-11-15 21:49:04.265
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [664]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2567-11-15 21:49:04.268
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [665]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [664]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-15 21:49:07.579
+!MESSAGE Logback config file: C:\Users\USER\OneDrive\Desktop\CS261\cs261-group7-100001\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2567-11-15 21:49:07.863
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-15 21:49:07.863
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2567-11-15 21:49:08.131
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-15 21:49:08.131
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2567-11-15 21:49:08.711
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-15 21:49:08.711
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-15 21:49:11.273
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=C:/Users/USER/OneDrive/Desktop/CS261/cs261-group7-100001/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1731682151272
+-Dlanguageserver.hover-timeout=225
+-jar
+C:\Users\USER\eclipse\CS111\eclipse\..\..\..\.p2\pool\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:49:11.274
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-15 21:49:11.284
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 3928
+
+!ENTRY org.eclipse.egit.ui 2 0 2567-11-15 21:49:12.247
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:49:12.357
+!MESSAGE Boot project ADDED: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:49:12.358
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:49:12.360
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:49:13.468
+!MESSAGE Classpath changed for project: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:49:38.766
+!MESSAGE Classpath changed for project: Backend
+!SESSION 2567-11-15 21:54:54.855 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.13
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-15 21:54:56.612
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2567-11-15 21:54:56.786
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [664]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2567-11-15 21:54:56.788
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [665]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [664]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-15 21:54:58.895
+!MESSAGE Logback config file: C:\Users\USER\OneDrive\Desktop\CS261\cs261-group7-100001\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2567-11-15 21:54:59.219
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-15 21:54:59.219
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2567-11-15 21:54:59.481
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-15 21:54:59.481
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2567-11-15 21:55:00.038
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-15 21:55:00.038
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-15 21:55:02.473
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=C:/Users/USER/OneDrive/Desktop/CS261/cs261-group7-100001/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1731682502472
+-Dlanguageserver.hover-timeout=225
+-jar
+C:\Users\USER\eclipse\CS111\eclipse\..\..\..\.p2\pool\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:55:02.474
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-15 21:55:02.482
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 7308
+
+!ENTRY org.eclipse.egit.ui 2 0 2567-11-15 21:55:03.445
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:55:03.555
+!MESSAGE Boot project ADDED: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:55:03.556
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:55:03.558
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 21:55:04.604
+!MESSAGE Classpath changed for project: Backend
+
+!ENTRY org.eclipse.jface 2 0 2567-11-15 21:59:03.368
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-15 21:59:03.368
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-15 22:00:53.369
+!MESSAGE Classpath changed for project: Backend
+!SESSION 2567-11-16 09:48:12.560 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.13
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-16 09:48:39.858
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2567-11-16 09:48:40.094
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [664]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2567-11-16 09:48:40.096
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [665]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [664]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-16 09:49:32.174
+!MESSAGE Logback config file: C:\Users\USER\OneDrive\Desktop\CS261\cs261-group7-100001\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2567-11-16 09:49:32.587
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-16 09:49:32.587
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2567-11-16 09:49:33.048
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-16 09:49:33.048
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2567-11-16 09:49:33.774
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-16 09:49:33.774
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-16 09:49:36.790
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=C:/Users/USER/OneDrive/Desktop/CS261/cs261-group7-100001/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1731725376790
+-Dlanguageserver.hover-timeout=225
+-jar
+C:\Users\USER\eclipse\CS111\eclipse\..\..\..\.p2\pool\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 09:49:36.791
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-16 09:49:36.802
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 22304
+
+!ENTRY org.eclipse.egit.ui 2 0 2567-11-16 09:49:37.816
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 09:49:37.899
+!MESSAGE Boot project ADDED: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 09:49:37.900
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 09:49:37.902
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 09:49:39.566
+!MESSAGE Classpath changed for project: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 09:53:35.107
+!MESSAGE Classpath changed for project: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 09:53:35.373
+!MESSAGE Classpath changed for project: Backend
+
+!ENTRY org.eclipse.jface 2 0 2567-11-16 09:55:19.423
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-16 09:55:19.423
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.697
+!MESSAGE Failed to look up method getId with signature ()Ljava/lang/Long; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.698
+!MESSAGE Failed to look up method getEng_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.698
+!MESSAGE Failed to look up method getEmail with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.699
+!MESSAGE Failed to look up method getFaculty with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.699
+!MESSAGE Failed to look up method getType with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.700
+!MESSAGE Failed to look up method getUser_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.701
+!MESSAGE Failed to look up method setId with signature (Ljava/lang/Long;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.701
+!MESSAGE Failed to look up method setEng_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.702
+!MESSAGE Failed to look up method setEmail with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.702
+!MESSAGE Failed to look up method setFaculty with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.702
+!MESSAGE Failed to look up method setType with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.703
+!MESSAGE Failed to look up method setUser_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.703
+!MESSAGE Failed to look up method equals with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.704
+!MESSAGE Failed to look up method canEqual with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.704
+!MESSAGE Failed to look up method hashCode with signature ()I in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:56:54.705
+!MESSAGE Failed to look up method toString with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.401
+!MESSAGE Failed to look up method getId with signature ()Ljava/lang/Long; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.401
+!MESSAGE Failed to look up method getEng_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.402
+!MESSAGE Failed to look up method getEmail with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.402
+!MESSAGE Failed to look up method getFaculty with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.403
+!MESSAGE Failed to look up method getType with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.403
+!MESSAGE Failed to look up method getUser_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.404
+!MESSAGE Failed to look up method setId with signature (Ljava/lang/Long;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.404
+!MESSAGE Failed to look up method setEng_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.404
+!MESSAGE Failed to look up method setEmail with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.405
+!MESSAGE Failed to look up method setFaculty with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.405
+!MESSAGE Failed to look up method setType with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.406
+!MESSAGE Failed to look up method setUser_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.406
+!MESSAGE Failed to look up method equals with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.406
+!MESSAGE Failed to look up method canEqual with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.407
+!MESSAGE Failed to look up method hashCode with signature ()I in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-16 09:57:11.407
+!MESSAGE Failed to look up method toString with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 09:57:21.698
+!MESSAGE Classpath changed for project: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 09:57:24.447
+!MESSAGE Classpath changed for project: Backend
+!SESSION 2567-11-16 10:01:24.862 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.13
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-16 10:01:26.794
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2567-11-16 10:01:27.007
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [664]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2567-11-16 10:01:27.010
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [665]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [664]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-16 10:01:32.885
+!MESSAGE Logback config file: C:\Users\USER\OneDrive\Desktop\CS261\cs261-group7-100001\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2567-11-16 10:01:33.253
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-16 10:01:33.253
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2567-11-16 10:01:33.546
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-16 10:01:33.546
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2567-11-16 10:01:34.169
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-16 10:01:34.169
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-16 10:01:36.960
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=C:/Users/USER/OneDrive/Desktop/CS261/cs261-group7-100001/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1731726096959
+-Dlanguageserver.hover-timeout=225
+-jar
+C:\Users\USER\eclipse\CS111\eclipse\..\..\..\.p2\pool\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 10:01:36.961
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-16 10:01:36.972
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 6984
+
+!ENTRY org.eclipse.egit.ui 2 0 2567-11-16 10:01:37.978
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 10:01:40.857
+!MESSAGE Boot project ADDED: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 10:01:40.858
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 10:01:40.859
+!MESSAGE Started Boot LS process
+
+!ENTRY org.eclipse.jface 2 0 2567-11-16 10:03:44.265
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-16 10:03:44.265
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2567-11-16 10:39:28.509 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.13
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-16 10:39:30.099
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2567-11-16 10:39:30.320
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [664]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2567-11-16 10:39:30.322
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [665]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [664]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-16 10:39:32.882
+!MESSAGE Logback config file: C:\Users\USER\OneDrive\Desktop\CS261\cs261-group7-100001\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2567-11-16 10:39:33.244
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-16 10:39:33.244
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2567-11-16 10:39:33.660
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-16 10:39:33.660
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2567-11-16 10:39:34.321
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-16 10:39:34.321
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-16 10:39:36.394
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=C:/Users/USER/OneDrive/Desktop/CS261/cs261-group7-100001/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1731728376393
+-Dlanguageserver.hover-timeout=225
+-jar
+C:\Users\USER\eclipse\CS111\eclipse\..\..\..\.p2\pool\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 10:39:36.395
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-16 10:39:36.407
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 3744
+
+!ENTRY org.eclipse.jface 2 0 2567-11-16 10:39:36.916
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-16 10:39:36.916
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2567-11-16 10:39:37.494
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 10:39:39.430
+!MESSAGE Boot project ADDED: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 10:39:39.431
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-16 10:39:39.432
+!MESSAGE Started Boot LS process
+!SESSION 2567-11-17 08:23:19.878 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.13
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-17 08:23:51.487
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2567-11-17 08:23:51.745
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [664]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2567-11-17 08:23:51.747
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [665]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [664]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-17 08:30:54.757
+!MESSAGE Logback config file: C:\Users\USER\OneDrive\Desktop\CS261\cs261-group7-100001\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2567-11-17 08:30:55.188
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-17 08:30:55.188
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2567-11-17 08:30:55.717
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-17 08:30:55.717
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2567-11-17 08:30:56.489
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-17 08:30:56.489
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-17 08:30:59.365
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=C:/Users/USER/OneDrive/Desktop/CS261/cs261-group7-100001/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1731807059365
+-Dlanguageserver.hover-timeout=225
+-jar
+C:\Users\USER\eclipse\CS111\eclipse\..\..\..\.p2\pool\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-17 08:30:59.366
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-17 08:30:59.378
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 19152
+
+!ENTRY org.eclipse.egit.ui 2 0 2567-11-17 08:30:59.939
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-17 08:31:06.445
+!MESSAGE Boot project ADDED: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-17 08:31:06.446
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-17 08:31:06.447
+!MESSAGE Started Boot LS process
+
+!ENTRY org.eclipse.jface 2 0 2567-11-17 08:37:29.019
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-17 08:37:29.019
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.lsp4e 2 0 2567-11-17 09:16:04.471
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.531
+!MESSAGE Failed to look up method getId with signature ()Ljava/lang/Long; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.531
+!MESSAGE Failed to look up method getTh_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.532
+!MESSAGE Failed to look up method getEng_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.533
+!MESSAGE Failed to look up method getBirthday with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.533
+!MESSAGE Failed to look up method getEmail with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.534
+!MESSAGE Failed to look up method getFaculty with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.534
+!MESSAGE Failed to look up method getType with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.535
+!MESSAGE Failed to look up method getYear with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.536
+!MESSAGE Failed to look up method getAddress with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.537
+!MESSAGE Failed to look up method getMoo with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.537
+!MESSAGE Failed to look up method getRoad with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.538
+!MESSAGE Failed to look up method getDistrict with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.539
+!MESSAGE Failed to look up method getProvince with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.539
+!MESSAGE Failed to look up method getZip_code with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.540
+!MESSAGE Failed to look up method getPhone_num with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.540
+!MESSAGE Failed to look up method getAdvisor with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.541
+!MESSAGE Failed to look up method getUser_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.541
+!MESSAGE Failed to look up method setId with signature (Ljava/lang/Long;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.542
+!MESSAGE Failed to look up method setTh_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.542
+!MESSAGE Failed to look up method setEng_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.543
+!MESSAGE Failed to look up method setBirthday with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.543
+!MESSAGE Failed to look up method setEmail with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.544
+!MESSAGE Failed to look up method setFaculty with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.544
+!MESSAGE Failed to look up method setType with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.545
+!MESSAGE Failed to look up method setYear with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.545
+!MESSAGE Failed to look up method setAddress with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.546
+!MESSAGE Failed to look up method setMoo with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.546
+!MESSAGE Failed to look up method setRoad with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.547
+!MESSAGE Failed to look up method setDistrict with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.547
+!MESSAGE Failed to look up method setProvince with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.548
+!MESSAGE Failed to look up method setZip_code with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.548
+!MESSAGE Failed to look up method setPhone_num with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.549
+!MESSAGE Failed to look up method setAdvisor with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.550
+!MESSAGE Failed to look up method setUser_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.550
+!MESSAGE Failed to look up method equals with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.551
+!MESSAGE Failed to look up method canEqual with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.551
+!MESSAGE Failed to look up method hashCode with signature ()I in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:18.552
+!MESSAGE Failed to look up method toString with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.176
+!MESSAGE Failed to look up method getId with signature ()Ljava/lang/Long; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.176
+!MESSAGE Failed to look up method getTh_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.177
+!MESSAGE Failed to look up method getEng_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.177
+!MESSAGE Failed to look up method getBirthday with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.178
+!MESSAGE Failed to look up method getEmail with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.178
+!MESSAGE Failed to look up method getFaculty with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.178
+!MESSAGE Failed to look up method getType with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.179
+!MESSAGE Failed to look up method getYear with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.179
+!MESSAGE Failed to look up method getAddress with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.180
+!MESSAGE Failed to look up method getMoo with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.180
+!MESSAGE Failed to look up method getRoad with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.181
+!MESSAGE Failed to look up method getDistrict with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.181
+!MESSAGE Failed to look up method getProvince with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.181
+!MESSAGE Failed to look up method getZip_code with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.182
+!MESSAGE Failed to look up method getPhone_num with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.183
+!MESSAGE Failed to look up method getAdvisor with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.183
+!MESSAGE Failed to look up method getUser_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.184
+!MESSAGE Failed to look up method setId with signature (Ljava/lang/Long;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.184
+!MESSAGE Failed to look up method setTh_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.184
+!MESSAGE Failed to look up method setEng_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.185
+!MESSAGE Failed to look up method setBirthday with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.185
+!MESSAGE Failed to look up method setEmail with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.185
+!MESSAGE Failed to look up method setFaculty with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.186
+!MESSAGE Failed to look up method setType with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.186
+!MESSAGE Failed to look up method setYear with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.187
+!MESSAGE Failed to look up method setAddress with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.187
+!MESSAGE Failed to look up method setMoo with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.188
+!MESSAGE Failed to look up method setRoad with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.188
+!MESSAGE Failed to look up method setDistrict with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.189
+!MESSAGE Failed to look up method setProvince with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.190
+!MESSAGE Failed to look up method setZip_code with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.190
+!MESSAGE Failed to look up method setPhone_num with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.190
+!MESSAGE Failed to look up method setAdvisor with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.191
+!MESSAGE Failed to look up method setUser_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.191
+!MESSAGE Failed to look up method equals with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.192
+!MESSAGE Failed to look up method canEqual with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.192
+!MESSAGE Failed to look up method hashCode with signature ()I in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:23:22.193
+!MESSAGE Failed to look up method toString with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.006
+!MESSAGE Failed to look up method getId with signature ()Ljava/lang/Long; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.006
+!MESSAGE Failed to look up method getTh_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.007
+!MESSAGE Failed to look up method getEng_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.007
+!MESSAGE Failed to look up method getBirthday with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.008
+!MESSAGE Failed to look up method getEmail with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.008
+!MESSAGE Failed to look up method getFaculty with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.008
+!MESSAGE Failed to look up method getType with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.009
+!MESSAGE Failed to look up method getYear with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.009
+!MESSAGE Failed to look up method getAddress with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.009
+!MESSAGE Failed to look up method getMoo with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.010
+!MESSAGE Failed to look up method getRoad with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.010
+!MESSAGE Failed to look up method getDistrict with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.011
+!MESSAGE Failed to look up method getProvince with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.011
+!MESSAGE Failed to look up method getZip_code with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.012
+!MESSAGE Failed to look up method getPhone_num with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.012
+!MESSAGE Failed to look up method getAdvisor with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.013
+!MESSAGE Failed to look up method getUser_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.013
+!MESSAGE Failed to look up method setId with signature (Ljava/lang/Long;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.013
+!MESSAGE Failed to look up method setTh_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.014
+!MESSAGE Failed to look up method setEng_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.015
+!MESSAGE Failed to look up method setBirthday with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.015
+!MESSAGE Failed to look up method setEmail with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.016
+!MESSAGE Failed to look up method setFaculty with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.016
+!MESSAGE Failed to look up method setType with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.017
+!MESSAGE Failed to look up method setYear with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.017
+!MESSAGE Failed to look up method setAddress with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.018
+!MESSAGE Failed to look up method setMoo with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.018
+!MESSAGE Failed to look up method setRoad with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.018
+!MESSAGE Failed to look up method setDistrict with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.019
+!MESSAGE Failed to look up method setProvince with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.020
+!MESSAGE Failed to look up method setZip_code with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.020
+!MESSAGE Failed to look up method setPhone_num with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.021
+!MESSAGE Failed to look up method setAdvisor with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.022
+!MESSAGE Failed to look up method setUser_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.022
+!MESSAGE Failed to look up method equals with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.023
+!MESSAGE Failed to look up method canEqual with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.023
+!MESSAGE Failed to look up method hashCode with signature ()I in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:13.023
+!MESSAGE Failed to look up method toString with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.764
+!MESSAGE Failed to look up method getId with signature ()Ljava/lang/Long; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.764
+!MESSAGE Failed to look up method getTh_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.765
+!MESSAGE Failed to look up method getEng_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.766
+!MESSAGE Failed to look up method getBirthday with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.766
+!MESSAGE Failed to look up method getEmail with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.767
+!MESSAGE Failed to look up method getFaculty with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.767
+!MESSAGE Failed to look up method getType with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.768
+!MESSAGE Failed to look up method getYear with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.768
+!MESSAGE Failed to look up method getAddress with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.769
+!MESSAGE Failed to look up method getMoo with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.769
+!MESSAGE Failed to look up method getRoad with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.770
+!MESSAGE Failed to look up method getDistrict with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.771
+!MESSAGE Failed to look up method getProvince with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.771
+!MESSAGE Failed to look up method getZip_code with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.772
+!MESSAGE Failed to look up method getPhone_num with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.773
+!MESSAGE Failed to look up method getAdvisor with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.773
+!MESSAGE Failed to look up method getUser_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.773
+!MESSAGE Failed to look up method setId with signature (Ljava/lang/Long;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.774
+!MESSAGE Failed to look up method setTh_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.775
+!MESSAGE Failed to look up method setEng_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.775
+!MESSAGE Failed to look up method setBirthday with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.776
+!MESSAGE Failed to look up method setEmail with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.776
+!MESSAGE Failed to look up method setFaculty with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.777
+!MESSAGE Failed to look up method setType with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.777
+!MESSAGE Failed to look up method setYear with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.778
+!MESSAGE Failed to look up method setAddress with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.778
+!MESSAGE Failed to look up method setMoo with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.779
+!MESSAGE Failed to look up method setRoad with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.780
+!MESSAGE Failed to look up method setDistrict with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.781
+!MESSAGE Failed to look up method setProvince with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.781
+!MESSAGE Failed to look up method setZip_code with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.782
+!MESSAGE Failed to look up method setPhone_num with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.782
+!MESSAGE Failed to look up method setAdvisor with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.783
+!MESSAGE Failed to look up method setUser_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.783
+!MESSAGE Failed to look up method equals with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.784
+!MESSAGE Failed to look up method canEqual with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.784
+!MESSAGE Failed to look up method hashCode with signature ()I in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:24:15.785
+!MESSAGE Failed to look up method toString with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-17 09:26:58.497
+!MESSAGE Classpath changed for project: Backend
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.905
+!MESSAGE Failed to look up method getId with signature ()Ljava/lang/Long; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.905
+!MESSAGE Failed to look up method getTh_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.906
+!MESSAGE Failed to look up method getEng_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.906
+!MESSAGE Failed to look up method getBirthday with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.907
+!MESSAGE Failed to look up method getEmail with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.907
+!MESSAGE Failed to look up method getFaculty with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.907
+!MESSAGE Failed to look up method getType with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.908
+!MESSAGE Failed to look up method getYear with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.908
+!MESSAGE Failed to look up method getAddress with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.909
+!MESSAGE Failed to look up method getMoo with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.909
+!MESSAGE Failed to look up method getRoad with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.910
+!MESSAGE Failed to look up method getDistrict with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.910
+!MESSAGE Failed to look up method getProvince with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.911
+!MESSAGE Failed to look up method getZip_code with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.911
+!MESSAGE Failed to look up method getPhone_num with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.912
+!MESSAGE Failed to look up method getAdvisor with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.912
+!MESSAGE Failed to look up method getUser_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.913
+!MESSAGE Failed to look up method setId with signature (Ljava/lang/Long;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.913
+!MESSAGE Failed to look up method setTh_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.913
+!MESSAGE Failed to look up method setEng_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.914
+!MESSAGE Failed to look up method setBirthday with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.914
+!MESSAGE Failed to look up method setEmail with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.915
+!MESSAGE Failed to look up method setFaculty with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.915
+!MESSAGE Failed to look up method setType with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.916
+!MESSAGE Failed to look up method setYear with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.916
+!MESSAGE Failed to look up method setAddress with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.916
+!MESSAGE Failed to look up method setMoo with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.917
+!MESSAGE Failed to look up method setRoad with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.917
+!MESSAGE Failed to look up method setDistrict with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.918
+!MESSAGE Failed to look up method setProvince with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.918
+!MESSAGE Failed to look up method setZip_code with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.919
+!MESSAGE Failed to look up method setPhone_num with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.919
+!MESSAGE Failed to look up method setAdvisor with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.920
+!MESSAGE Failed to look up method setUser_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.920
+!MESSAGE Failed to look up method equals with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.920
+!MESSAGE Failed to look up method canEqual with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.921
+!MESSAGE Failed to look up method hashCode with signature ()I in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:43.921
+!MESSAGE Failed to look up method toString with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.051
+!MESSAGE Failed to look up method getId with signature ()Ljava/lang/Long; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.051
+!MESSAGE Failed to look up method getTh_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.052
+!MESSAGE Failed to look up method getEng_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.053
+!MESSAGE Failed to look up method getBirthday with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.053
+!MESSAGE Failed to look up method getEmail with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.054
+!MESSAGE Failed to look up method getFaculty with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.054
+!MESSAGE Failed to look up method getType with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.055
+!MESSAGE Failed to look up method getYear with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.055
+!MESSAGE Failed to look up method getAddress with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.056
+!MESSAGE Failed to look up method getMoo with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.056
+!MESSAGE Failed to look up method getRoad with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.057
+!MESSAGE Failed to look up method getDistrict with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.057
+!MESSAGE Failed to look up method getProvince with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.058
+!MESSAGE Failed to look up method getZip_code with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.058
+!MESSAGE Failed to look up method getPhone_num with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.059
+!MESSAGE Failed to look up method getAdvisor with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.059
+!MESSAGE Failed to look up method getUser_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.059
+!MESSAGE Failed to look up method setId with signature (Ljava/lang/Long;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.060
+!MESSAGE Failed to look up method setTh_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.060
+!MESSAGE Failed to look up method setEng_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.061
+!MESSAGE Failed to look up method setBirthday with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.061
+!MESSAGE Failed to look up method setEmail with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.061
+!MESSAGE Failed to look up method setFaculty with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.062
+!MESSAGE Failed to look up method setType with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.062
+!MESSAGE Failed to look up method setYear with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.062
+!MESSAGE Failed to look up method setAddress with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.063
+!MESSAGE Failed to look up method setMoo with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.063
+!MESSAGE Failed to look up method setRoad with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.064
+!MESSAGE Failed to look up method setDistrict with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.064
+!MESSAGE Failed to look up method setProvince with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.065
+!MESSAGE Failed to look up method setZip_code with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.065
+!MESSAGE Failed to look up method setPhone_num with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.066
+!MESSAGE Failed to look up method setAdvisor with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.066
+!MESSAGE Failed to look up method setUser_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.067
+!MESSAGE Failed to look up method equals with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.068
+!MESSAGE Failed to look up method canEqual with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.068
+!MESSAGE Failed to look up method hashCode with signature ()I in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:27:46.069
+!MESSAGE Failed to look up method toString with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.219
+!MESSAGE Failed to look up method getId with signature ()Ljava/lang/Long; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.220
+!MESSAGE Failed to look up method getTh_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.220
+!MESSAGE Failed to look up method getEng_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.221
+!MESSAGE Failed to look up method getBirthday with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.222
+!MESSAGE Failed to look up method getEmail with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.222
+!MESSAGE Failed to look up method getFaculty with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.223
+!MESSAGE Failed to look up method getType with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.223
+!MESSAGE Failed to look up method getYear with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.224
+!MESSAGE Failed to look up method getAddress with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.225
+!MESSAGE Failed to look up method getMoo with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.225
+!MESSAGE Failed to look up method getRoad with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.226
+!MESSAGE Failed to look up method getDistrict with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.226
+!MESSAGE Failed to look up method getProvince with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.227
+!MESSAGE Failed to look up method getZip_code with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.227
+!MESSAGE Failed to look up method getPhone_num with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.228
+!MESSAGE Failed to look up method getAdvisor with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.228
+!MESSAGE Failed to look up method getUser_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.229
+!MESSAGE Failed to look up method setId with signature (Ljava/lang/Long;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.229
+!MESSAGE Failed to look up method setTh_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.230
+!MESSAGE Failed to look up method setEng_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.230
+!MESSAGE Failed to look up method setBirthday with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.231
+!MESSAGE Failed to look up method setEmail with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.231
+!MESSAGE Failed to look up method setFaculty with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.232
+!MESSAGE Failed to look up method setType with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.232
+!MESSAGE Failed to look up method setYear with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.233
+!MESSAGE Failed to look up method setAddress with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.234
+!MESSAGE Failed to look up method setMoo with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.234
+!MESSAGE Failed to look up method setRoad with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.235
+!MESSAGE Failed to look up method setDistrict with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.236
+!MESSAGE Failed to look up method setProvince with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.236
+!MESSAGE Failed to look up method setZip_code with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.237
+!MESSAGE Failed to look up method setPhone_num with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.237
+!MESSAGE Failed to look up method setAdvisor with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.238
+!MESSAGE Failed to look up method setUser_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.238
+!MESSAGE Failed to look up method equals with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.239
+!MESSAGE Failed to look up method canEqual with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.239
+!MESSAGE Failed to look up method hashCode with signature ()I in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:52.240
+!MESSAGE Failed to look up method toString with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.406
+!MESSAGE Failed to look up method getId with signature ()Ljava/lang/Long; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.406
+!MESSAGE Failed to look up method getTh_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.407
+!MESSAGE Failed to look up method getEng_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.407
+!MESSAGE Failed to look up method getBirthday with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.408
+!MESSAGE Failed to look up method getEmail with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.408
+!MESSAGE Failed to look up method getFaculty with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.409
+!MESSAGE Failed to look up method getType with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.409
+!MESSAGE Failed to look up method getYear with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.410
+!MESSAGE Failed to look up method getAddress with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.410
+!MESSAGE Failed to look up method getMoo with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.411
+!MESSAGE Failed to look up method getRoad with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.412
+!MESSAGE Failed to look up method getDistrict with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.412
+!MESSAGE Failed to look up method getProvince with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.413
+!MESSAGE Failed to look up method getZip_code with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.413
+!MESSAGE Failed to look up method getPhone_num with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.414
+!MESSAGE Failed to look up method getAdvisor with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.414
+!MESSAGE Failed to look up method getUser_name with signature ()Ljava/lang/String; in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.415
+!MESSAGE Failed to look up method setId with signature (Ljava/lang/Long;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.415
+!MESSAGE Failed to look up method setTh_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.416
+!MESSAGE Failed to look up method setEng_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.416
+!MESSAGE Failed to look up method setBirthday with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.417
+!MESSAGE Failed to look up method setEmail with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.417
+!MESSAGE Failed to look up method setFaculty with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.418
+!MESSAGE Failed to look up method setType with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.418
+!MESSAGE Failed to look up method setYear with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.419
+!MESSAGE Failed to look up method setAddress with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.419
+!MESSAGE Failed to look up method setMoo with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.419
+!MESSAGE Failed to look up method setRoad with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.420
+!MESSAGE Failed to look up method setDistrict with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.420
+!MESSAGE Failed to look up method setProvince with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.421
+!MESSAGE Failed to look up method setZip_code with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.421
+!MESSAGE Failed to look up method setPhone_num with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.421
+!MESSAGE Failed to look up method setAdvisor with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.422
+!MESSAGE Failed to look up method setUser_name with signature (Ljava/lang/String;)V in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.423
+!MESSAGE Failed to look up method equals with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.423
+!MESSAGE Failed to look up method canEqual with signature (Ljava/lang/Object;)Z in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.424
+!MESSAGE Failed to look up method hashCode with signature ()I in type com.example.crud.User
+
+!ENTRY org.eclipse.pde.api.tools 2 0 2567-11-17 09:29:54.424
+!MESSAGE Failed to look up method toString with signature ()Ljava/lang/String; in type com.example.crud.User
+!SESSION 2567-11-18 09:35:45.919 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.13
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-18 09:36:13.059
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2567-11-18 09:36:13.316
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [664]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2567-11-18 09:36:13.318
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [665]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [664]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-18 09:36:21.490
+!MESSAGE Logback config file: C:\Users\USER\OneDrive\Desktop\CS261\cs261-group7-100001\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2567-11-18 09:36:21.947
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-18 09:36:21.947
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2567-11-18 09:36:22.466
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-18 09:36:22.466
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2567-11-18 09:36:23.297
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-18 09:36:23.297
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-18 09:36:28.301
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=C:/Users/USER/OneDrive/Desktop/CS261/cs261-group7-100001/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1731897388300
+-Dlanguageserver.hover-timeout=225
+-jar
+C:\Users\USER\eclipse\CS111\eclipse\..\..\..\.p2\pool\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-18 09:36:28.302
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-18 09:36:28.321
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 5896
+
+!ENTRY org.eclipse.egit.ui 2 0 2567-11-18 09:36:34.093
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-18 09:36:34.176
+!MESSAGE Boot project ADDED: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-18 09:36:34.177
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-18 09:36:34.179
+!MESSAGE Started Boot LS process
+
+!ENTRY org.eclipse.jface 2 0 2567-11-18 09:40:50.510
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-18 09:40:50.510
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2567-11-19 17:05:22.134 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.13
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-19 17:05:51.679
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2567-11-19 17:05:51.889
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [664]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2567-11-19 17:05:51.891
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [665]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [664]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2567-11-19 17:06:01.747
+!MESSAGE Logback config file: C:\Users\USER\OneDrive\Desktop\CS261\cs261-group7-100001\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2567-11-19 17:06:02.370
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-19 17:06:02.370
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2567-11-19 17:06:02.879
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2567-11-19 17:06:02.879
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2567-11-19 17:06:03.704
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-19 17:06:03.704
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-19 17:06:08.232
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=C:/Users/USER/OneDrive/Desktop/CS261/cs261-group7-100001/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1732010768231
+-Dlanguageserver.hover-timeout=225
+-jar
+C:\Users\USER\eclipse\CS111\eclipse\..\..\..\.p2\pool\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-19 17:06:08.233
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2567-11-19 17:06:08.245
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 6420
+
+!ENTRY org.eclipse.egit.ui 2 0 2567-11-19 17:06:12.812
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-19 17:06:12.864
+!MESSAGE Boot project ADDED: Backend
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-19 17:06:12.865
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2567-11-19 17:06:12.867
+!MESSAGE Started Boot LS process
+
+!ENTRY org.eclipse.lsp4e 2 0 2567-11-19 17:13:27.534
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jface 2 0 2567-11-19 17:23:08.572
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2567-11-19 17:23:08.572
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.lsp4e 2 0 2567-11-19 17:30:16.509
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2567-11-19 17:36:56.867
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core 4 4 2567-11-19 17:38:17.310
+!MESSAGE Could not retrieve declared fields
+!STACK 0
+org.eclipse.core.runtime.OperationCanceledException
+	at org.eclipse.jdt.internal.core.AbstractClassFile.getClassFileContent(AbstractClassFile.java:237)
+	at org.eclipse.jdt.internal.core.ClassFile.getJarBinaryTypeInfo(ClassFile.java:240)
+	at org.eclipse.jdt.internal.core.ClassFile.getBinaryTypeInfo(ClassFile.java:201)
+	at org.eclipse.jdt.internal.core.ClassFile.buildStructure(ClassFile.java:92)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.SourceRefElement.generateInfos(SourceRefElement.java:113)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:572)
+	at org.eclipse.jdt.internal.core.BinaryType.getElementInfo(BinaryType.java:288)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:289)
+	at org.eclipse.jdt.internal.core.SearchableEnvironment.createAnswer(SearchableEnvironment.java:247)
+	at org.eclipse.jdt.internal.core.SearchableEnvironment.find(SearchableEnvironment.java:198)
+	at org.eclipse.jdt.internal.core.SearchableEnvironment.findType(SearchableEnvironment.java:527)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.lambda$0(LookupEnvironment.java:264)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForTypeFromModules(LookupEnvironment.java:408)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:263)
+	at org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding.resolve(UnresolvedReferenceBinding.java:116)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.resolveType(BinaryTypeBinding.java:251)
+	at org.eclipse.jdt.internal.compiler.lookup.ParameterizedTypeBinding.resolve(ParameterizedTypeBinding.java:1297)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.resolveType(BinaryTypeBinding.java:222)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.resolveTypeFor(BinaryTypeBinding.java:1926)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.availableFields(BinaryTypeBinding.java:371)
+	at org.eclipse.jdt.core.dom.TypeBinding.getDeclaredFields(TypeBinding.java:249)
+	at org.eclipse.jdt.internal.ui.text.correction.UnresolvedElementsSubProcessor.hasMethodWithName(UnresolvedElementsSubProcessor.java:580)
+	at org.eclipse.jdt.internal.ui.text.correction.UnresolvedElementsSubProcessor.addSimilarVariableProposals(UnresolvedElementsSubProcessor.java:530)
+	at org.eclipse.jdt.internal.ui.text.correction.UnresolvedElementsSubProcessor.getVariableProposals(UnresolvedElementsSubProcessor.java:317)
+	at org.eclipse.jdt.internal.ui.text.correction.QuickFixProcessor.process(QuickFixProcessor.java:423)
+	at org.eclipse.jdt.internal.ui.text.correction.QuickFixProcessor.getCorrections(QuickFixProcessor.java:379)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionCollector.safeRun(JavaCorrectionProcessor.java:384)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionProcessorAccess.run(JavaCorrectionProcessor.java:342)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionProcessorAccess.process(JavaCorrectionProcessor.java:337)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectCorrections(JavaCorrectionProcessor.java:470)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.getJavaAnnotationFixes(ProblemHover.java:115)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.computeCompletionProposals(ProblemHover.java:89)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.<init>(ProblemHover.java:74)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover.createAnnotationInfo(ProblemHover.java:178)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractAnnotationHover.getHoverInfo2(AbstractAnnotationHover.java:755)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2567-11-19 17:38:20.173
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
