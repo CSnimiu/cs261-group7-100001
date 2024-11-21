@@ -32,6 +32,9 @@ public class User {
 	@Column(name = "faculty", nullable = false)
 	private String faculty ;
 	
+	@Column(name = "department", nullable = false)
+	private String department ;
+	
 	@Column(name = "type", nullable = false)
 	private String type ;
 	
@@ -113,6 +116,14 @@ public class User {
 
     public void setFaculty(String faculty) {
         this.faculty = faculty;
+    }
+    
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public String getType() {

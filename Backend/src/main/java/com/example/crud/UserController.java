@@ -45,6 +45,7 @@ public class UserController {
 		if (user.getEmail() != null) target.setEmail(user.getEmail());
 		if (user.getEng_name()!= null) target.setEng_name(user.getEng_name());
 		if (user.getFaculty() != null) target.setFaculty(user.getFaculty());
+		if (user.getDepartment() != null) target.setDepartment(user.getDepartment());
 		if (user.getMoo() != null) target.setMoo(user.getMoo());
 		if (user.getPhone_num() != null) target.setPhone_num(user.getPhone_num());
 		if (user.getProvince() != null) target.setProvince(user.getProvince());

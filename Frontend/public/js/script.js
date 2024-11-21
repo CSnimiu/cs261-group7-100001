@@ -1,3 +1,4 @@
+
 function togglePassword() {
     const passwordInput = document.getElementById('password');
     const eyeIcon = document.getElementById('eye-icon');
@@ -38,7 +39,7 @@ function submitLogin() {
         console.log(data);
         if (data.status) {
             addToDB(data); 
-            window.location.href = 'main.html'; 
+            //window.location.href = 'main.html'; 
         } else {
             if (checkDiv) checkDiv.innerText = 'Incorrect username or password. Please try again!';
         }
@@ -47,7 +48,35 @@ function submitLogin() {
 }
 
 function addToDB(user) {
-    localStorage.setItem('user', JSON.stringify(user)); 
+    fetch('http://localhost:8080/api/user', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            "email": user.email,
+            "type": user.type,
+            "eng_name": user.displayname_en,
+            "th_name": user.displayname_th,
+            "faculty": user.faculty,
+            "department": user.department,
+            "birthday": null,
+            "year": null,
+            "address": null,
+            "moo": null,
+            "road": null,
+            "district": null,
+            "province": null,
+            "zip_code": null,
+            "phone_num": null,
+            "advisor": null,
+            "user_name": user.username
+        })
+    })
+
+    localStorage.setItem('user', JSON.stringify(user));
+
+
 }
 
 /***************(Normal logout function has been moved to alert.js)***************/
