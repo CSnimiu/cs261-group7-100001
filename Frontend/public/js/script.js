@@ -39,7 +39,7 @@ function submitLogin() {
         console.log(data);
         if (data.status) {
             addToDB(data); 
-            Window.location.href = 'main.html'; 
+            window.location.href = 'main.html'; 
         } else {
             if (checkDiv) checkDiv.innerText = 'Incorrect username or password. Please try again!';
         }
