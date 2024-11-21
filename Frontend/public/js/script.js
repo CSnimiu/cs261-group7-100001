@@ -100,9 +100,12 @@ function addToDB(user) {
                     "user_name": user.username
                 })
             })
-            .catch(error => {
-                console.log('Error:', error);
-            });
+            .then(response => response.json())
+                .then(data => {
+                    user = data;
+            })
+        
+            
         }
     })
     localStorage.setItem('user', JSON.stringify(user));
@@ -143,6 +146,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("info-box-faculty").innerText = user.faculty;
         document.getElementById("info-box-major").innerText = user.department;
         document.getElementById("info-box-id").innerText = user.username;
+        document.getElementById("info-box-dob").innerText = user.birthday;
+        document.getElementById("info-box-year").innerText = user.year;
+        document.getElementById("info-box-address").innerText = user.address;
+        document.getElementById("info-box-moo").innerText = user.moo;
+        document.getElementById("info-box-subdistrict").innerText = user.road;
+        document.getElementById("info-box-district").innerText = user.district;
+        document.getElementById("info-box-state").innerText = user.province;
+        document.getElementById("info-box-postcode").innerText = user.zip_code;
     }
 });
 
@@ -210,3 +221,8 @@ function confirmCancel() {
     window.location.href = "../main.html"; // Redirect to the main page
     console.log("Form submission canceled...");
 }
+
+function updateProfile() {
+    
+}
+
