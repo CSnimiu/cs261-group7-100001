@@ -38,8 +38,7 @@ function submitLogin() {
     .then(data => {
         console.log(data);
         if (data.status) {
-            addToDB(data); 
-            window.location.href = 'main.html'; 
+            addToDB(data);  
         } else {
             if (checkDiv) checkDiv.innerText = 'Incorrect username or password. Please try again!';
         }
@@ -55,6 +54,7 @@ function ownedAccount(data,user) {
             break;
         }
     }
+    console.log(OwnedAccount);
     return OwnedAccount;
 }
 
@@ -72,7 +72,8 @@ function addToDB(user) {
         if (ownedAccount(data, user) != null) {
             console.log("Own");
             user = ownedAccount(data, user);
-            console.log(user);
+            localStorage.setItem('user', JSON.stringify(user));
+            window.location.href = 'main.html';
         }
         else {
             fetch('http://localhost:8080/api/user', {
@@ -101,14 +102,14 @@ function addToDB(user) {
                 })
             })
             .then(response => response.json())
-                .then(data => {
-                    user = data;
+            .then(data => {
+                user = data;
+                localStorage.setItem('user', JSON.stringify(user));
+                window.location.href = 'main.html';
             })
-        
-            
         }
+       
     })
-    localStorage.setItem('user', JSON.stringify(user));
 
 
 }
@@ -137,15 +138,15 @@ document.addEventListener('DOMContentLoaded', () => {
         //TODO: Switch to internal DB for more info
 
         console.log(user);
-        const thname = user.displayname_th.split(" ");
-        const enname = user.displayname_en.split(" ");
+        const thname = user.th_name.split(" ");
+        const enname = user.eng_name.split(" ");
         document.getElementById("info-box-thname").innerText = thname[0];
         document.getElementById("info-box-thlname").innerText = thname[1];
         document.getElementById("info-box-enname").innerText = enname[0];
         document.getElementById("info-box-enlname").innerText = enname[1];
         document.getElementById("info-box-faculty").innerText = user.faculty;
         document.getElementById("info-box-major").innerText = user.department;
-        document.getElementById("info-box-id").innerText = user.username;
+        document.getElementById("info-box-id").innerText = user.user_name;
         document.getElementById("info-box-dob").innerText = user.birthday;
         document.getElementById("info-box-year").innerText = user.year;
         document.getElementById("info-box-address").innerText = user.address;
@@ -154,6 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("info-box-district").innerText = user.district;
         document.getElementById("info-box-state").innerText = user.province;
         document.getElementById("info-box-postcode").innerText = user.zip_code;
+        document.getElementById("info-box-email").innerText = user.email;
+        document.getElementById("info-box-phone").innerText = user.phone_num;
+        document.getElementById("info-box-advisor").innerText = user.advisor;
     }
 });
 

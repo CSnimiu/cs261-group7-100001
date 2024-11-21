@@ -13,9 +13,9 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 	
-	@DeleteMapping
-	public List<User> delAllUsers(@RequestBody String Key){ //For DEV
-		if (Key == "DEV") {
+	@DeleteMapping("/{Key}")
+	public List<User> delAllUsers(@PathVariable int Key){ //For DEV
+		if (Key == 1234567) {
 			userRepository.deleteAll();
 		}
 		else {
