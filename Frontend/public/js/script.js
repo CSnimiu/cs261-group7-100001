@@ -39,7 +39,7 @@ function submitLogin() {
         console.log(data);
         if (data.status) {
             addToDB(data); 
-            //window.location.href = 'main.html'; 
+            Window.location.href = 'main.html'; 
         } else {
             if (checkDiv) checkDiv.innerText = 'Incorrect username or password. Please try again!';
         }
@@ -47,34 +47,67 @@ function submitLogin() {
     .catch(error => console.error('Error:', error));
 }
 
+function ownedAccount(data,user) {
+    let OwnedAccount = null;
+    for (i in data) {
+        if (data[i].user_name === user.username) {
+            OwnedAccount = data[i];
+            break;
+        }
+    }
+    console.log(OwnedAccount);
+    return OwnedAccount;
+}
+
 function addToDB(user) {
+    let LStorageObj = null;
     fetch('http://localhost:8080/api/user', {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            "email": user.email,
-            "type": user.type,
-            "eng_name": user.displayname_en,
-            "th_name": user.displayname_th,
-            "faculty": user.faculty,
-            "department": user.department,
-            "birthday": null,
-            "year": null,
-            "address": null,
-            "moo": null,
-            "road": null,
-            "district": null,
-            "province": null,
-            "zip_code": null,
-            "phone_num": null,
-            "advisor": null,
-            "user_name": user.username
-        })
+        
     })
-
-    localStorage.setItem('user', JSON.stringify(user));
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        if (ownedAccount(data, user) != null) {
+            console.log("Own");
+            LStorageObj = ownedAccount(data, user);
+        }
+        else {
+            fetch('http://localhost:8080/api/user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    "email": user.email,
+                    "type": user.type,
+                    "eng_name": user.displayname_en,
+                    "th_name": user.displayname_th,
+                    "faculty": user.faculty,
+                    "department": user.department,
+                    "birthday": "",
+                    "year": "",
+                    "address": "",
+                    "moo": "",
+                    "road": "",
+                    "district": "",
+                    "province": "",
+                    "zip_code": "",
+                    "phone_num": "",
+                    "advisor": "",
+                    "user_name": user.username
+                })
+            })
+            .catch(error => {
+                console.log('Error:', error);
+            });
+            LStorageObj = user;
+        }
+    })
+    localStorage.setItem('user', JSON.stringify(LStorageObj));
 
 
 }
