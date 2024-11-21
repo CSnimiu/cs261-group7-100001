@@ -55,12 +55,10 @@ function ownedAccount(data,user) {
             break;
         }
     }
-    console.log(OwnedAccount);
     return OwnedAccount;
 }
 
 function addToDB(user) {
-    let LStorageObj = null;
     fetch('http://localhost:8080/api/user', {
         method: 'GET',
         headers: {
@@ -73,7 +71,8 @@ function addToDB(user) {
         console.log(data);
         if (ownedAccount(data, user) != null) {
             console.log("Own");
-            LStorageObj = ownedAccount(data, user);
+            user = ownedAccount(data, user);
+            console.log(user);
         }
         else {
             fetch('http://localhost:8080/api/user', {
@@ -104,10 +103,9 @@ function addToDB(user) {
             .catch(error => {
                 console.log('Error:', error);
             });
-            LStorageObj = user;
         }
     })
-    localStorage.setItem('user', JSON.stringify(LStorageObj));
+    localStorage.setItem('user', JSON.stringify(user));
 
 
 }
@@ -125,7 +123,7 @@ function sessionTimeoutLogout() {
 document.addEventListener('DOMContentLoaded', () => {
     const user = JSON.parse(localStorage.getItem('user'));
     const currentPath = window.location.pathname; // รับ path ของหน้าปัจจุบัน เช่น "/login.html"
-
+    console.log(user);
     // ตรวจสอบว่าผู้ใช้เข้าสู่ระบบหรือยัง และตรวจสอบว่าไม่ใช่หน้า login.html
     if (!user && !currentPath.includes('login.html')) {
         // ถ้าไม่มีข้อมูลผู้ใช้ใน localStorage นำผู้ใช้ไปยังหน้า login
@@ -134,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (currentPath.includes('profile.html')) {
         //TODO: Switch to internal DB for more info
+
         console.log(user);
         const thname = user.displayname_th.split(" ");
         const enname = user.displayname_en.split(" ");
