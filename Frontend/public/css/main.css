@@ -10,7 +10,7 @@ body{
 }
 
 /*--------- nav bar ----------*/
-nav{
+nav {
     height: 90px;
     display: flex;
     padding: 0;
@@ -20,34 +20,46 @@ nav{
     overflow: hidden;
     box-shadow: 0px 2px 4px #00000050;
 }
-nav img{
+
+nav img {
     width: 300px;
     height: 100%;
     background-color: #D9D9D9;
     margin: 0;
     padding: 15px;
     padding-top: 20px;
-
 }
-nav ul{
+
+nav ul {
     margin-right: 0px;
 }
-nav ul li{
+
+nav ul li {
     list-style: none;
     display: inline-block;
-    padding: 35px 10px 35px 10px;
+    padding: 0; /* Remove padding from <li> to avoid overlapping issues */
     position: relative;
+    cursor: pointer;
 }
-nav ul li a{
+
+nav ul li a, /* Apply styles to both <a> and <div> */
+nav ul li div {
+    display: block; /* Make them block-level elements */
+    padding: 35px 10px; /* Add padding inside the clickable area */
     color: white;
     text-decoration: none;
     font-size: 15px;
     font-weight: 400;
+    height: 100%; /* Fill the height of the <li> */
+    width: 100%; /* Fill the width of the <li> */
+    cursor: pointer;
 }
+
 nav ul li:hover {
     background-color: #9a1010;
 }
-/*responsive navbar*/
+
+/* Responsive navbar */
 @media (max-width: 750px) {
     nav {
         flex-direction: column;
@@ -75,8 +87,12 @@ nav ul li:hover {
         display: block;
         width: 100%;
         text-align: center;
-        padding: 10px 10px;
         margin-bottom: 5px;
+    }
+
+    nav ul li a,
+    nav ul li div {
+        padding: 10px 10px;
     }
 }
 

@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/alert.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!--add more css file here (check path before add, pls)-->
-    <link rel="stylesheet" href="./css/">
-    <script src="js/script.js" defer></script> 
+    <link rel="stylesheet" href="./css/profile.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/alert.js" defer></script>
     <title>Profile</title>
 </head>
 
@@ -19,11 +21,135 @@
                 <li><a href="./main.html">แบบฟอร์มคำร้อง</a></li>
                 <li><a href="./history.html">ประวัติคำร้อง</a></li>
                 <li><a href="./profile.html">ประวัติส่วนตัว</a></li>
-                <li><a href="#" onclick="" >ออกจากระบบ</a></li>
+                <li><div onclick="logout()">ออกจากระบบ</div></li>
             </ul>
         </nav>
     </section>
 
+    <section class="profile">
+        <div class="content-header">
+            <div class="row" id="profile-text">
+                <H4>ประวัตินักศึกษา / แก้ไขข้อมูล</H4>
+            </div>
+        </div>
+
+        <div class="row" id="profile-content">
+            <div class="col" id="profile-picture">
+                <img src="" alt="">
+            </div>
+            <div class="information-container">
+                <div class="row" id="information">
+                    <div class="row" id="red-line-text">
+                        <h4>ข้อมูลส่วนบุคคล</h4>
+                    </div>
+                    <div class="row" id="info-container">
+                        <div class="col" id="info">
+                            <h4 class="info-header">ชื่อ</h4>
+                            <div class="info-box" id="info-box-thname">โอลิเวีย</div>
+                        </div>
+                        <div class="col" id="info">
+                            <h4 class="info-header">นามสกุล</h4>
+                            <div class="info-box" id="info-box-thlname">เกรนเจอร์</div>
+                        </div>
+                    </div>
+                    <div class="row" id="info-container">
+                        <div class="col" id="info">
+                            <h4 class="info-header">First name</h4>
+                            <div class="info-box" id="info-box-enname">Olivia</div>
+                        </div>
+                        <div class="col" id="info">
+                            <h4 class="info-header">Last name</h4>
+                            <div class="info-box" id="info-box-enlname">Granger</div>
+                        </div>
+                    </div>
+                    <div class="row" id="info-container">
+                        <div class="col" id="info">
+                            <h4 class="info-header">วัน เดือน ปี เกิด (วว/ดด/ปปปป)</h4>
+                            <div class="info-box" id="info-box-dob">01/01/2548</div>
+                        </div>
+                    </div>
+                    <div class="row" id="info-container">
+                        <div class="col" id="info">
+                            <h4 class="info-header">คณะ</h4>
+                            <div class="info-box" id="info-box-faculty">วิทยาศาสตร์และเทคโนโลยี</div>
+                        </div>
+                        <div class="col" id="info">
+                            <h4 class="info-header">สาขา</h4>
+                            <div class="info-box" id="info-box-major">วิทยาการคอมพิวเตอร์</div>
+                        </div>
+                    </div>
+                    <div class="row" id="info-container">
+                        <div class="col" id="info">
+                            <h4 class="info-header">ชั้นปี</h4>
+                            <div class="info-box" id="info-box-year">2</div>
+                        </div>
+                        <div class="col" id="info">
+                            <h4 class="info-header">รหัสนักศึกษา</h4>
+                            <div class="info-box" id="info-box-id">0123456789</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="information">
+                    <div class="row" id="red-line-text">
+                        <h4>ข้อมูลที่อยู่ (ที่อยู่ปัจจุบัน)</h4>
+                    </div>
+                    <div class="row" id="info-container">
+                        <div class="col" id="info">
+                            <h4 class="info-header">ที่อยู่ปัจจุบัน (เลขที่,หมู่บ้าน)</h4>
+                            <div class="info-box" id="info-box-address">12/34</div>
+                        </div>
+                        <div class="col" id="info">
+                            <h4 class="info-header">หมู่ที่</h4>
+                            <div class="info-box" id="info-box-moo">0</div>
+                        </div>
+                    </div>
+                    <div class="row" id="info-container">
+                        <div class="col" id="info">
+                            <h4 class="info-header">ถนน, แขวง/ตำบล</h4>
+                            <div class="info-box" id="info-box-subdistrict">ถนนเชียงราก</div>
+                        </div>
+                        <div class="col" id="info">
+                            <h4 class="info-header">เขต/อำเภอ</h4>
+                            <div class="info-box" id="info-box-district">เมืองปทุมธานี</div>
+                        </div>
+                    </div>
+                    <div class="row" id="info-container">
+                        <div class="col" id="info">
+                            <h4 class="info-header">จังหวัด</h4>
+                            <div class="info-box" id="info-box-state">ปทุมธานี</div>
+                        </div>
+                        <div class="col" id="info">
+                            <h4 class="info-header">รหัสไปรษณีย์</h4>
+                            <div class="info-box" id="info-box-postcode">1234</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="information">
+                    <div class="row" id="red-line-text">
+                        <h4>ข้อมูลสำหรับติดต่อ และอื่นๆ</h4>
+                    </div>
+                    <div class="row" id="info-container">
+                        <div class="col" id="info">
+                            <h4 class="info-header">เบอร์โทรศัพท์</h4>
+                            <div class="info-box" id="info-box-phone">0987654321</div>
+                        </div>
+                        <div class="col" id="info">
+                            <h4 class="info-header">Email</h4>
+                            <div class="info-box" id="info-box-email">olivia.gra@dome.tu.ac.th</div>
+                        </div>
+                    </div>
+                    <div class="row" id="info-container">
+                        <div class="col" id="info">
+                            <h4 class="info-header">อาจารย์ที่ปรึกษา</h4>
+                            <div class="info-box" id="info-box-advisor">อาจารย์ แดง</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="footer"></section>
 
 
 

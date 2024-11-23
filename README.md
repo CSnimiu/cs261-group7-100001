@@ -1,6 +1,7 @@
+
 # Repository for team project in CS261 course
 ### (Group 7 Section 100001)
-Currently, this repository has 2 branches: *'main' (Default)*, *'profile'*  
+Currently, this repository has 2 branches: *`'main' (Default)`*, *`'profile'`*  
 
 **--> Current completed task (project status):**
 - Login system that calls the TU API to verify identity + Logout
@@ -15,10 +16,10 @@ Currently, this repository has 2 branches: *'main' (Default)*, *'profile'*
 
 
 ## Branch Structure
-### This is the 'main' branch
-The main branch is currently the first backup branch that does not have a database system built to support it. To see the latest progress of the project, please visit [*the profile branch*](https://github.com/CSnimiu/cs261-group7-100001/tree/profile)  
+### This is the 'profile' branch
+The profile branch is now a repository for working projects. As of this writing, the project is still in development.  
 
-This branch contains 2 main folders:
+This branch contains 3 main folders:
 >
 >* **Frontend/**
 >>   * .html **/** .css **/** .js **/** .json **/** .png (images) **/** .gitignore
@@ -26,19 +27,21 @@ This branch contains 2 main folders:
 >* **Server-Setup/**
 >>   * .dockerfile (docker image for build & run on Docker)  
 >>
-
-
+>* **Backend/**
+>>   * Database and API Management
+>
+  
 ## Download Project 
 You can install the ~~latest version~~ *Default branch (main)* of this project by **cloning project** using the command:  
 >`git clone https://github.com/CSnimiu/cs261-group7-100001`  
 
-To download any sub-branch, please use the command:
->`git clone -b <branch> https://github.com/CSnimiu/cs261-group7-100001` 
+To download ***only this*** sub-branch, please use the command:
+>`git clone -b profile https://github.com/CSnimiu/cs261-group7-100001` 
 
 or select the download option via **Code > Download Zip** and then extract the zip file to access the working folder.  
   
 **If you already have this project branch on your device**, you can use the command to grab the updated version of the project using the command:  
->`git pull origin main`  
+>`git pull origin profile`  
 
 
 ## Install and Running server
@@ -52,9 +55,7 @@ The last two lines of the **DockerContainer_NodeJS.dockerfile** file in `server-
 
 ***Note that:*** these commands only work properly if you build the docker file in the same location as the `frontend` and `server-setup` folders, so use the code with caution.  
 
-
 .  
 .  
 .  
-*The project will be updated continuously...*  
-*Please follow any updates via the `README.md` file*
+*The project will be updated continuously...*

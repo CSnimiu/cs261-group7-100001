@@ -89,6 +89,7 @@ body {
     margin: 10px;
     background: linear-gradient(to top right,#ffe47c, #f9d948, #f4b459, #f78258, #f04e42);;
     padding: 30px;
+    border: 2px solid #ffffff;
     border-radius: 20px;
     box-shadow: 5px 5px #4d4d4d4b, 0px 0px 20px #5656564e;
     transition-duration: 0.5s;
@@ -152,6 +153,7 @@ input:focus {
 
 button {
     border: 2px solid #ff3d3d;
+    border-radius: 8px;
     background-color: #ff2e2e;
     color: #ffffff;
     width: 50%;
@@ -159,7 +161,7 @@ button {
     text-align: center; 
     text-decoration: none;
     display: inline-block;
-    box-shadow: 3px 3px #4d4d4d4b,0px 0px 0px #000000;
+    box-shadow: 0px 0px 8px #ffffff;
     margin: 20px 2px 10px 2px;
     transition-duration: 0.5s;
     cursor: pointer;
@@ -170,7 +172,7 @@ button:hover, button:focus, button:active {
     border: 2px solid #9d1f1f;
     background-color: #ac0c0c;
     color: #ffffff;
-    box-shadow: 3px 3px  #cd0033, 0px 0px 0px #ffffff5d;
+    box-shadow: 0px 0px 10px #cd0033, 0px 0px 10px #ffffff5d;
 }
 
 input:valid {

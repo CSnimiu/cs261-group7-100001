@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    height: auto;
+    overflow-x: hidden;
+}
+/*-------- Universal Element ---------*/
+.row{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+.col{
+    /* background: #ffe6e6; */
+    border-radius: 10px;
+
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-header{
+    margin: 0;
+    padding: 0;
+}
+/*---------- profile header --------------*/
+#profile-text {
+    justify-content: center;
+    margin-left: -25%;
+}
+#profile-text h4 {
+    font-size: 35px;
+    font-weight: 600;
+}
+/*---------- profile picture --------------*/
+#profile-picture {
+    width: 15%;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#profile-picture img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+/*---------- information --------------*/
+#information {
+    margin-top: 0;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+}
+#red-line-text {
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    background-color: #D41616;
+    margin-top: 0;
+}
+#red-line-text h4{
+    color: white;
+    padding-left: 20px;
+    font-weight: 600;
+    font-size: 25px;
+}
+#info-container{
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    width: 100%;
+}
+#info{
+    margin: 0 30px 0 30px;
+    flex-basis: 35%;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+}
+h4.info-header{
+    font-size: 20px;
+    font-weight: 600;
+}
+.info-box{
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid rgb(58, 58, 58);
+}
+.information-container{
+    width: 70%;
+    height: auto;
+    margin-left: 5%;
+    padding: 0;
+}
+.info-box {
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+    font-size: 15px;
+    font-weight: 400;
+}
