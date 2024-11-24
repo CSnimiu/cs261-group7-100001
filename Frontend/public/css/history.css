@@ -42,14 +42,6 @@ nav ul li {
     cursor: pointer;
 }
 
-nav ul li:first-child {
-    color: white;
-    font-size: 15px;
-    font-weight: 400;
-    padding: 35px 10px;
-    cursor: default;
-}
-
 nav ul li a, /* Apply styles to both <a> and <div> */
 nav ul li div {
     display: block; /* Make them block-level elements */
@@ -61,10 +53,6 @@ nav ul li div {
     height: 100%; /* Fill the height of the <li> */
     width: 100%; /* Fill the width of the <li> */
     cursor: pointer;
-}
-
-nav ul li:first-child:hover {
-    background-color: #D41616;
 }
 
 nav ul li:hover {
