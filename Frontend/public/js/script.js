@@ -123,44 +123,143 @@ function sessionTimeoutLogout() {
     console.log('Session timed out. Logging out...'); // ตรวจสอบว่าฟังก์ชันถูก
 }
 
-// ตรวจสอบการเข้าสู่ระบบเมื่อโหลดหน้า main.html
 document.addEventListener('DOMContentLoaded', () => {
     const user = JSON.parse(localStorage.getItem('user'));
-    const currentPath = window.location.pathname; // รับ path ของหน้าปัจจุบัน เช่น "/login.html"
-    console.log(user);
-    // ตรวจสอบว่าผู้ใช้เข้าสู่ระบบหรือยัง และตรวจสอบว่าไม่ใช่หน้า login.html
+    const currentPath = window.location.pathname;
+
     if (!user && !currentPath.includes('login.html')) {
-        // ถ้าไม่มีข้อมูลผู้ใช้ใน localStorage นำผู้ใช้ไปยังหน้า login
         window.location.href = 'login.html';
     }
 
     if (currentPath.includes('profile.html')) {
-        //TODO: Switch to internal DB for more info
+        populateProfile(user);
 
-        console.log(user);
-        const thname = user.th_name.split(" ");
-        const enname = user.eng_name.split(" ");
-        document.getElementById("info-box-thname").innerText = thname[0];
-        document.getElementById("info-box-thlname").innerText = thname[1];
-        document.getElementById("info-box-enname").innerText = enname[0];
-        document.getElementById("info-box-enlname").innerText = enname[1];
-        document.getElementById("info-box-faculty").innerText = user.faculty;
-        document.getElementById("info-box-major").innerText = user.department;
-        document.getElementById("info-box-id").innerText = user.user_name;
-        document.getElementById("info-box-dob").innerText = user.birthday;
-        document.getElementById("info-box-year").innerText = user.year;
-        document.getElementById("info-box-address").innerText = user.address;
-        document.getElementById("info-box-moo").innerText = user.moo;
-        document.getElementById("info-box-subdistrict").innerText = user.road;
-        document.getElementById("info-box-district").innerText = user.district;
-        document.getElementById("info-box-state").innerText = user.province;
-        document.getElementById("info-box-postcode").innerText = user.zip_code;
-        document.getElementById("info-box-email").innerText = user.email;
-        document.getElementById("info-box-phone").innerText = user.phone_num;
-        document.getElementById("info-box-advisor").innerText = user.advisor;
+        // เพิ่ม Event Listener สำหรับปุ่มบันทึกข้อมูล
+        document.getElementById("save-profile").addEventListener("click", saveProfile);
     }
 });
 
+/*******************************
+ * แสดงข้อมูลผู้ใช้ใน profile.html
+ *******************************/
+function populateProfile(user) {
+    document.getElementById("info-box-thname").value = user.th_name.split(" ")[0] || "";
+    document.getElementById("info-box-thlname").value = user.th_name.split(" ")[1] || "";
+    document.getElementById("info-box-enname").value = user.eng_name.split(" ")[0] || "";
+    document.getElementById("info-box-enlname").value = user.eng_name.split(" ")[1] || "";
+    document.getElementById("info-box-faculty").value = user.faculty || "";
+    document.getElementById("info-box-major").value = user.department || "";
+    document.getElementById("info-box-id").value = user.user_name || "";
+    document.getElementById("info-box-dob").value = user.birthday || "";
+    document.getElementById("info-box-year").value = user.year || "";
+    document.getElementById("info-box-address").value = user.address || "";
+    document.getElementById("info-box-moo").value = user.moo || "";
+    document.getElementById("info-box-subdistrict").value = user.road || "";
+    document.getElementById("info-box-district").value = user.district || "";
+    document.getElementById("info-box-state").value = user.province || "";
+    document.getElementById("info-box-postcode").value = user.zip_code || "";
+    document.getElementById("info-box-email").value = user.email || "";
+    document.getElementById("info-box-phone").value = user.phone_num || "";
+    document.getElementById("info-box-advisor").value = user.advisor || "";
+}
+
+function fetchProfile(user_name) {
+    fetch(`http://localhost:8080/api/user/${user_name}?timestamp=${Date.now()}`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error("Failed to fetch profile data");
+        })
+        .then(user => {
+            console.log("Fetched profile:", user);
+            populateProfile(user); // แสดงข้อมูลในหน้า Profile
+        })
+        .catch(error => {
+            console.error("Error fetching profile:", error);
+        });
+}
+
+
+/*******************************
+ * บันทึกข้อมูลที่แก้ไขลงใน Database
+ *******************************/
+function saveProfile() {
+    const updatedData = {
+        th_name: document.getElementById("info-box-thname").value + " " + document.getElementById("info-box-thlname").value,
+        eng_name: document.getElementById("info-box-enname").value + " " + document.getElementById("info-box-enlname").value,
+        faculty: document.getElementById("info-box-faculty").value,
+        department: document.getElementById("info-box-major").value,
+        user_name: document.getElementById("info-box-id").value,
+        birthday: document.getElementById("info-box-dob").value,
+        year: document.getElementById("info-box-year").value,
+        address: document.getElementById("info-box-address").value,
+        moo: document.getElementById("info-box-moo").value,
+        road: document.getElementById("info-box-subdistrict").value,
+        district: document.getElementById("info-box-district").value,
+        province: document.getElementById("info-box-state").value,
+        zip_code: document.getElementById("info-box-postcode").value,
+        email: document.getElementById("info-box-email").value,
+        phone_num: document.getElementById("info-box-phone").value,
+        advisor: document.getElementById("info-box-advisor").value,
+    };
+
+    fetch(`http://localhost:8080/api/user/${updatedData.user_name}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedData),
+    })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error("Failed to update profile");
+        })
+        .then(updatedUser => {
+            console.log("Profile updated successfully:", updatedUser);
+            // เรียกข้อมูลล่าสุดมาแสดงผล
+            fetchProfile(updatedData.user_name);
+            alert("ข้อมูลได้รับการบันทึกสำเร็จ!");
+        })
+        .catch(error => {
+            console.error("Error updating profile:", error);
+            alert("เกิดข้อผิดพลาดในการบันทึกข้อมูล");
+        });
+}
+
+function fetchProfile(user_name) {
+    fetch(`http://localhost:8080/api/user/${user_name}`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error("Failed to fetch profile data");
+        })
+        .then(user => {
+            console.log("Fetched profile:", user);
+            populateProfile(user);
+        })
+        .catch(error => {
+            console.error("Error fetching profile:", error);
+        });
+}
+
+// Event Listener: ตรวจสอบผู้ใช้งานและโหลดข้อมูลโปรไฟล์เมื่อเปิดหน้า
+document.addEventListener('DOMContentLoaded', () => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    const currentPath = window.location.pathname;
+
+    if (!user && !currentPath.includes('login.html')) {
+        window.location.href = 'login.html';
+    }
+
+    if (currentPath.includes('profile.html')) {
+        fetchProfile(user.user_name); // โหลดข้อมูลโปรไฟล์
+        document.getElementById("save-profile").addEventListener("click", saveProfile); // ผูกฟังก์ชันบันทึกข้อมูลกับปุ่ม
+    }
+});
 
 // กำหนดเวลา timeout (in milliseconds). : minutes * seconds * milliseconds
 const sessionTimeout = 15 * 60 * 1000; // 15 minutes
