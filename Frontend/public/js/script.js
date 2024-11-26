@@ -394,42 +394,97 @@ function updateProfile() {
 /*******************************
         Submit Button
  *******************************/
-        function Submit() {
-            openSubmitModal(); // Open the modal when the "Submit" button is clicked
+function Submit() {
+    if (!validateForm()) {
+        alert("กรุณากรอกข้อมูลให้ครบถ้วนก่อนยื่นคำร้อง");
+        return;
+    }
+    openSubmitModal(); // Open the modal when the "Submit" button is clicked
+}
+
+function validateForm() {
+    const requiredFields = document.querySelectorAll('[required]');
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            field.classList.add('error'); // Highlight the field with error
+            isValid = false;
+        } else {
+            field.classList.remove('error');
         }
-        
-        function createSubmitModal() {
-            const modalHtml = `
-                <div id="SubmitModal" class="modal">
-                    <div class="modal-content">
-                        <h2>ยื่นคำร้อง</h2>
-                        <p>ท่านต้องการยื่นคำร้อง ใช่หรือไม่</p>
-                        <button class="cancel-btn" onclick="closeSubmitModal()">ยกเลิก</button>
-                        <button class="confirm-btn" onclick="confirmSubmit()">ยืนยัน</button>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', modalHtml);
+    });
+
+    return isValid;
+}
+
+function createSubmitModal() {
+    const existingModal = document.getElementById("SubmitModal");
+    if (existingModal) {
+        existingModal.remove(); // Remove existing modal before creating a new one
+    }
+
+    const modalHtml = `
+        <div id="SubmitModal" class="modal">
+            <div class="modal-content">
+                <h2>ยื่นคำร้อง</h2>
+                <p>ท่านต้องการยื่นคำร้อง ใช่หรือไม่</p>
+                <button class="cancel-btn" onclick="closeSubmitModal()">ยกเลิก</button>
+                <button class="confirm-btn" onclick="confirmSubmit()">ยืนยัน</button>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+}
+
+function openSubmitModal() {
+    const modal = document.getElementById("SubmitModal");
+    if (!modal) {
+        createSubmitModal(); // Create the modal if it doesn’t exist
+    }
+    document.getElementById("SubmitModal").style.display = "flex";
+}
+
+function closeSubmitModal() {
+    const modal = document.getElementById("SubmitModal");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+function confirmSubmit() {
+    alert("คำร้องของคุณได้ถูกส่งเรียบร้อยแล้ว!");
+    closeSubmitModal(); // Close the modal after confirming
+
+    // ทำการส่งคำร้องไปยัง backend
+    sendFormData();
+}
+
+function sendFormData() {
+    // ดึงข้อมูลจากฟอร์มด้วย id
+    const formElement = document.getElementById("resignForm");
+
+    if (!formElement) {
+        console.error("Form element not found.");
+        return;
+    }
+
+    const formData = new FormData(formElement);
+
+    fetch("http://localhost:8080/api/form", {
+        method: "POST",
+        body: formData,
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log("Form submitted successfully.");
+        } else {
+            throw new Error("Failed to submit form.");
         }
-        
-        function openSubmitModal() {
-            const modal = document.getElementById("SubmitModal");
-            if (!modal) {
-                createSubmitModal(); // Create the modal if it doesn’t exist
-            }
-            document.getElementById("SubmitModal").style.display = "flex";
-        }
-        
-        function closeSubmitModal() {
-            const modal = document.getElementById("SubmitModal");
-            if (modal) {
-                modal.style.display = "none";
-            }
-        }
-        
-        function confirmSubmit() {
-            alert("Form submitted successfully!");
-            closeSubmitModal(); // Close the modal after confirming
-            console.log("Form submission confirmed...");
-        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("เกิดข้อผิดพลาดในการส่งคำร้อง กรุณาลองใหม่อีกครั้ง");
+    });
+}
 
