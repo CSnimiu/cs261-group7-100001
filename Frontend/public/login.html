@@ -17,29 +17,30 @@
 
     <div class="login">
         <img src="img/reg.png" width="300">
-        <!--<p class="note">(Please log in with your TU account)</p>-->
         <div class="login-box">
-                <form id=form action="/auth" method="post">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" maxlength="10" required title="TU Account Username" placeholder="Enter your username...">
-                    
-                    <label for="password">Password :</label>
-                    <div class="password-box">
-                        <input type="password" id="password" name="password" maxlength="20" required title="TU Account Password" placeholder="Enter your password...">
-                        <span id="toggle-password" onclick="togglePassword()">
-                            <img src="img/eye-close-icon.png" alt="Show Password" id="eye-icon">
-                        </span>
-                    </div>
-                    <div id="check"></div>
-                    <button type="button" onclick="submitLogin()">Login</button>
-                </form>
-        </div>
-        <div id="result" style="display:none;">
-            <p id="status"></p>
-            <p id="message"></p>
-            <button type="button" onclick="backtoLogin()"><b>Back</b></button>
+            <form id="form">
+                <!-- Username Field -->
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" maxlength="10" required 
+                       title="TU Account Username" placeholder="Enter your username...">
+                
+                <!-- Password Field -->
+                <label for="password">Password :</label>
+                <div class="password-box">
+                    <input type="password" id="password" name="password" maxlength="20" required 
+                           title="TU Account Password" placeholder="Enter your password...">
+                    <span id="toggle-password" onclick="togglePassword()">
+                        <img src="img/eye-close-icon.png" alt="Show Password" id="eye-icon">
+                    </span>
+                </div>
+
+                <!-- Error Message -->
+                <div id="check" class="error-message"></div>
+
+                <!-- Login Button -->
+                <button type="button" onclick="submitLogin()">Login</button>
+            </form>
         </div>
     </div>
-       
 </body>
 </html>
