@@ -1,6 +1,4 @@
-/*******************************
- * Toggle Password Visibility
- *******************************/
+
 function togglePassword() {
     const passwordInput = document.getElementById('password');
     const eyeIcon = document.getElementById('eye-icon');
@@ -16,169 +14,169 @@ function togglePassword() {
     }
 }
 
-/*******************************
- * Mock Data สำหรับการพัฒนา
- *******************************/
-const mockStudents = [
-    { username: 'student', password: '123456', type: 'student' },
-];
-
-const mockProfessors = [
-    { username: 'professor', password: '123456', type: 'professor' },
-];
-
-/*******************************
- * Submit Login Form
- *******************************/
 function submitLogin() {
-    const userName = document.getElementById('username')?.value;
-    const password = document.getElementById('password')?.value;
+    const UserName = document.getElementById('username')?.value;
+    const PassWord = document.getElementById('password')?.value;
     const checkDiv = document.getElementById('check');
 
-    if (!userName || !password) {
-        if (checkDiv) checkDiv.innerText = '*กรุณากรอกชื่อผู้ใช้และรหัสผ่าน*';
+    if (!UserName || !PassWord) {
+        if (checkDiv) checkDiv.innerText = '*Please enter both username and password.*';
         return;
     }
 
-    // ตรวจสอบ Mock Data ก่อน
-    const validUser = mockStudents.find(user => user.username === userName && user.password === password)
-                     || mockProfessors.find(user => user.username === userName && user.password === password);
-
-    if (validUser) {
-        console.log('Login Successful with Mock Data:', validUser);
-        localStorage.setItem('user', JSON.stringify(validUser)); // บันทึกข้อมูลผู้ใช้ลง LocalStorage
-        redirectUser(validUser.type); // เปลี่ยนเส้นทางตามประเภทผู้ใช้
-    } else {
-        // ถ้าไม่พบข้อมูลใน Mock Data ให้เรียก API
-        console.log('Checking API for user authentication...');
-        fetch('https://restapi.tu.ac.th/api/v1/auth/Ad/verify', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Application-Key': 'TU6b385dc1f8327e133ed355505488df04cd80b11ff6273eb291fa94ad1a05c456116ca973efcb839f730143f2cb931d4b'
-            },
-            body: JSON.stringify({ "UserName": userName, "PassWord": password })
-        })
-        .then(async response => {
-            console.log('Response Status:', response.status);
-            const result = await response.json();
-            console.log('Response Body:', result);
-
-            if (response.ok) {
-                if (result.status) {
-                    console.log('Login Successful with API:', result);
-                    addToDB(result); // เพิ่มผู้ใช้ในฐานข้อมูล
-                } else {
-                    if (checkDiv) checkDiv.innerText = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง!';
-                }
-            } else {
-                if (checkDiv) checkDiv.innerText = result.message || 'เกิดข้อผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์';
-            }
-        })
-        .catch(error => {
-            console.error('Error connecting to API:', error);
-            if (checkDiv) checkDiv.innerText = 'เกิดข้อผิดพลาดในการเชื่อมต่อกับ API';
-        });
-    }
+    fetch('https://restapi.tu.ac.th/api/v1/auth/Ad/verify', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Application-Key': 'TU6b385dc1f8327e133ed355505488df04cd80b11ff6273eb291fa94ad1a05c456116ca973efcb839f730143f2cb931d4b'
+            //^^^token of team project's channel//
+            //for easier testing//
+        },
+        body: JSON.stringify({ "UserName":UserName, "PassWord":PassWord })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        if (data.status) {
+            addToDB(data);  
+        } else {
+            if (checkDiv) checkDiv.innerText = 'Incorrect username or password. Please try again!';
+        }
+    })
+    .catch(error => console.error('Error:', error));
 }
 
-/*******************************
- * Add User to Database
- *******************************/
+function ownedAccount(data,user) {
+    let OwnedAccount = null;
+    for (i in data) {
+        if (data[i].user_name === user.username) {
+            OwnedAccount = data[i];
+            break;
+        }
+    }
+    console.log(OwnedAccount);
+    return OwnedAccount;
+}
+
 function addToDB(user) {
     fetch('http://localhost:8080/api/user', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
         },
+        
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Existing Users:', data);
-        const existingUser = ownedAccount(data, user);
-        if (existingUser) {
-            console.log('User already exists in DB:', existingUser);
-            localStorage.setItem('user', JSON.stringify(existingUser));
-            redirectUser(existingUser.type);
-        } else {
-            console.log('Adding new user to DB...');
+        console.log(data);
+        if (ownedAccount(data, user) != null) {
+            console.log("Own");
+            user = ownedAccount(data, user);
+            localStorage.setItem('user', JSON.stringify(user));
+            window.location.href = 'main.html';
+        }
+        else {
             fetch('http://localhost:8080/api/user', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    email: user.email,
-                    type: user.type || 'student', // Default to 'student' if type is missing
-                    eng_name: user.displayname_en,
-                    th_name: user.displayname_th,
-                    faculty: user.faculty,
-                    department: user.department,
-                    birthday: "",
-                    year: "",
-                    address: "",
-                    moo: "",
-                    road: "",
-                    district: "",
-                    province: "",
-                    zip_code: "",
-                    phone_num: "",
-                    advisor: "",
-                    user_name: user.username
-                }),
+                    "email": user.email,
+                    "type": user.type,
+                    "eng_name": user.displayname_en,
+                    "th_name": user.displayname_th,
+                    "faculty": user.faculty,
+                    "department": user.department,
+                    "birthday": "",
+                    "year": "",
+                    "address": "",
+                    "moo": "",
+                    "road": "",
+                    "district": "",
+                    "province": "",
+                    "zip_code": "",
+                    "phone_num": "",
+                    "advisor": "",
+                    "user_name": user.username
+                })
             })
             .then(response => response.json())
-            .then(newUser => {
-                console.log('User added to DB:', newUser);
-                localStorage.setItem('user', JSON.stringify(newUser));
-                redirectUser(newUser.type);
-            });
+            .then(data => {
+                user = data;
+                localStorage.setItem('user', JSON.stringify(user));
+                window.location.href = 'main.html';
+            })
         }
+       
     })
-    .catch(error => console.error('Error fetching or adding user to DB:', error));
+
+
 }
 
-/*******************************
- * Check for Existing Account
- *******************************/
-function ownedAccount(data, user) {
-    return data.find(account => account.user_name === user.username) || null;
+/***************(Normal logout function has been moved to alert.js)***************/
+
+// ฟังก์ชั่น logout สำหรับ session timeout logout
+function sessionTimeoutLogout() {
+    localStorage.removeItem('user'); // ลบข้อมูลผู้ใช้ (หากมี)
+    window.location.href = "login.html"; // เปลี่ยนเส้นทางไปยังหน้า login
+    console.log('Session timed out. Logging out...'); // ตรวจสอบว่าฟังก์ชันถูก
 }
 
-/*******************************
- * Redirect User Based on Role
- *******************************/
-function redirectUser(userType) {
-    if (userType === 'student') {
-        window.location.href = 'main.html'; // ไปที่หน้า Student
-    } else if (userType === 'professor') {
-        window.location.href = 'professormain.html'; // ไปที่หน้า Professor
-    } else {
-        console.error('ประเภทผู้ใช้ไม่ถูกต้อง:', userType);
+// ตรวจสอบการเข้าสู่ระบบเมื่อโหลดหน้า main.html
+document.addEventListener('DOMContentLoaded', () => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    const currentPath = window.location.pathname; // รับ path ของหน้าปัจจุบัน เช่น "/login.html"
+    console.log(user);
+    // ตรวจสอบว่าผู้ใช้เข้าสู่ระบบหรือยัง และตรวจสอบว่าไม่ใช่หน้า login.html
+    if (!user && !currentPath.includes('login.html')) {
+        // ถ้าไม่มีข้อมูลผู้ใช้ใน localStorage นำผู้ใช้ไปยังหน้า login
+        window.location.href = 'login.html';
     }
-}
 
-/*******************************
- * Session Timeout Handling
- *******************************/
+    if (currentPath.includes('profile.html')) {
+        //TODO: Switch to internal DB for more info
+
+        console.log(user);
+        const thname = user.th_name.split(" ");
+        const enname = user.eng_name.split(" ");
+        document.getElementById("info-box-thname").innerText = thname[0];
+        document.getElementById("info-box-thlname").innerText = thname[1];
+        document.getElementById("info-box-enname").innerText = enname[0];
+        document.getElementById("info-box-enlname").innerText = enname[1];
+        document.getElementById("info-box-faculty").innerText = user.faculty;
+        document.getElementById("info-box-major").innerText = user.department;
+        document.getElementById("info-box-id").innerText = user.user_name;
+        document.getElementById("info-box-dob").innerText = user.birthday;
+        document.getElementById("info-box-year").innerText = user.year;
+        document.getElementById("info-box-address").innerText = user.address;
+        document.getElementById("info-box-moo").innerText = user.moo;
+        document.getElementById("info-box-subdistrict").innerText = user.road;
+        document.getElementById("info-box-district").innerText = user.district;
+        document.getElementById("info-box-state").innerText = user.province;
+        document.getElementById("info-box-postcode").innerText = user.zip_code;
+        document.getElementById("info-box-email").innerText = user.email;
+        document.getElementById("info-box-phone").innerText = user.phone_num;
+        document.getElementById("info-box-advisor").innerText = user.advisor;
+    }
+});
+
+
+// กำหนดเวลา timeout (in milliseconds). : minutes * seconds * milliseconds
 const sessionTimeout = 15 * 60 * 1000; // 15 minutes
 let timeoutId;
 
+// Function to reset the session timeout
 function resetTimeout() {
     clearTimeout(timeoutId);
     startTimeout();
 }
 
+// Function to start the timeout timer
 function startTimeout() {
     timeoutId = setTimeout(() => {
-        sessionTimeoutLogout();
+        sessionTimeoutLogout(); // หลังจาก timeout แล้วจะนำ user กลับไปหน้า login
     }, sessionTimeout);
-}
-
-function sessionTimeoutLogout() {
-    localStorage.removeItem('user');
-    window.location.href = 'login.html';
-    console.log('หมดเวลาเซสชัน กำลังออกจากระบบ...');
 }
 
 // Reset ตัวจับเวลาเมื่อมี interaction
@@ -186,24 +184,49 @@ document.addEventListener("mousemove", resetTimeout);
 document.addEventListener("keydown", resetTimeout);
 document.addEventListener("click", resetTimeout);
 document.addEventListener("scroll", resetTimeout);
+
+// Start the session timeout countdown
 startTimeout();
 
-/*******************************
- * On Page Load (Session Check)
- *******************************/
-document.addEventListener('DOMContentLoaded', () => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    const currentPath = window.location.pathname;
+function Cancel() {
+    openCancelModal(); // Open the modal when the "ยกเลิก" button is clicked
+}
 
-    if (!user && !currentPath.includes('login.html')) {
-        window.location.href = 'login.html';
-    }
+function createCancelModal() {
+    const modalHtml = `
+        <div id="CancelModal" class="modal">
+            <div class="modal-content">
+                <h2>คำร้องยังไม่ได้บันทึก</h2>
+                <p>ท่านต้องการออกจากหน้าแบบฟอร์ม ใช่หรือไม่</p>
+                <button class="cancel-btn" onclick="closeCancelModal()">ยกเลิก</button>
+                <button class="confirm-btn" onclick="confirmCancel()">ยืนยัน</button>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+}
 
-    if (user) {
-        if (currentPath.includes('student.html') && user.type !== 'student') {
-            window.location.href = 'login.html';
-        } else if (currentPath.includes('professor.html') && user.type !== 'professor') {
-            window.location.href = 'login.html';
-        }
+function openCancelModal() {
+    const modal = document.getElementById("CancelModal");
+    if (!modal) {
+        createCancelModal(); // Create the modal if it doesn’t exist
     }
-});
+    document.getElementById("CancelModal").style.display = "flex";
+}
+
+function closeCancelModal() {
+    const modal = document.getElementById("CancelModal");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+function confirmCancel() {
+    window.location.href = "../main.html"; // Redirect to the main page
+    console.log("Form submission canceled...");
+}
+
+function updateProfile() {
+    
+}
+
