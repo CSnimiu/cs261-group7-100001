@@ -30,9 +30,25 @@ public class FormController {
 	}
 	
 	@PostMapping
-	public Form createForm(@RequestBody Form form) {
-		return formRepository.save(form);
-	}
+	 public Form createForm(@RequestBody Form form) {
+        if (form.getID() == -1) {
+            return formRepository.save(form);
+        } else {
+            return formRepository.findById(form.getID()).map(existingForm -> {
+            	existingForm.setUser_id(form.getUser_id());
+                existingForm.setPurpose(form.getPurpose());
+                existingForm.setStage(form.getStage());
+                existingForm.setC_code(form.getC_code());
+                existingForm.setC_name(form.getC_name());
+                existingForm.setSection(form.getSection());
+                existingForm.setTime(form.getTime());
+                existingForm.setC_unit(form.getC_unit());
+                existingForm.setTeacher(form.getTeacher());
+                existingForm.setReason(form.getReason());
+                return formRepository.save(existingForm);
+            }).orElseThrow(() -> new RuntimeException("error updating draft"));
+        }
+    }
 	
 	@PatchMapping("/{id},{stage}")
 	public Form patchForm(@PathVariable Long id ,@PathVariable String stage) {

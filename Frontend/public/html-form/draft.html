@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
     <script src="../js/script.js" defer></script>
     <script src="../js/alert.js" defer></script>
+    <script src="../js/draft.js" defer></script>
     <title>Form</title>
 </head>
 <body>
@@ -43,7 +44,7 @@
             <label>ชั้นปีที่</label>
             <label>รหัสนักศึกษา</label>
             <input type="number" placeholder="Year">
-            <input type="number" placeholder="Student ID">
+            <input id="uid" type="number" placeholder="Student ID">
         </div>
 
         <div class="just-space"></div>
@@ -94,31 +95,31 @@
         <!-- Request Section -->
         <div class="form-section">
             <label>มีความประสงค์ในการขอ</label>
-            <select>
-                <option>เลือกคำร้อง</option>
-                <option>จดทะเบียนล่าช้า/เพิ่มล่าช้า</option>
-                <option>ขอถอนรายวิชา</option>
-                <option>ขอจดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
+            <select id="sPurpose">
+                <option value="" selected disabled>เลือกคำร้อง</option>
+                <option value="late">จดทะเบียนล่าช้า/เพิ่มล่าช้า</option>
+                <option value="withdrawal">ขอถอนรายวิชา</option>
+                <option value="external">ขอจดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
             </select>
 
             <label>รหัสวิชา</label>
             <label>ชื่อวิชา</label>
-            <input type="text" placeholder="Subject Code">
-            <input type="text" placeholder="Subject Name">
+            <input id="sCode" type="text" placeholder="Subject Code">
+            <input id="sName" placeholder="Subject Name">
 
             <label>Section</label>
             <label>วัน/เวลา</label>
-            <input type="text" placeholder="Section">
-            <input type="datetime-local" placeholder="Day/Time">
+            <input id="sSection" type="text" placeholder="Section">
+            <input id="sTime" type="datetime-local" placeholder="Day/Time">
 
             <label>หน่วยกิต</label>
             <label>ชื่อผู้สอน</label>
-            <input type="text" placeholder="Credits">
-            <input type="text" placeholder="Instructor Name">
+            <input id="sCredit" type="text" placeholder="Credits">
+            <input id="sTeacher" type="text" placeholder="Instructor Name">
 
             <label>หมายเหตุที่ขอเพิ่มถอน</label>
             <br>
-            <textarea placeholder="Reason"></textarea>
+            <textarea id="sReason" placeholder="Reason"></textarea>
         </div>
 
         <!-- Buttons -->

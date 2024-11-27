@@ -129,6 +129,7 @@ function save() {
         btnTextR: 'ยืนยัน',
         onConfirm: () => {
             //////
+            saveDraft();
             console.log("save darft");
         },
         onCancel: () => {
