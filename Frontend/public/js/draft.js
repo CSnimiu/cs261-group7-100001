@@ -37,7 +37,6 @@ function saveDraft() {
     })
     .then(data => {
         draftID = data.id;
-        alert('บันทึกร่างสำเร็จ');
     })
     .catch(error => {
         alert('Error:', error);

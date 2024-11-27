@@ -130,6 +130,7 @@ function save() {
         onConfirm: () => {
             //////
             saveDraft();
+            alert("Form saved successfully!");
             console.log("save darft");
         },
         onCancel: () => {
@@ -220,6 +221,7 @@ function updateProfile() {
         }
         
         function confirmSubmit() {
+            saveDraft();
             alert("Form submitted successfully!");
             closeSubmitModal(); // Close the modal after confirming
             console.log("Form submission confirmed...");
