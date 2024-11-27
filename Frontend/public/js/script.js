@@ -1,4 +1,3 @@
-
 function togglePassword() {
     const passwordInput = document.getElementById('password');
     const eyeIcon = document.getElementById('eye-icon');
@@ -287,6 +286,7 @@ document.addEventListener("scroll", resetTimeout);
 // Start the session timeout countdown
 startTimeout();
 
+
 function Cancel() {
     openCancelModal(); // Open the modal when the "ยกเลิก" button is clicked
 }
@@ -330,44 +330,45 @@ function updateProfile() {
 }
 
 /*******************************
-        Submit Button
- *******************************/
-        function Submit() {
-            openSubmitModal(); // Open the modal when the "Submit" button is clicked
-        }
-        
-        function createSubmitModal() {
-            const modalHtml = `
-                <div id="SubmitModal" class="modal">
-                    <div class="modal-content">
-                        <h2>ยื่นคำร้อง</h2>
-                        <p>ท่านต้องการยื่นคำร้อง ใช่หรือไม่</p>
-                        <button class="cancel-btn" onclick="closeSubmitModal()">ยกเลิก</button>
-                        <button class="confirm-btn" onclick="confirmSubmit()">ยืนยัน</button>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', modalHtml);
-        }
-        
-        function openSubmitModal() {
-            const modal = document.getElementById("SubmitModal");
-            if (!modal) {
-                createSubmitModal(); // Create the modal if it doesn’t exist
-            }
-            document.getElementById("SubmitModal").style.display = "flex";
-        }
-        
-        function closeSubmitModal() {
-            const modal = document.getElementById("SubmitModal");
-            if (modal) {
-                modal.style.display = "none";
-            }
-        }
-        
-        function confirmSubmit() {
-            alert("Form submitted successfully!");
-            closeSubmitModal(); // Close the modal after confirming
-            console.log("Form submission confirmed...");
-        }
+Submit Button
+*******************************/
+function Submit() {
+    openSubmitModal(); // Open the modal when the "Submit" button is clicked
+}
+
+function createSubmitModal() {
+    const modalHtml = `
+        <div id="SubmitModal" class="modal">
+            <div class="modal-content">
+                <h2>ยื่นคำร้อง</h2>
+                <p>ท่านต้องการยื่นคำร้อง ใช่หรือไม่</p>
+                <button class="cancel-btn" onclick="closeSubmitModal()">ยกเลิก</button>
+                <button class="confirm-btn" onclick="confirmSubmit()">ยืนยัน</button>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+}
+
+function openSubmitModal() {
+    const modal = document.getElementById("SubmitModal");
+    if (!modal) {
+        createSubmitModal(); // Create the modal if it doesn’t exist
+    }
+    document.getElementById("SubmitModal").style.display = "flex";
+}
+
+function closeSubmitModal() {
+    const modal = document.getElementById("SubmitModal");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+function confirmSubmit() {
+    alert("Form submitted successfully!");
+    closeSubmitModal(); // Close the modal after confirming
+    console.log("Form submission confirmed...");
+}
+
 
