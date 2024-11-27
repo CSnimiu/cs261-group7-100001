@@ -1,6 +1,3 @@
-/*******************************
- * ฟังก์ชันสำหรับแสดง/ซ่อนรหัสผ่าน
- *******************************/
 function togglePassword() {
     const passwordInput = document.getElementById('password');
     const eyeIcon = document.getElementById('eye-icon');
@@ -349,6 +346,7 @@ document.addEventListener("scroll", resetTimeout);
 // Start the session timeout countdown
 startTimeout();
 
+
 function Cancel() {
     openCancelModal(); // Open the modal when the "ยกเลิก" button is clicked
 }
@@ -392,38 +390,13 @@ function updateProfile() {
 }
 
 /*******************************
-        Submit Button
- *******************************/
+Submit Button
+*******************************/
 function Submit() {
-    if (!validateForm()) {
-        alert("กรุณากรอกข้อมูลให้ครบถ้วนก่อนยื่นคำร้อง");
-        return;
-    }
     openSubmitModal(); // Open the modal when the "Submit" button is clicked
 }
 
-function validateForm() {
-    const requiredFields = document.querySelectorAll('[required]');
-    let isValid = true;
-
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            field.classList.add('error'); // Highlight the field with error
-            isValid = false;
-        } else {
-            field.classList.remove('error');
-        }
-    });
-
-    return isValid;
-}
-
 function createSubmitModal() {
-    const existingModal = document.getElementById("SubmitModal");
-    if (existingModal) {
-        existingModal.remove(); // Remove existing modal before creating a new one
-    }
-
     const modalHtml = `
         <div id="SubmitModal" class="modal">
             <div class="modal-content">
@@ -453,38 +426,52 @@ function closeSubmitModal() {
 }
 
 function confirmSubmit() {
-    alert("คำร้องของคุณได้ถูกส่งเรียบร้อยแล้ว!");
+    alert("Form submitted successfully!");
     closeSubmitModal(); // Close the modal after confirming
-
-    // ทำการส่งคำร้องไปยัง backend
-    sendFormData();
+    console.log("Form submission confirmed...");
 }
 
-function sendFormData() {
-    // ดึงข้อมูลจากฟอร์มด้วย id
-    const formElement = document.getElementById("resignForm");
-
-    if (!formElement) {
-        console.error("Form element not found.");
-        return;
-    }
-
-    const formData = new FormData(formElement);
-
-    fetch("http://localhost:8080/api/form", {
-        method: "POST",
-        body: formData,
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log("Form submitted successfully.");
-        } else {
-            throw new Error("Failed to submit form.");
+/*******************************
+        Save Profile Button
+ *******************************/
+        function SaveProfile() {
+            openSaveModal(); // Open the modal when the "ยกเลิก" button is clicked
         }
-    })
-    .catch(error => {
-        console.error("Error:", error);
-        alert("เกิดข้อผิดพลาดในการส่งคำร้อง กรุณาลองใหม่อีกครั้ง");
-    });
-}
-
+        
+        function createSaveModal() {
+            const modalHtml = `
+                <div id="SaveModal" class="modal">
+                    <div class="modal-content">
+                        <h2>บันทึกโปรไฟล์</h2>
+                        <p>ท่านต้องการบันทึกข้อมูล ใช่หรือไม่</p>
+                        <button class="cancel-btn" onclick="closeSaveModal()">ยกเลิก</button>
+                        <button class="confirm-btn" onclick="confirmSave()">บันทึก</button>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+        }
+        
+        function openSaveModal() {
+            const modal = document.getElementById("SaveModal");
+            if (!modal) {
+                createSaveModal(); // Create the modal if it doesn’t exist
+            }
+            document.getElementById("SaveModal").style.display = "flex";
+        }
+        
+        function closeSaveModal() {
+            const modal = document.getElementById("SaveModal");
+            if (modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        function confirmSave() {
+            updateProfile()
+            const modal = document.getElementById("SaveModal");
+            if (modal) {
+                modal.style.display = "none";
+            }
+            console.log("Profile updated...");
+        }

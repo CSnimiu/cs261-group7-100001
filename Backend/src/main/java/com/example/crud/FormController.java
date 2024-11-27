@@ -12,36 +12,56 @@ import java.util.Optional;
 @RequestMapping("/api/form")
 public class FormController {
 
-    @Autowired
-    private FormRepository formRepository;
-
-    // Delete all forms or a specific form by key
-    @DeleteMapping
-    public ResponseEntity<?> delAllForms(@RequestParam(required = false) Long key) {
-        if (key != null) {
-            if (key == -1) {
-                formRepository.deleteAll();
-                return ResponseEntity.ok("All forms have been deleted successfully.");
-            } else {
-                Optional<Form> formOptional = formRepository.findById(key);
-                if (formOptional.isPresent()) {
-                    formRepository.delete(formOptional.get());
-                    return ResponseEntity.ok("Form deleted successfully.");
-                } else {
-                    return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Form not found with ID: " + key);
-                }
-            }
+	@Autowired
+	private FormRepository formRepository;
+	
+	@DeleteMapping
+	public List<Form> delAllForms(@RequestBody Long Key){
+		if (Key == -1) {
+			formRepository.deleteAll();
+		}
+		else {
+			formRepository.delete(formRepository.getReferenceById(Key));
+		}
+			
+		return formRepository.findAll();
+	}
+	
+	@GetMapping
+	public List<Form> getAllForms(){
+		return formRepository.findAll();
+	}
+	
+	@PostMapping
+	 public Form createForm(@RequestBody Form form) {
+        if (form.getID() == -1) {
+            return formRepository.save(form);
         } else {
-            return ResponseEntity.badRequest().body("Invalid key parameter.");
+            return formRepository.findById(form.getID()).map(existingForm -> {
+            	existingForm.setUser_id(form.getUser_id());
+                existingForm.setPurpose(form.getPurpose());
+                existingForm.setStage(form.getStage());
+                existingForm.setC_code(form.getC_code());
+                existingForm.setC_name(form.getC_name());
+                existingForm.setSection(form.getSection());
+                existingForm.setTime(form.getTime());
+                existingForm.setC_unit(form.getC_unit());
+                existingForm.setTeacher(form.getTeacher());
+                existingForm.setReason(form.getReason());
+                return formRepository.save(existingForm);
+            }).orElseThrow(() -> new RuntimeException("error updating draft"));
         }
     }
+	
+	@PatchMapping("/{id},{stage}")
+	public Form patchForm(@PathVariable Long id ,@PathVariable String stage) {
+		Form target = formRepository.getReferenceById(id);
+		if (stage != null) target.setStage(stage);
 
-    // Get all forms
-    @GetMapping
-    public ResponseEntity<List<Form>> getAllForms() {
-        List<Form> forms = formRepository.findAll();
-        return ResponseEntity.ok(forms);
-    }
+		return formRepository.save(target);
+	}
+	
+}
 
     // Create a new form
     @PostMapping

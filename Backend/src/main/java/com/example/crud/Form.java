@@ -11,68 +11,61 @@ import jakarta.persistence.Table;
 @Table(name = "forms")
 public class Form {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "user_id", nullable = false)
-    private Long userId;
-
-    @Column(name = "requirement", nullable = false)
-    private String requirement;
-
-    @Column(name = "stage", nullable = false)
-    private String stage;
-
-    @Column(name = "c_code", nullable = false)
-    private String courseCode;
-
-    @Column(name = "c_name", nullable = false)
-    private String courseName;
-
-    @Column(name = "section", nullable = false)
-    private String section;
-
-    @Column(name = "time", nullable = false)
-    private String courseTime;
-
-    @Column(name = "c_unit", nullable = false)
-    private Float courseUnit;
-
-    @Column(name = "teacher", nullable = false)
-    private String teacher;
-
-    @Column(name = "note", nullable = true)
-    private String note;
-
-    // Getter and Setter for id
-    public Long getId() {
-        return id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id ;
+	
+	@Column(name = "user_id", nullable = false)
+	private Long user_id ;
+	
+	@Column(name = "purpose", nullable = false)
+	private String purpose ;
+	
+	@Column(name = "stage", nullable = false)
+	private String stage ;
+	
+	@Column(name = "c_code", nullable = false)
+	private String c_code ;
+	
+	@Column(name = "c_name", nullable = false, columnDefinition = "NVARCHAR(255)")
+	private String c_name ;
+	
+	@Column(name = "section", nullable = false)
+	private String section ;
+	
+	@Column(name = "time", nullable = false)
+	private String time ;
+	
+	@Column(name = "c_unit", nullable = false)
+	private double c_unit ;
+	
+	@Column(name = "teacher", nullable = false, columnDefinition = "NVARCHAR(255)")
+	private String teacher ;
+	
+	@Column(name = "reason", nullable = false, columnDefinition = "NVARCHAR(1023)")
+	private String reason ;
+	
+	public long getID() {
+		return id == null ? -1 : id;
+    }
+    
+	public Long getUser_id() {
+        return user_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
-    // Getter and Setter for userId
-    public Long getUserId() {
-        return userId;
+    public String getPurpose() {
+        return purpose;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setPurpose(String purpose) {
+        this.purpose = purpose;
     }
 
-    // Getter and Setter for requirement
-    public String getRequirement() {
-        return requirement;
-    }
 
-    public void setRequirement(String requirement) {
-        this.requirement = requirement;
-    }
-
-    // Getter and Setter for stage
     public String getStage() {
         return stage;
     }
@@ -81,25 +74,24 @@ public class Form {
         this.stage = stage;
     }
 
-    // Getter and Setter for courseCode
-    public String getCourseCode() {
-        return courseCode;
+
+    public String getC_code() {
+        return c_code;
     }
 
-    public void setCourseCode(String courseCode) {
-        this.courseCode = courseCode;
+    public void setC_code(String c_code) {
+        this.c_code = c_code;
     }
 
-    // Getter and Setter for courseName
-    public String getCourseName() {
-        return courseName;
+    public String getC_name() {
+        return c_name;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setC_name(String c_name) {
+        this.c_name = c_name;
     }
 
-    // Getter and Setter for section
+
     public String getSection() {
         return section;
     }
@@ -108,25 +100,23 @@ public class Form {
         this.section = section;
     }
 
-    // Getter and Setter for courseTime
-    public String getCourseTime() {
-        return courseTime;
+
+    public String getTime() {
+        return time;
     }
 
-    public void setCourseTime(String courseTime) {
-        this.courseTime = courseTime;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    // Getter and Setter for courseUnit
-    public Float getCourseUnit() {
-        return courseUnit;
+    public double getC_unit() {
+        return c_unit;
     }
 
-    public void setCourseUnit(Float courseUnit) {
-        this.courseUnit = courseUnit;
+    public void setC_unit(double c_unit) {
+        this.c_unit = c_unit;
     }
 
-    // Getter and Setter for teacher
     public String getTeacher() {
         return teacher;
     }
@@ -135,12 +125,13 @@ public class Form {
         this.teacher = teacher;
     }
 
-    // Getter and Setter for note
-    public String getNote() {
-        return note;
+
+    public String getReason() {
+        return reason;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 }
+

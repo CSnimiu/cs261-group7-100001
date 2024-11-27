@@ -14,7 +14,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // อนุญาตทุกเส้นทางของ API
-                        .allowedOrigins("http://localhost:3000") // ระบุ Origin ที่อนุญาต
+                        .allowedOrigins("http://127.0.0.1:3000", "http://localhost:3000", "http://node-server:3000", "http://localhost:8080") // ระบุ Origin ที่อนุญาต
                         .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS") // ระบุ HTTP Methods
                         .allowedHeaders("*") // อนุญาตทุก Headers
                         .allowCredentials(true); // รองรับการส่ง Credentials (เช่น Cookies หรือ Headers Authentication)

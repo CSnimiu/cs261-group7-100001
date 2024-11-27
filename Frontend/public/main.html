@@ -35,11 +35,11 @@
         <div class="row" id="req-menu-container">
             <div class="req-menu">
                 <h4>คำร้องขอเพิ่ม-ถอนรายวิชา <br>หรือจดทะเบียนเรียนข้ามหลักสูตร</h4>
-                <div class="create-req" onclick="location.href='./html-form/draft.html'"><i class="bi bi-plus-circle"></i><h4>สร้างคำร้อง</h4></div>
+                <div class="create-req" onclick="localStorage.setItem('currentDraft', ''); location.href='./html-form/draft.html'"><i class="bi bi-plus-circle"></i><h4>สร้างคำร้อง</h4></div>
             </div>
             <div class="req-menu">
                 <h4>คำร้องขอลาออก</h4>
-                <div class="create-req" onclick="location.href='./html-form/resign.html'"><i class="bi bi-plus-circle"></i><h4>สร้างคำร้อง</h4></div>
+                <div class="create-req" onclick="localStorage.setItem('currentDraft', ''); location.href='./html-form/resign.html'"><i class="bi bi-plus-circle"></i><h4>สร้างคำร้อง</h4></div>
             </div>
             <!--
             <div class="req-menu">
