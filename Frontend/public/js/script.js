@@ -371,4 +371,47 @@ function confirmSubmit() {
     console.log("Form submission confirmed...");
 }
 
-
+/*******************************
+        Save Profile Button
+ *******************************/
+        function SaveProfile() {
+            openSaveModal(); // Open the modal when the "ยกเลิก" button is clicked
+        }
+        
+        function createSaveModal() {
+            const modalHtml = `
+                <div id="SaveModal" class="modal">
+                    <div class="modal-content">
+                        <h2>บันทึกโปรไฟล์</h2>
+                        <p>ท่านต้องการบันทึกข้อมูล ใช่หรือไม่</p>
+                        <button class="cancel-btn" onclick="closeSaveModal()">ยกเลิก</button>
+                        <button class="confirm-btn" onclick="confirmSave()">บันทึก</button>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+        }
+        
+        function openSaveModal() {
+            const modal = document.getElementById("SaveModal");
+            if (!modal) {
+                createSaveModal(); // Create the modal if it doesn’t exist
+            }
+            document.getElementById("SaveModal").style.display = "flex";
+        }
+        
+        function closeSaveModal() {
+            const modal = document.getElementById("SaveModal");
+            if (modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        function confirmSave() {
+            updateProfile()
+            const modal = document.getElementById("SaveModal");
+            if (modal) {
+                modal.style.display = "none";
+            }
+            console.log("Profile updated...");
+        }

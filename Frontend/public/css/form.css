@@ -150,18 +150,18 @@ textarea {
     cursor: pointer;
 }
 
-.btn.cancel {
+.btn.save {
     background-color: #7e7e7e;
     color: white;
 }
 
-.btn.save {
-    background-color: #315d36;
+.btn.cancel {
+    background-color: #D41616;
     color: white;
 }
 
 .btn.submit {
-    background-color: #D41616;
+    background-color: #1F962D;
     color: white;
 }
 
@@ -365,19 +365,19 @@ input#otherUniversity{
 }
 
 .modal-content .cancel-btn {
-    background-color: #7e7e7e;
+    background-color: #D41616;
     color: #ffffff;
 }
 
 .modal-content .cancel-btn:hover {
-    background-color: #9b9b9b;
+    background-color: #e42020;
 }
 
 .modal-content .confirm-btn {
-    background-color: #315d36;
+    background-color: #1F962D;
     color: #ffffff;
 }
 
 .modal-content .confirm-btn:hover {
-    background-color: #34813d;
+    background-color: #28ac37;
 }
