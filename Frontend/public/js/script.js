@@ -3,47 +3,107 @@ function togglePassword() {
     const eyeIcon = document.getElementById('eye-icon');
 
     if (passwordInput.type === 'password') {
-        passwordInput.type = 'text'; // Show the password
+        passwordInput.type = 'text'; // แสดงรหัสผ่าน
         eyeIcon.src = 'img/eye-open-icon.png';
         eyeIcon.alt = 'Hide Password';
     } else {
-        passwordInput.type = 'password'; // Hide the password
+        passwordInput.type = 'password'; // ซ่อนรหัสผ่าน
         eyeIcon.src = 'img/eye-close-icon.png';
         eyeIcon.alt = 'Show Password';
     }
 }
 
+/*******************************
+ * ข้อมูล Mock สำหรับการพัฒนา
+ *******************************/
+const mockStudents = [
+    { username: 'student', password: '123456', type: 'student' },
+];
+
+const mockProfessors = [
+    { username: 'professor1', password: '123456', type: 'professor' },
+    { username: 'professor2', password: '123456', type: 'professor' },
+];
+
+
+/******************************* 
+* Submit Login Form
+/*******************************/
 function submitLogin() {
-    const UserName = document.getElementById('username')?.value;
-    const PassWord = document.getElementById('password')?.value;
-    const checkDiv = document.getElementById('check');
+   const userName = document.getElementById('username')?.value;
+   const password = document.getElementById('password')?.value;
+   const checkDiv = document.getElementById('check');
 
-    if (!UserName || !PassWord) {
-        if (checkDiv) checkDiv.innerText = '*Please enter both username and password.*';
-        return;
-    }
+   if (!userName || !password) {
+       checkDiv.innerText = '*กรุณากรอกชื่อผู้ใช้และรหัสผ่าน*';
+       return;
+   }
 
-    fetch('https://restapi.tu.ac.th/api/v1/auth/Ad/verify', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Application-Key': 'TU6b385dc1f8327e133ed355505488df04cd80b11ff6273eb291fa94ad1a05c456116ca973efcb839f730143f2cb931d4b'
-            //^^^token of team project's channel//
-            //for easier testing//
-        },
-        body: JSON.stringify({ "UserName":UserName, "PassWord":PassWord })
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        if (data.status) {
-            addToDB(data);  
-        } else {
-            if (checkDiv) checkDiv.innerText = 'Incorrect username or password. Please try again!';
-        }
-    })
-    .catch(error => console.error('Error:', error));
+   // ตรวจสอบ Mock Data ก่อน
+   const validUser = mockStudents.find(user => user.username === userName && user.password === password)
+       || mockProfessors.find(user => user.username === userName && user.password === password);
+
+   if (validUser) {
+       console.log('Login Successful with Mock Data:', validUser);
+       localStorage.setItem('user', JSON.stringify(validUser)); // บันทึกข้อมูลผู้ใช้ลง LocalStorage
+       redirectUser(validUser.type); // เปลี่ยนเส้นทางตามประเภทผู้ใช้
+       return;
+   }
+   
+
+   // ถ้าไม่พบข้อมูลใน Mock Data ให้เรียก API
+   console.log('Checking API for user authentication...');
+   authenticateWithAPI(userName, password, checkDiv);
 }
+
+
+/*******************************
+* Authenticate with API
+*******************************/
+function authenticateWithAPI(userName, password, checkDiv) {
+   fetch('https://restapi.tu.ac.th/api/v1/auth/Ad/verify', {
+       method: 'POST',
+       headers: {
+           'Content-Type': 'application/json',
+           'Application-Key': 'TU6b385dc1f8327e133ed355505488df04cd80b11ff6273eb291fa94ad1a05c456116ca973efcb839f730143f2cb931d4b'
+       },
+       body: JSON.stringify({ UserName: userName, PassWord: password }),
+   })
+       .then(async response => {
+           if (!response.ok) {
+               const errorMessage = await response.text();
+               throw new Error(errorMessage || 'เกิดข้อผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์');
+           }
+
+           const result = await response.json();
+           console.log('Response Body:', result);
+
+           if (result.status) {
+               console.log('Login Successful with API:', result);
+               addToDB(result); // เพิ่มผู้ใช้ในฐานข้อมูล
+           } else {
+               checkDiv.innerText = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง!';
+           }
+       })
+       .catch(error => {
+           console.error('Error connecting to API:', error);
+           checkDiv.innerText = 'เกิดข้อผิดพลาดในการเชื่อมต่อกับ API';
+       });
+}
+
+/*******************************
+* Redirect User by Type
+*******************************/
+function redirectUser(userType) {
+   if (userType === 'student') {
+       window.location.href = 'studentMain.html';
+   } else if (userType === 'professor') {
+       window.location.href = 'professorMain.html';
+   } else {
+       console.error('ประเภทผู้ใช้ไม่ถูกต้อง:', userType);
+   }
+}
+
 
 function ownedAccount(data,user) {
     let OwnedAccount = null;

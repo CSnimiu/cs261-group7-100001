@@ -165,6 +165,16 @@ textarea {
     color: white;
 }
 
+.btn.deny {
+    background-color: #D41616;
+    color: white;
+}
+
+.btn.approve {
+    background-color: #1F962D;
+    color: white;
+}
+
 p {
     display: flex;
     align-items: center;
@@ -203,6 +213,7 @@ p input {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 
 .why{
     font-size: 17px;

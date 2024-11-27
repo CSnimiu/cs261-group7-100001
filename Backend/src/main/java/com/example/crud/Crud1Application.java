@@ -15,4 +15,5 @@ public class Crud1Application extends SpringBootServletInitializer {
 	public static void main(String[] args) {
 		SpringApplication.run(Crud1Application.class, args);
 	}
+
 }
