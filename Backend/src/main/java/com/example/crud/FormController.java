@@ -1,36 +1,38 @@
 package com.example.crud;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/form")
 public class FormController {
 
-    @Autowired
-    private FormRepository formRepository;
-
-    // Delete all forms or a specific form by key
-    @DeleteMapping
-    public ResponseEntity<?> delAllForms(@RequestParam(required = false) Long key) {
-        if (key != null) {
-            if (key == -1) {
-                formRepository.deleteAll();
-                return ResponseEntity.ok("All forms have been deleted successfully.");
-            } else {
-                Optional<Form> formOptional = formRepository.findById(key);
-                if (formOptional.isPresent()) {
-                    formRepository.delete(formOptional.get());
-                    return ResponseEntity.ok("Form deleted successfully.");
-                } else {
-                    return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Form not found with ID: " + key);
-                }
-            }
+	@Autowired
+	private FormRepository formRepository;
+	
+	@DeleteMapping
+	public List<Form> delAllForms(@RequestBody Long Key){
+		if (Key == -1) {
+			formRepository.deleteAll();
+		}
+		else {
+			formRepository.delete(formRepository.getReferenceById(Key));
+		}
+			
+		return formRepository.findAll();
+	}
+	
+	@GetMapping
+	public List<Form> getAllForms(){
+		return formRepository.findAll();
+	}
+	
+	@PostMapping
+	 public Form createForm(@RequestBody Form form) {
+        if (form.getID() == -1) {
+            return formRepository.save(form);
         } else {
             return ResponseEntity.badRequest().body("Invalid key parameter.");
         }
@@ -75,4 +77,14 @@ public class FormController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Form not found with ID: " + id);
         }
     }
+	
+	@PatchMapping("/{id},{stage}")
+	public Form patchForm(@PathVariable Long id ,@PathVariable String stage) {
+		Form target = formRepository.getReferenceById(id);
+		if (stage != null) target.setStage(stage);
+
+		return formRepository.save(target);
+	}
+	
 }
+

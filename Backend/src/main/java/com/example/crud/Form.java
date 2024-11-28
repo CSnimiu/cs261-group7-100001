@@ -6,11 +6,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
-@Table(name = "forms")
+@Table(name="forms")
 public class Form {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -78,7 +79,6 @@ public class Form {
         this.requirement = requirement;
     }
 
-    // Getter and Setter for stage
     public String getStage() {
         return stage;
     }
@@ -87,25 +87,22 @@ public class Form {
         this.stage = stage;
     }
 
-    // Getter and Setter for courseCode
-    public String getCourseCode() {
-        return courseCode;
+    public String getC_code() {
+        return c_code;
     }
 
-    public void setCourseCode(String courseCode) {
-        this.courseCode = courseCode;
+    public void setC_code(String c_code) {
+        this.c_code = c_code;
     }
 
-    // Getter and Setter for courseName
-    public String getCourseName() {
-        return courseName;
+    public String getC_name() {
+        return c_name;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setC_name(String c_name) {
+        this.c_name = c_name;
     }
 
-    // Getter and Setter for section
     public String getSection() {
         return section;
     }
@@ -114,16 +111,14 @@ public class Form {
         this.section = section;
     }
 
-    // Getter and Setter for courseTime
-    public String getCourseTime() {
-        return courseTime;
+    public String getTime() {
+        return time;
     }
 
-    public void setCourseTime(String courseTime) {
-        this.courseTime = courseTime;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    // Getter and Setter for courseUnit
     public String getCourseUnit() {
         return courseUnit;
     }
@@ -132,7 +127,6 @@ public class Form {
         this.courseUnit = courseUnit;
     }
 
-    // Getter and Setter for teacher
     public String getTeacher() {
         return teacher;
     }
@@ -141,13 +135,12 @@ public class Form {
         this.teacher = teacher;
     }
 
-    // Getter and Setter for note
-    public String getNote() {
-        return note;
+    public String getReason() {
+        return reason;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setReason(String reason) {
+        this.reason = reason;
     }
     
  // Getter and Setter for teacher

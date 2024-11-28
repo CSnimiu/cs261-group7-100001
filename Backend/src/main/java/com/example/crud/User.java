@@ -13,7 +13,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "th_name", nullable = false)
+    @Column(name = "th_name", nullable = false, columnDefinition = "NVARCHAR(255)")
     private String th_name;
 
     @Column(name = "eng_name", nullable = false)
@@ -25,10 +25,10 @@ public class User {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "faculty", nullable = false)
+    @Column(name = "faculty", nullable = false, columnDefinition = "NVARCHAR(255)")
     private String faculty;
 
-    @Column(name = "department", nullable = false)
+    @Column(name = "department", nullable = false, columnDefinition = "NVARCHAR(255)")
     private String department;
 
     @Column(name = "type", nullable = false)
@@ -37,19 +37,19 @@ public class User {
     @Column(name = "year", nullable = true)
     private String year;
 
-    @Column(name = "address", nullable = true)
+    @Column(name = "address", nullable = true, columnDefinition = "NVARCHAR(255)")
     private String address;
 
     @Column(name = "moo", nullable = true)
     private String moo;
 
-    @Column(name = "road", nullable = true)
+    @Column(name = "road", nullable = true, columnDefinition = "NVARCHAR(255)")
     private String road;
 
-    @Column(name = "district", nullable = true)
+    @Column(name = "district", nullable = true, columnDefinition = "NVARCHAR(255)")
     private String district;
 
-    @Column(name = "province", nullable = true)
+    @Column(name = "province", nullable = true, columnDefinition = "NVARCHAR(255)")
     private String province;
 
     @Column(name = "zip_code", nullable = true)
@@ -58,7 +58,7 @@ public class User {
     @Column(name = "phone_num", nullable = true)
     private String phone_num;
 
-    @Column(name = "advisor", nullable = true)
+    @Column(name = "advisor", nullable = true, columnDefinition = "NVARCHAR(255)")
     private String advisor;
 
     @Column(name = "user_name", nullable = false, unique = true)

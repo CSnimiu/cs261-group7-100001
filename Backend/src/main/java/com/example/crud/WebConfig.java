@@ -15,7 +15,9 @@ public class WebConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // อนุญาตทุกเส้นทางของ API
                         .allowedOrigins("*") // ระบุ Origin ที่อนุญาต
-                        .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"); // ระบุ HTTP Methods
+                        .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS") // ระบุ HTTP Methods
+                        .allowedHeaders("*") // อนุญาตทุก Headers
+                        .allowCredentials(true); // รองรับการส่ง Credentials (เช่น Cookies หรือ Headers Authentication)
             }
         };
     }
