@@ -94,7 +94,7 @@
             <!-- Request Section -->
             <div class="form-section">
                 <label>มีความประสงค์ในการขอ</label>
-                <select>
+                <select id="requirement">
                     <option>เลือกคำร้อง</option>
                     <option>จดทะเบียนล่าช้า/เพิ่มล่าช้า</option>
                     <option>ขอถอนรายวิชา</option>
@@ -103,22 +103,22 @@
 
                 <label>รหัสวิชา</label>
                 <label>ชื่อวิชา</label>
-                <input type="text" placeholder="Subject Code">
-                <input type="text" placeholder="Subject Name">
+                <input type="text" placeholder="Subject Code" id="courseCode">
+                <input type="text" placeholder="Subject Name" id="courseName">
 
                 <label>Section</label>
                 <label>วัน/เวลา</label>
-                <input type="text" placeholder="Section">
+                <input type="text" placeholder="Section" id="section">
                 <input type="datetime-local" placeholder="Day/Time" id="time">
 
                 <label>หน่วยกิต</label>
                 <label>ชื่อผู้สอน</label>
-                <input type="text" placeholder="Credits">
-                <input type="text" placeholder="Instructor Name">
+                <input type="text" placeholder="Credits" id="courseUnit">
+                <input type="text" placeholder="Instructor Name" id="teacher">
 
                 <label>หมายเหตุที่ขอเพิ่มถอน</label>
                 <br>
-                <textarea placeholder="Reason"></textarea>
+                <textarea placeholder="Reason" id="note"></textarea>
             </div>
 
             <!-- Buttons -->

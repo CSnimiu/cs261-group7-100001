@@ -436,6 +436,9 @@ function createPendingModal() {
             for (let i in data) {
                 const dataI = data[i];
                 if (dataI.stage === "Pending") {
+                    if (dataI.type === "Request") {
+                        dataI.type = dataI.requirement;
+                    }
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
                             <div class="req-menu">
@@ -514,7 +517,7 @@ function sendFormData() {
             department: document.getElementById("info-box-major").value,
             user_name: document.getElementById("info-box-id").value,
             birthday: "",
-            year: document.getElementById("info-box-year").value,
+            year: document.getElementById("year").value,
             address: document.getElementById("info-box-address").value,
             moo: document.getElementById("info-box-moo").value,
             road: document.getElementById("info-box-subdistrict").value,
@@ -525,7 +528,7 @@ function sendFormData() {
             phone_num: document.getElementById("info-box-phone").value,
             advisor: document.getElementById("info-box-advisor").value,
             userId: 0,
-            requirement: "",
+            requirement: document.getElementById("requirement").value,
             stage: "Pending",
             courseCode: "",
             courseName: "",
@@ -533,8 +536,8 @@ function sendFormData() {
             courseTime: "",
             courseUnit: "",
             teacher: "",
-            note: "",
-            semester: "",
+            note: document.getElementById("note").value,
+            semester: document.getElementById("semester").value,
             type: "Resign"
         }
 
@@ -579,17 +582,17 @@ function sendFormData() {
             phone_num: document.getElementById("info-box-phone").value,
             advisor: document.getElementById("info-box-advisor").value,
             userId: 0,
-            requirement: "",
+            requirement: document.getElementById("requirement").value,
             stage: "Pending",
-            courseCode: "",
-            courseName: "",
-            section: "",
+            courseCode: document.getElementById("courseCode").value,
+            courseName: document.getElementById("courseName").value,
+            section: document.getElementById("section").value,
             courseTime: document.getElementById("time").value,
-            courseUnit: "",
-            teacher: "",
-            note: "",
+            courseUnit: document.getElementById("courseUnit").value,
+            teacher: document.getElementById("teacher").value,
+            note: document.getElementById("note").value,
             semester: "",
-            type: "request"
+            type: "Request"
         }
 
         console.log(formData);
