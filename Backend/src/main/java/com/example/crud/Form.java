@@ -19,7 +19,7 @@ public class Form {
     @Column(name = "user_id", nullable = false)
     private Long userId;
 
-    @Column(name = "requirement", nullable = false)
+    @Column(name = "requirement", nullable = false, columnDefinition = "NVARCHAR(255)")
     private String requirement;
 
     @Column(name = "stage", nullable = false)
@@ -28,7 +28,7 @@ public class Form {
     @Column(name = "courseCode", nullable = false)
     private String courseCode;
 
-    @Column(name = "courseName", nullable = false)
+    @Column(name = "courseName", nullable = false, columnDefinition = "NVARCHAR(255)")
     private String courseName;
 
     @Column(name = "section", nullable = false)
@@ -40,10 +40,10 @@ public class Form {
     @Column(name = "courseUnit", nullable = false)
     private String courseUnit;
 
-    @Column(name = "teacher", nullable = false)
+    @Column(name = "teacher", nullable = false, columnDefinition = "NVARCHAR(255)")
     private String teacher;
 
-    @Column(name = "note", nullable = true)
+    @Column(name = "note", nullable = true, columnDefinition = "NVARCHAR(1023)")
     private String note;
     
     @Column(name = "semester", nullable = true)
@@ -153,7 +153,7 @@ public class Form {
         this.year = year;
     }
     
-    @Column(name = "th_name", nullable = false)
+    @Column(name = "th_name", nullable = false, columnDefinition = "NVARCHAR(255)")
     private String th_name;
 
     @Column(name = "eng_name", nullable = false)
@@ -165,28 +165,28 @@ public class Form {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "faculty", nullable = false)
+    @Column(name = "faculty", nullable = false, columnDefinition = "NVARCHAR(255)")
     private String faculty;
 
-    @Column(name = "department", nullable = false)
+    @Column(name = "department", nullable = false, columnDefinition = "NVARCHAR(255)")
     private String department;
 
     @Column(name = "type", nullable = false)
     private String type;
 
-    @Column(name = "address", nullable = true)
+    @Column(name = "address", nullable = true, columnDefinition = "NVARCHAR(255)")
     private String address;
 
     @Column(name = "moo", nullable = true)
     private String moo;
 
-    @Column(name = "road", nullable = true)
+    @Column(name = "road", nullable = true, columnDefinition = "NVARCHAR(255)")
     private String road;
 
-    @Column(name = "district", nullable = true)
+    @Column(name = "district", nullable = true, columnDefinition = "NVARCHAR(255)")
     private String district;
 
-    @Column(name = "province", nullable = true)
+    @Column(name = "province", nullable = true, columnDefinition = "NVARCHAR(255)")
     private String province;
 
     @Column(name = "zip_code", nullable = true)
@@ -195,7 +195,7 @@ public class Form {
     @Column(name = "phone_num", nullable = true)
     private String phone_num;
 
-    @Column(name = "advisor", nullable = true)
+    @Column(name = "advisor", nullable = true, columnDefinition = "NVARCHAR(255)")
     private String advisor;
 
     @Column(name = "user_name", nullable = false, unique = true)
