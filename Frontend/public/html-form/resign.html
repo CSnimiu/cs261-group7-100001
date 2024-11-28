@@ -27,23 +27,23 @@
         <div class="form-section">
             <label>ชื่อ</label>
             <label>นามสกุล</label>
-            <input type="text" placeholder="ชื่อ">
-            <input type="text" placeholder="นามสกุล">
+            <input type="text" placeholder="ชื่อ" id="info-box-thname">
+            <input type="text" placeholder="นามสกุล" id="info-box-thlname">
 
             <label>First Name</label>
             <label>Last Name</label>
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name">
+            <input type="text" placeholder="First Name" id="info-box-enname">
+            <input type="text" placeholder="Last Name" id="info-box-enlname">
             
             <label>คณะ</label>
             <label>สาขาวิชา</label>
-            <input type="text" placeholder="Faculty">
-            <input type="text" placeholder="Major">
+            <input type="text" placeholder="Faculty" id="info-box-faculty">
+            <input type="text" placeholder="Major" id="info-box-major">
 
             <label>ชั้นปีที่</label>
             <label>รหัสนักศึกษา</label>
-            <input type="number" placeholder="Year">
-            <input id="uid" type="number" placeholder="Student ID">
+            <input type="number" placeholder="Year" id="info-box-year">
+            <input type="number" placeholder="Student ID" id="info-box-id">
         </div>
 
         <div class="just-space"></div>
@@ -55,18 +55,18 @@
         <div class="form-section">
             <label>ที่อยู่ปัจจุบัน (เลขที่, หมู่บ้าน)</label>
             <label>หมู่ที่</label>
-            <input type="text" placeholder="Address">
-            <input type="number" placeholder="Village No.">
+            <input type="text" placeholder="Address" id="info-box-address">
+            <input type="number" placeholder="Village No." id="info-box-moo">
 
             <label>ถนน, แขวง/ตำบล</label>
             <label>เขต/อำเภอ</label>
-            <input type="text" placeholder="Road, Subdistrict">
-            <input type="text" placeholder="District">
+            <input type="text" placeholder="Road, Subdistrict" id="info-box-subdistrict">
+            <input type="text" placeholder="District" id="info-box-district">
 
             <label>จังหวัด</label>
             <label>รหัสไปรษณีย์</label>
-            <input type="text" placeholder="Province">
-            <input type="number" placeholder="Postal Code">
+            <input type="text" placeholder="Province" id="info-box-state">
+            <input type="number" placeholder="Postal Code" id="info-box-postcode">
         </div>
 
         <div class="just-space"></div>
@@ -78,12 +78,12 @@
         <div class="form-section">
             <label>เบอร์โทรศัพท์</label>
             <label>Email</label>
-            <input type="number" placeholder="Phone Number">
-            <input type="email" placeholder="Email">
+            <input type="number" placeholder="Phone Number" id="info-box-phone">
+            <input type="email" placeholder="Email" id="info-box-email">
 
             <label>อาจารย์ที่ปรึกษา</label>
             <br>
-            <input type="text" placeholder="Advisor Name">
+            <input type="text" placeholder="Advisor Name" id="info-box-advisor">
         </div>
 
         <div class="just-space"></div>
@@ -94,8 +94,8 @@
         <!-- Resignation Reason Section -->
         <h3>มีความประสงค์จะยื่นคำร้องขอลาออก</h3>
         <div class="reason-section">
-            <p>ในภาคเรียนที่ <input type="text" id="semester" name="semester" placeholder="ภาคเรียน"> 
-            ปีการศึกษา <input type="text" id="academicYear" name="academicYear" placeholder="ปีการศึกษา"></p>
+        <p>ในภาคเรียนที่ <input type="text" name="semester" placeholder="ภาคเรียน" id="semester"> 
+        ปีการศึกษา <input type="text" name="academicYear" placeholder="ปีการศึกษา" id="year"></p>
         </div>
 
         <div class="reason-section">
@@ -106,13 +106,13 @@
                     <label class="why">เหตุผล เพราะ</label>
                     <input type="radio" id="continueThammasat" name="reason" value="thammasat">
                     <label class="continue" for="continueThammasat">ศึกษาต่อที่ ม.ธรรมศาสตร์ คณะ</label>
-                    <input class="optional-faculty" type="text" id="thammasatFaculty" name="thammasatFaculty" placeholder="คณะ (ถ้ามี)">
+                    <input class="optional-faculty" type="text" name="thammasatFaculty" placeholder="คณะ (ถ้ามี)" id="note">
                 </div>
         <!-- Second row -->
                 <div class="reason-row">
                     <input type="radio" id="otherUniversity" name="reason" value="otherUniversity">
                     <label class="other-uni" for="otherUniversity">ศึกษาต่อที่มหาวิทยาลัยอื่น คือ มหาวิทยาลัย</label>
-                    <input type="text" id="otherUniversityInput" name="otherUniversity" placeholder="มหาวิทยาลัย">
+                    <input type="text" id="note" name="otherUniversityName" placeholder="มหาวิทยาลัย">
                 </div>
             </div>
         </div>
@@ -123,8 +123,8 @@
             </div>
             <div class="row row-input">
                 <div class="col first-option">
-                    <label for="debtDetails">1. มีหนี้ค้างกับ มธ./หน่วยงานภายใน มธ. หรือไม่ ถ้ามีโปรดระบุ</label>
-                    <input type="text" id="debtDetails" name="debtDetails" placeholder="รายละเอียดหนี้ (ถ้ามี)">
+                    <label>1. มีหนี้ค้างกับ มธ./หน่วยงานภายใน มธ. หรือไม่ ถ้ามีโปรดระบุ</label>
+                    <input type="text" name="debtDetails" placeholder="รายละเอียดหนี้ (ถ้ามี)" id="requirement">
                 </div>
                 <div class="col second-option">
                 <label for="gradeRequest">2. ต้องการเกรดในภาคเรียนที่ยื่นคำร้องลาออกหรือไม่*</label>

@@ -11,9 +11,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // อนุญาตทุก URL
-                .allowedOrigins("http://localhost:3000") // ระบุ origin ที่อนุญาต
-                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS") // ระบุ HTTP Methods
-                .allowedHeaders("*") // อนุญาตทุก Headers
-                .allowCredentials(true); // อนุญาตการใช้งาน Credential
+                .allowedOrigins("*") // ระบุ origin ที่อนุญาต
+                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"); // ระบุ HTTP Methods
     }
 }

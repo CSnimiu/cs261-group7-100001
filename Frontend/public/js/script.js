@@ -314,6 +314,10 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'login.html';
     }
 
+    if (currentPath.includes('main.html')) {
+        createPendingModal();
+    }
+
     if (currentPath.includes('profile.html')) {
         fetchProfile(user.user_name); // โหลดข้อมูลโปรไฟล์
         document.getElementById("save-profile").addEventListener("click", saveProfile); // ผูกฟังก์ชันบันทึกข้อมูลกับปุ่ม
@@ -396,6 +400,76 @@ function Submit() {
     openSubmitModal(); // Open the modal when the "Submit" button is clicked
 }
 
+function validateForm() {
+    const requiredFields = document.querySelectorAll('[required]');
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            field.classList.add('error'); // Highlight the field with error
+            isValid = false;
+        } else {
+            field.classList.remove('error');
+        }
+    });
+
+    return isValid;
+}
+
+function createPendingModal() {
+    fetch('http://localhost:8080/api/form', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            for (let i in data) {
+                const dataI = data[i];
+                if (dataI.type === "Request") {
+                    dataI.type = dataI.requirement;
+                }
+                if (dataI.stage === "Pending") {                  
+                    const modalHtml = `
+                        <div class="row req-status-menu-container" id="pending-status-menu-container">
+                            <div class="req-menu">
+                                <h4 id="pending-status-name">${dataI.type}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                            </div>
+                        </div>
+                        `;
+                    document.getElementById("pending").insertAdjacentHTML('afterend', modalHtml);
+                }
+                else if (dataI.stage === "Approve") {
+                    const modalHtml = `
+                        <div class="row req-status-menu-container" id="pending-status-menu-container">
+                            <div class="req-menu">
+                                <h4 id="pending-status-name">${dataI.type}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                            </div>
+                        </div>
+                        `;
+                    document.getElementById("approve").insertAdjacentHTML('afterend', modalHtml);
+                }
+                else if (dataI.stage === "Draft") {
+                    const modalHtml = `
+                        <div class="row req-status-menu-container" id="pending-status-menu-container">
+                            <div class="req-menu">
+                                <h4 id="pending-status-name">${dataI.type}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                            </div>
+                        </div>
+                        `;
+                    document.getElementById("draft").insertAdjacentHTML('afterend', modalHtml);
+                }
+            }
+        })
+    
+}
+
 function createSubmitModal() {
     const modalHtml = `
         <div id="SubmitModal" class="modal">
@@ -431,47 +505,215 @@ function confirmSubmit() {
     console.log("Form submission confirmed...");
 }
 
+function sendFormDraftData() {
+
+    if (document.getElementById("requestForm")) {
+        const formData = {
+            th_name: document.getElementById("info-box-thname").value + " " + document.getElementById("info-box-thlname").value,
+            eng_name: document.getElementById("info-box-enname").value + " " + document.getElementById("info-box-enlname").value,
+            faculty: document.getElementById("info-box-faculty").value,
+            department: document.getElementById("info-box-major").value,
+            user_name: document.getElementById("info-box-id").value,
+            birthday: "",
+            year: document.getElementById("info-box-year").value,
+            address: document.getElementById("info-box-address").value,
+            moo: document.getElementById("info-box-moo").value,
+            road: document.getElementById("info-box-subdistrict").value,
+            district: document.getElementById("info-box-district").value,
+            province: document.getElementById("info-box-state").value,
+            zip_code: document.getElementById("info-box-postcode").value,
+            email: document.getElementById("info-box-email").value,
+            phone_num: document.getElementById("info-box-phone").value,
+            advisor: document.getElementById("info-box-advisor").value,
+            userId: 0,
+            requirement: document.getElementById("requirement").value,
+            stage: "Draft",
+            courseCode: document.getElementById("courseCode").value,
+            courseName: document.getElementById("courseName").value,
+            section: document.getElementById("section").value,
+            courseTime: document.getElementById("time").value,
+            courseUnit: document.getElementById("courseUnit").value,
+            teacher: document.getElementById("teacher").value,
+            note: document.getElementById("note").value,
+            semester: "",
+            type: "Request"
+        }
+
+        console.log(formData);
+
+        fetch("http://localhost:8080/api/form", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Form submitted successfully.");
+                } else {
+                    throw new Error("Failed to submit form.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("เกิดข้อผิดพลาดในการส่งคำร้อง กรุณาลองใหม่อีกครั้ง");
+            });
+        return;
+    }
+}
+function sendFormData() {
+
+    if (document.getElementById("resignForm")) {
+        const formData = {
+            th_name: document.getElementById("info-box-thname").value + " " + document.getElementById("info-box-thlname").value,
+            eng_name: document.getElementById("info-box-enname").value + " " + document.getElementById("info-box-enlname").value,
+            faculty: document.getElementById("info-box-faculty").value,
+            department: document.getElementById("info-box-major").value,
+            user_name: document.getElementById("info-box-id").value,
+            birthday: "",
+            year: document.getElementById("year").value,
+            address: document.getElementById("info-box-address").value,
+            moo: document.getElementById("info-box-moo").value,
+            road: document.getElementById("info-box-subdistrict").value,
+            district: document.getElementById("info-box-district").value,
+            province: document.getElementById("info-box-state").value,
+            zip_code: document.getElementById("info-box-postcode").value,
+            email: document.getElementById("info-box-email").value,
+            phone_num: document.getElementById("info-box-phone").value,
+            advisor: document.getElementById("info-box-advisor").value,
+            userId: 0,
+            requirement: document.getElementById("requirement").value,
+            stage: "Pending",
+            courseCode: "",
+            courseName: "",
+            section: "",
+            courseTime: "",
+            courseUnit: "",
+            teacher: "",
+            note: document.getElementById("note").value,
+            semester: document.getElementById("semester").value,
+            type: "Resign"
+        }
+
+        console.log(formData);
+
+        fetch("http://localhost:8080/api/form", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Form submitted successfully.");
+                } else {
+                    throw new Error("Failed to submit form.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("เกิดข้อผิดพลาดในการส่งคำร้อง กรุณาลองใหม่อีกครั้ง");
+            });
+        return;
+    }
+    else if (document.getElementById("requestForm")) {
+        const formData = {
+            th_name: document.getElementById("info-box-thname").value + " " + document.getElementById("info-box-thlname").value,
+            eng_name: document.getElementById("info-box-enname").value + " " + document.getElementById("info-box-enlname").value,
+            faculty: document.getElementById("info-box-faculty").value,
+            department: document.getElementById("info-box-major").value,
+            user_name: document.getElementById("info-box-id").value,
+            birthday: "",
+            year: document.getElementById("info-box-year").value,
+            address: document.getElementById("info-box-address").value,
+            moo: document.getElementById("info-box-moo").value,
+            road: document.getElementById("info-box-subdistrict").value,
+            district: document.getElementById("info-box-district").value,
+            province: document.getElementById("info-box-state").value,
+            zip_code: document.getElementById("info-box-postcode").value,
+            email: document.getElementById("info-box-email").value,
+            phone_num: document.getElementById("info-box-phone").value,
+            advisor: document.getElementById("info-box-advisor").value,
+            userId: 0,
+            requirement: document.getElementById("requirement").value,
+            stage: "Pending",
+            courseCode: document.getElementById("courseCode").value,
+            courseName: document.getElementById("courseName").value,
+            section: document.getElementById("section").value,
+            courseTime: document.getElementById("time").value,
+            courseUnit: document.getElementById("courseUnit").value,
+            teacher: document.getElementById("teacher").value,
+            note: document.getElementById("note").value,
+            semester: "",
+            type: "Request"
+        }
+
+        console.log(formData);
+
+        fetch("http://localhost:8080/api/form", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Form submitted successfully.");
+                } else {
+                    throw new Error("Failed to submit form.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("เกิดข้อผิดพลาดในการส่งคำร้อง กรุณาลองใหม่อีกครั้ง");
+            });
+        return;
+    }
+}
 /*******************************
         Save Profile Button
  *******************************/
-        function SaveProfile() {
-            openSaveModal(); // Open the modal when the "ยกเลิก" button is clicked
-        }
-        
-        function createSaveModal() {
-            const modalHtml = `
-                <div id="SaveModal" class="modal">
-                    <div class="modal-content">
-                        <h2>บันทึกโปรไฟล์</h2>
-                        <p>ท่านต้องการบันทึกข้อมูล ใช่หรือไม่</p>
-                        <button class="cancel-btn" onclick="closeSaveModal()">ยกเลิก</button>
-                        <button class="confirm-btn" onclick="confirmSave()">บันทึก</button>
-                    </div>
+    function SaveProfile() {
+        openSaveModal(); // Open the modal when the "ยกเลิก" button is clicked
+    }
+
+    function createSaveModal() {
+        const modalHtml = `
+            <div id="SaveModal" class="modal">
+                <div class="modal-content">
+                    <h2>บันทึกโปรไฟล์</h2>
+                    <p>ท่านต้องการบันทึกข้อมูล ใช่หรือไม่</p>
+                    <button class="cancel-btn" onclick="closeSaveModal()">ยกเลิก</button>
+                    <button class="confirm-btn" onclick="confirmSave()">บันทึก</button>
                 </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', modalHtml);
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+    }
+
+    function openSaveModal() {
+        const modal = document.getElementById("SaveModal");
+        if (!modal) {
+            createSaveModal(); // Create the modal if it doesn’t exist
         }
-        
-        function openSaveModal() {
-            const modal = document.getElementById("SaveModal");
-            if (!modal) {
-                createSaveModal(); // Create the modal if it doesn’t exist
-            }
-            document.getElementById("SaveModal").style.display = "flex";
+        document.getElementById("SaveModal").style.display = "flex";
+    }
+
+    function closeSaveModal() {
+        const modal = document.getElementById("SaveModal");
+        if (modal) {
+            modal.style.display = "none";
         }
-        
-        function closeSaveModal() {
-            const modal = document.getElementById("SaveModal");
-            if (modal) {
-                modal.style.display = "none";
-            }
+    }
+
+    function confirmSave() {
+        updateProfile()
+        const modal = document.getElementById("SaveModal");
+        if (modal) {
+            modal.style.display = "none";
         }
-        
-        function confirmSave() {
-            updateProfile()
-            const modal = document.getElementById("SaveModal");
-            if (modal) {
-                modal.style.display = "none";
-            }
-            console.log("Profile updated...");
-        }
+        console.log("Profile updated...");
+    }
