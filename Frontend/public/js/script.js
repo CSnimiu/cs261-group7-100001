@@ -278,9 +278,7 @@ function saveProfile() {
         })
         .then(updatedUser => {
             console.log("Profile updated successfully:", updatedUser);
-            // เรียกข้อมูลล่าสุดมาแสดงผล
-            fetchProfile(updatedData.user_name);
-            alert("ข้อมูลได้รับการบันทึกสำเร็จ!");
+            fetchProfile(updatedData.user_name); // Load updated profile
         })
         .catch(error => {
             console.error("Error updating profile:", error);
@@ -305,7 +303,7 @@ function fetchProfile(user_name) {
         });
 }
 
-// Event Listener: ตรวจสอบผู้ใช้งานและโหลดข้อมูลโปรไฟล์เมื่อเปิดหน้า
+// Ensure the event listener is added only once
 document.addEventListener('DOMContentLoaded', () => {
     const user = JSON.parse(localStorage.getItem('user'));
     const currentPath = window.location.pathname;
@@ -318,13 +316,12 @@ document.addEventListener('DOMContentLoaded', () => {
         createPendingModal();
     }
     if (currentPath.includes('professorMain.html')) {
-        createProfessorModal()
+        createProfessorModal();
     }
-    
 
     if (currentPath.includes('profile.html')) {
-        fetchProfile(user.user_name); // โหลดข้อมูลโปรไฟล์
-        document.getElementById("save-profile").addEventListener("click", saveProfile); // ผูกฟังก์ชันบันทึกข้อมูลกับปุ่ม
+        fetchProfile(user.user_name); // Load profile data
+        document.getElementById("save-profile").addEventListener("click", confirmSaveProfile); // Attach the event listener
     }
 });
 

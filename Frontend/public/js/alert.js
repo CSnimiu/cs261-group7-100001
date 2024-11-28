@@ -119,6 +119,14 @@ function send() {
         text: 'ท่านต้องการยื่นคำร้องใช่หรือไม่?',
         btnTextL: 'ยกเลิก',
         btnTextR: 'ยืนยัน',
+        onConfirm: () => {
+            sendFormData();  // Call sendFormData() only when the user confirms
+            alert("Form submitted successfully!");
+            console.log("Form submission confirmed");
+        },
+        onCancel: () => {
+            console.log('Submission cancelled'); // Log if the user cancels
+        }
     });
 }
 function save() {
@@ -128,13 +136,28 @@ function save() {
         btnTextL: 'ยกเลิก',
         btnTextR: 'ยืนยัน',
         onConfirm: () => {
-            //////
-            saveDraft();
-            alert("Form saved successfully!");
-            console.log("save draft");
+            sendFormDraftData(); // Call sendFormDraftData() only when the user confirms
+            alert("Draft saved successfully!");
+            console.log("Draft save confirmed");
         },
         onCancel: () => {
-            console.log('Cancelled save draft');            //check if function working
+            console.log('Draft save cancelled'); // Log if the user cancels
+        }
+    });
+}
+
+function confirmSaveProfile() {
+    ava({
+        icon: 'save', // Use the appropriate icon based on your ava logic
+        text: 'ท่านต้องการบันทึกข้อมูลโปรไฟล์ใช่หรือไม่?',
+        btnTextL: 'ยกเลิก',  // Cancel button text
+        btnTextR: 'ยืนยัน',  // Confirm button text
+        onConfirm: () => {
+            alert("ข้อมูลได้รับการบันทึกสำเร็จ!");
+            saveProfile();  // Call the original saveProfile function after confirmation
+        },
+        onCancel: () => {
+            console.log('Profile save canceled'); // Optional: log or handle cancellation
         }
     });
 }

@@ -107,6 +107,11 @@ nav ul li:hover {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.content-header:first-child + .content-header {
+    margin-top: -100px;
 }
 
 #req-text{
