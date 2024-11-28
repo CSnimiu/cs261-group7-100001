@@ -320,6 +320,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentPath.includes('main.html')) {
         createPendingModal();
     }
+    if (currentPath.includes('professorMain.html')) {
+        createProfessorModal()
+    }
+    
 
     if (currentPath.includes('profile.html')) {
         fetchProfile(user.user_name); // โหลดข้อมูลโปรไฟล์
@@ -420,6 +424,64 @@ function validateForm() {
     });
 
     return isValid;
+}
+
+function createProfessorModal() {
+    fetch('http://localhost:8080/api/form', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            const user = JSON.parse(localStorage.getItem('user'));
+            for (let i in data) {
+                const dataI = data[i];
+                if (dataI.advisor != user.username) { continue; }
+                console.log(dataI.stage);
+                if (dataI.stage === "Draft") { continue; }
+                if (dataI.type === "Request") {
+                    dataI.type = dataI.requirement;
+                }
+                if (dataI.requirement === "จดทะเบียนล่าช้า/เพิ่มล่าช้า") {
+                    const modalHtml = `
+                        <div class="row req-status-menu-container" id="pending-status-menu-container">
+                            <div class="req-menu">
+                                <h4 id="pending-status-name">${dataI.type}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                            </div>
+                        </div>
+                        `;
+                    document.getElementById("จดทะเบียนล่าช้า/เพิ่มล่าช้า").insertAdjacentHTML('afterend', modalHtml);
+                }
+                else if (dataI.requirement === "ขอจดทะเบียนศึกษารายวิชาข้ามหลักสูตร") {
+                    const modalHtml = `
+                        <div class="row req-status-menu-container" id="pending-status-menu-container">
+                            <div class="req-menu">
+                                <h4 id="pending-status-name">${dataI.type}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                            </div>
+                        </div>
+                        `;
+                    document.getElementById("ขอจดทะเบียนศึกษารายวิชาข้ามหลักสูตร").insertAdjacentHTML('afterend', modalHtml);
+                }
+                else if (dataI.requirement === "ขอถอนรายวิชา") {
+                    const modalHtml = `
+                        <div class="row req-status-menu-container" id="pending-status-menu-container">
+                            <div class="req-menu">
+                                <h4 id="pending-status-name">${dataI.type}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                            </div>
+                        </div>
+                        `;
+                    document.getElementById("ขอถอนรายวิชา").insertAdjacentHTML('afterend', modalHtml);
+                }
+            }
+        })
+
 }
 
 function createPendingModal() {
