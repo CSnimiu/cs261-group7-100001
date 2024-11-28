@@ -35,11 +35,11 @@
         <div class="row" id="req-menu-container">
             <div class="req-menu">
                 <h4>คำร้องขอเพิ่ม-ถอนรายวิชา <br>หรือจดทะเบียนเรียนข้ามหลักสูตร</h4>
-                <div class="create-req" onclick="location.href='./html-form/draft.html'"><i class="bi bi-plus-circle"></i><h4>สร้างคำร้อง</h4></div>
+                <div class="create-req" onclick="localStorage.setItem('currentDraft', ''); location.href='./html-form/draft.html'"><i class="bi bi-plus-circle"></i><h4>สร้างคำร้อง</h4></div>
             </div>
             <div class="req-menu">
                 <h4>คำร้องขอลาออก</h4>
-                <div class="create-req" onclick="location.href='./html-form/resign.html'"><i class="bi bi-plus-circle"></i><h4>สร้างคำร้อง</h4></div>
+                <div class="create-req" onclick="localStorage.setItem('currentDraft', ''); location.href='./html-form/resign.html'"><i class="bi bi-plus-circle"></i><h4>สร้างคำร้อง</h4></div>
             </div>
             <!--
             <div class="req-menu">
@@ -50,7 +50,7 @@
         </div>
     </section>
     <section class="status-req">
-        <div class="content-header">
+        <div class="content-header" id="draft">
             <div class="row" id="req-text">
                 <H4>สถานะคำร้อง</H4>
             </div>
@@ -65,14 +65,8 @@
                 <div class="sm-line"></div>
             </div>
         </div>
-        <div class="row req-status-menu-container" id="draft-status-menu-container">
-            <div class="req-menu">
-                <h4 id="draft-status-name">คำร้องขอเพิ่ม-ถอน รายวิชา</h4>
-                <h4 class="req-status-date" id="draft-status-date">07/11/2567</h4>
-            </div>
-        </div>
 
-        <div class="content-header">
+        <div class="content-header" id="approve">
             <div class="row" id="status-text">
                 <H4>อนุมัติ</H4>
                 <i class="bi bi-check2-square"></i>
@@ -88,25 +82,13 @@
             </div>
         </div>
 
-        <div class="content-header">
+        <div class="content-header" id="pending">
             <div class="row" id="status-text">
                 <H4>รอดำเนินการ</H4>
                 <i class="bi bi-clock"></i>
             </div>
             <div class="row" id="req-sm-line">
                 <div class="sm-line"></div>
-            </div>
-        </div>
-        <div class="row req-status-menu-container" id="pending-status-menu-container">
-            <div class="req-menu">
-                <h4 id="pending-status-name">คำร้องขอเพิ่ม-ถอน รายวิชา</h4>
-                <h4 class="req-status-date" id="pending-status-date">30/10/2567</h4>
-            </div>
-        </div>
-        <div class="row req-status-menu-container" id="pending-status-menu-container">
-            <div class="req-menu">
-                <h4 id="pending-status-name">คำร้องทั่วไป</h4>
-                <h4 class="req-status-date" id="pending-status-date">02/11/2567</h4>
             </div>
         </div>
 

@@ -6,6 +6,11 @@
     font-size: 18px;
 }
 
+/***********hide eye in ms edge***********/
+input[type="password"]::-ms-reveal {
+    display: none; /* Hides the default password reveal button in Edge */
+}
+
 /***********navigation bar***********/
 nav {
     position: fixed;

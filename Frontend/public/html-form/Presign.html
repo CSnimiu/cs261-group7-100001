@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    <!-- <script src="../js/script.js" defer></script> -->
+    <title>Form</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav">
+            <li class="nav"><a href="../professormain.html"><i class="bi bi-arrow-left"></i>ย้อนกลับ</a></li>
+        </ul>
+    </nav>
+
+    <!-- --------------------------------------------------------สำหรับให้อาจารย์อนุมัติหรือปฏิเสธ------------------------------------------------------ -->
+    
+    <form id="resignForm">
+    <div class="container">
+        <h1>คำร้องขอลาออก</h1>
+        <h2>คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
+        <div class="red-line"></div>
+
+        <!-- Personal Information -->
+        <div class="form-section">
+            <label>ชื่อ</label>
+            <label>นามสกุล</label>
+            <input type="text" placeholder="ชื่อ">
+            <input type="text" placeholder="นามสกุล">
+
+            <label>First Name</label>
+            <label>Last Name</label>
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Last Name">
+            
+            <label>คณะ</label>
+            <label>สาขาวิชา</label>
+            <input type="text" placeholder="Faculty">
+            <input type="text" placeholder="Major">
+
+            <label>ชั้นปีที่</label>
+            <label>รหัสนักศึกษา</label>
+            <input type="number" placeholder="Year">
+            <input type="number" placeholder="Student ID">
+        </div>
+
+        <div class="just-space"></div>
+
+        <h3>ข้อมูลที่อยู่ (ที่อยู่ปัจจุบัน)</h3>
+        <div class="red-line"></div>
+
+        <!-- Address Information -->
+        <div class="form-section">
+            <label>ที่อยู่ปัจจุบัน (เลขที่, หมู่บ้าน)</label>
+            <label>หมู่ที่</label>
+            <input type="text" placeholder="Address">
+            <input type="number" placeholder="Village No.">
+
+            <label>ถนน, แขวง/ตำบล</label>
+            <label>เขต/อำเภอ</label>
+            <input type="text" placeholder="Road, Subdistrict">
+            <input type="text" placeholder="District">
+
+            <label>จังหวัด</label>
+            <label>รหัสไปรษณีย์</label>
+            <input type="text" placeholder="Province">
+            <input type="number" placeholder="Postal Code">
+        </div>
+
+        <div class="just-space"></div>
+
+        <h3>ข้อมูลสำหรับติดต่อและอื่นๆ</h3>
+        <div class="red-line"></div>
+
+        <!-- Contact Information -->
+        <div class="form-section">
+            <label>เบอร์โทรศัพท์</label>
+            <label>Email</label>
+            <input type="number" placeholder="Phone Number">
+            <input type="email" placeholder="Email">
+
+            <label>อาจารย์ที่ปรึกษา</label>
+            <br>
+            <input type="text" placeholder="Advisor Name">
+        </div>
+
+        <div class="just-space"></div>
+
+            <h3>แสดงความคิดเห็น</h3>
+            <div class="red-line"></div>
+            <div class="form-section">
+                <textarea placeholder="Professor comment"></textarea>
+            </div>
+
+        <div class="just-space"></div>
+
+        <h3>คำร้อง</h3>
+        <div class="red-line"></div>
+ 
+        <!-- Resignation Reason Section -->
+        <h3>มีความประสงค์จะยื่นคำร้องขอลาออก</h3>
+        <div class="reason-section">
+        <p>ในภาคเรียนที่ <input type="text" name="semester" placeholder="ภาคเรียน"> 
+        ปีการศึกษา <input type="text" name="academicYear" placeholder="ปีการศึกษา"></p>
+        </div>
+
+        <div class="reason-section">
+            <!-- Label and first row -->
+            <div class="reason-container">
+                <!-- First row -->
+                <div class="reason-row">
+                    <label class="why">เหตุผล เพราะ</label>
+                    <input type="radio" id="continueThammasat" name="reason" value="thammasat">
+                    <label class="continue" for="continueThammasat">ศึกษาต่อที่ ม.ธรรมศาสตร์ คณะ</label>
+                    <input class="optional-faculty" type="text" name="thammasatFaculty" placeholder="คณะ (ถ้ามี)">
+                </div>
+                <!-- Second row -->
+                <div class="reason-row">
+                    <input type="radio" id="otherUniversity" name="reason" value="otherUniversity">
+                    <label class="other-uni" for="otherUniversity">ศึกษาต่อที่มหาวิทยาลัยอื่น คือ มหาวิทยาลัย</label>
+                    <input type="text" id="otherUniversityInput" name="otherUniversityName" placeholder="มหาวิทยาลัย">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h3>กรณีลาออก</h3>
+            </div>
+            <div class="row row-input">
+                <div class="col first-option">
+                    <label>1. มีหนี้ค้างกับ มธ./หน่วยงานภายใน มธ. หรือไม่ ถ้ามีโปรดระบุ</label>
+                    <input type="text" name="debtDetails" placeholder="รายละเอียดหนี้ (ถ้ามี)">
+                </div>
+                <div class="col second-option">
+                    <label>2. ต้องการเกรดในภาคเรียนที่ยื่นคำร้องลาออกหรือไม่*</label>
+                    <div class="second-option-input">
+                        <input type="radio" id="gradesYes" name="gradeRequest" value="yes">
+                        <label for="gradesYes">ต้องการ</label>
+                        <input type="radio" id="gradesNo" name="gradeRequest" value="no">
+                        <label for="gradesNo">ไม่ต้องการ</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-row">
+            <!-- Buttons -->
+            <div class="button-group resign-button">
+                <button type="button" onclick="Cancel()" class="btn cancel">ยกเลิก</button>
+                <button type="button" onclick="" class="btn deny">ปฎิเสธ</button>
+                <button type="button" onclick="" class="btn approve">อนุมัติ</button>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
