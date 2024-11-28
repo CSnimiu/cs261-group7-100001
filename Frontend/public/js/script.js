@@ -469,11 +469,45 @@ function sendFormData() {
         return;
     }
 
-    const formData = new FormData(formElement);
+    const formData = {
+        th_name: document.getElementById("info-box-thname").value + " " + document.getElementById("info-box-thlname").value,
+        eng_name: document.getElementById("info-box-enname").value + " " + document.getElementById("info-box-enlname").value,
+        faculty: document.getElementById("info-box-faculty").value,
+        department: document.getElementById("info-box-major").value,
+        user_name: document.getElementById("info-box-id").value,
+        birthday: "",
+        year: document.getElementById("info-box-year").value,
+        address: document.getElementById("info-box-address").value,
+        moo: document.getElementById("info-box-moo").value,
+        road: document.getElementById("info-box-subdistrict").value,
+        district: document.getElementById("info-box-district").value,
+        province: document.getElementById("info-box-state").value,
+        zip_code: document.getElementById("info-box-postcode").value,
+        email: document.getElementById("info-box-email").value,
+        phone_num: document.getElementById("info-box-phone").value,
+        advisor: document.getElementById("info-box-advisor").value,
+        userId: 0,
+        requirement: "",
+        stage: "",
+        courseCode: "",
+        courseName: "",
+        section: "",
+        courseTime: "",
+        courseUnit: "",
+        teacher: "",
+        note: "",
+        semester: "",
+        type: ""
+    }
+
+    console.log(formData);
 
     fetch("http://localhost:8080/api/form", {
         method: "POST",
-        body: formData,
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
     })
     .then(response => {
         if (response.ok) {

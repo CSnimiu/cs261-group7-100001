@@ -51,7 +51,8 @@ public class FormController {
             form.getCourseCode() == null || form.getCourseName() == null || form.getSection() == null ||
             form.getCourseTime() == null || form.getCourseUnit() == null || form.getTeacher() == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Missing required form fields.");
-        }
+        }      
+
         
         Form createdForm = formRepository.save(form);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdForm);

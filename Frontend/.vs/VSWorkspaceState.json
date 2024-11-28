@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\public",
+    "\\public\\html-form",
     "\\public\\js"
   ],
-  "SelectedNode": "\\public\\profile.html",
+  "SelectedNode": "\\public\\html-form\\resign.html",
   "PreviewInSolutionExplorer": false
 }
