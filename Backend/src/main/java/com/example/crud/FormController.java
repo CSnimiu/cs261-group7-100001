@@ -1,9 +1,12 @@
 package com.example.crud;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/form")
@@ -23,20 +26,6 @@ public class FormController {
 			
 		return formRepository.findAll();
 	}
-	
-	@GetMapping
-	public List<Form> getAllForms(){
-		return formRepository.findAll();
-	}
-	
-	@PostMapping
-	 public Form createForm(@RequestBody Form form) {
-        if (form.getID() == -1) {
-            return formRepository.save(form);
-        } else {
-            return ResponseEntity.badRequest().body("Invalid key parameter.");
-        }
-    }
 
     // Get all forms
     @GetMapping
@@ -77,14 +66,6 @@ public class FormController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Form not found with ID: " + id);
         }
     }
-	
-	@PatchMapping("/{id},{stage}")
-	public Form patchForm(@PathVariable Long id ,@PathVariable String stage) {
-		Form target = formRepository.getReferenceById(id);
-		if (stage != null) target.setStage(stage);
-
-		return formRepository.save(target);
-	}
 	
 }
 

@@ -87,20 +87,20 @@ public class Form {
         this.stage = stage;
     }
 
-    public String getC_code() {
-        return c_code;
+    public String getCourseCode() {
+        return courseCode;
     }
 
-    public void setC_code(String c_code) {
-        this.c_code = c_code;
+    public void setCourseCode(String c_code) {
+        this.courseCode = c_code;
     }
 
-    public String getC_name() {
-        return c_name;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setC_name(String c_name) {
-        this.c_name = c_name;
+    public void setCourseName(String c_code) {
+        this.courseName = c_code;
     }
 
     public String getSection() {
@@ -111,12 +111,12 @@ public class Form {
         this.section = section;
     }
 
-    public String getTime() {
-        return time;
+    public String getCourseTime() {
+        return courseTime;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setCourseTime(String time) {
+        this.courseTime = time;
     }
 
     public String getCourseUnit() {
@@ -133,14 +133,6 @@ public class Form {
 
     public void setTeacher(String teacher) {
         this.teacher = teacher;
-    }
-
-    public String getReason() {
-        return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
     }
     
  // Getter and Setter for teacher
