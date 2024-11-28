@@ -18,6 +18,8 @@
             <li class="nav"><a href="../main.html"><i class="bi bi-arrow-left"></i>ย้อนกลับ</a></li>
         </ul>
     </nav>
+    <!-- ใส่ form ครอบทุกข้อมูลที่เกี่ยวกับการยื่นคำร้อง -->
+    <form id="resignForm">
     <div class="container">
         <h1>คำร้องขอลาออก</h1>
         <h2>คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
@@ -144,9 +146,9 @@
             </div>
             <!-- Buttons -->
             <div class="button-group">
-                <button onclick="save()" class="btn save">บันทึกแบบร่าง</button>
-                <button onclick="leave()" class="btn cancel">ยกเลิก</button>
-                <button onclick="Submit()" class="btn submit">ส่งคำร้อง</button>
+                <button type="button" onclick="Cancel()" class="btn cancel">ยกเลิก</button>
+                <button type="button" onclick="sendFormDraftData()" class="btn save">บันทึกแบบร่าง</button>
+                <button type="button" onclick="sendFormData()" class="btn submit">ส่งคำร้อง</button>
             </div>
         </div>
     </div>

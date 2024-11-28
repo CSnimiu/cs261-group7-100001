@@ -569,7 +569,61 @@ function confirmSubmit() {
 
 function sendFormDraftData() {
 
-    if (document.getElementById("requestForm")) {
+    if (document.getElementById("resignForm")) {
+        const formData = {
+            th_name: document.getElementById("info-box-thname").value + " " + document.getElementById("info-box-thlname").value,
+            eng_name: document.getElementById("info-box-enname").value + " " + document.getElementById("info-box-enlname").value,
+            faculty: document.getElementById("info-box-faculty").value,
+            department: document.getElementById("info-box-major").value,
+            user_name: document.getElementById("info-box-id").value,
+            birthday: "",
+            year: document.getElementById("year").value,
+            address: document.getElementById("info-box-address").value,
+            moo: document.getElementById("info-box-moo").value,
+            road: document.getElementById("info-box-subdistrict").value,
+            district: document.getElementById("info-box-district").value,
+            province: document.getElementById("info-box-state").value,
+            zip_code: document.getElementById("info-box-postcode").value,
+            email: document.getElementById("info-box-email").value,
+            phone_num: document.getElementById("info-box-phone").value,
+            advisor: document.getElementById("info-box-advisor").value,
+            userId: 0,
+            requirement: document.getElementById("requirement").value,
+            stage: "Draft",
+            courseCode: "",
+            courseName: "",
+            section: "",
+            courseTime: "",
+            courseUnit: "",
+            teacher: "",
+            note: document.getElementById("note").value,
+            semester: document.getElementById("semester").value,
+            type: "Resign"
+        }
+
+        console.log(formData);
+
+        fetch("http://localhost:8080/api/form", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Form submitted successfully.");
+                } else {
+                    throw new Error("Failed to submit form.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("เกิดข้อผิดพลาดในการส่งคำร้อง กรุณาลองใหม่อีกครั้ง");
+            });
+        return;
+    }
+    else if (document.getElementById("requestForm")) {
         const formData = {
             th_name: document.getElementById("info-box-thname").value + " " + document.getElementById("info-box-thlname").value,
             eng_name: document.getElementById("info-box-enname").value + " " + document.getElementById("info-box-enlname").value,
