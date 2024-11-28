@@ -131,7 +131,7 @@ function save() {
             //////
             saveDraft();
             alert("Form saved successfully!");
-            console.log("save darft");
+            console.log("save draft");
         },
         onCancel: () => {
             console.log('Cancelled save draft');            //check if function working

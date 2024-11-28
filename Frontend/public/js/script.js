@@ -96,9 +96,9 @@ function authenticateWithAPI(userName, password, checkDiv) {
 *******************************/
 function redirectUser(userType) {
    if (userType === 'student') {
-       window.location.href = 'studentMain.html';
+       window.location.href = 'main.html';
    } else if (userType === 'professor') {
-       window.location.href = 'professorMain.html';
+       window.location.href = 'professormain.html';
    } else {
        console.error('ประเภทผู้ใช้ไม่ถูกต้อง:', userType);
    }

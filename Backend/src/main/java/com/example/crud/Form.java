@@ -6,9 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
-@Table(name = "forms")
+@Table(name="forms")
 public class Form {
 
 	@Id
@@ -65,7 +67,6 @@ public class Form {
         this.purpose = purpose;
     }
 
-
     public String getStage() {
         return stage;
     }
@@ -73,7 +74,6 @@ public class Form {
     public void setStage(String stage) {
         this.stage = stage;
     }
-
 
     public String getC_code() {
         return c_code;
@@ -91,7 +91,6 @@ public class Form {
         this.c_name = c_name;
     }
 
-
     public String getSection() {
         return section;
     }
@@ -99,7 +98,6 @@ public class Form {
     public void setSection(String section) {
         this.section = section;
     }
-
 
     public String getTime() {
         return time;
@@ -125,7 +123,6 @@ public class Form {
         this.teacher = teacher;
     }
 
-
     public String getReason() {
         return reason;
     }
@@ -134,4 +131,3 @@ public class Form {
         this.reason = reason;
     }
 }
-
