@@ -317,6 +317,10 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'login.html';
     }
 
+    if (currentPath.includes('main.html')) {
+        createPendingModal();
+    }
+
     if (currentPath.includes('profile.html')) {
         fetchProfile(user.user_name); // โหลดข้อมูลโปรไฟล์
         document.getElementById("save-profile").addEventListener("click", saveProfile); // ผูกฟังก์ชันบันทึกข้อมูลกับปุ่ม
@@ -416,6 +420,19 @@ function validateForm() {
     });
 
     return isValid;
+}
+
+function createPendingModal() {
+    
+    const modalHtml = `
+    <div class="row req-status-menu-container" id="pending-status-menu-container">
+        <div class="req-menu">
+            <h4 id="pending-status-name">คำร้องขอเพิ่ม-ถอน รายวิชา</h4>
+            <h4 class="req-status-date" id="pending-status-date">3000000000000000000000/10/2567</h4>
+        </div>
+    </div>
+    `;
+    document.getElementById("pending").insertAdjacentHTML('afterend', modalHtml);
 }
 
 function createSubmitModal() {
