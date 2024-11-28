@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\html-form\\draft.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\html-form\\draft.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\html-form\\resign.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\html-form\\resign.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\profile.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\profile.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\main.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\main.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\alert.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\js\\alert.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\dartf.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\js\\dartf.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\resign.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\js\\resign.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\profile.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\profile.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +42,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "alert.js",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\alert.js",
+              "RelativeDocumentMoniker": "public\\js\\alert.js",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\alert.js",
+              "RelativeToolTip": "public\\js\\alert.js",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-28T07:19:55.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dartf.js",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\dartf.js",
+              "RelativeDocumentMoniker": "public\\js\\dartf.js",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\dartf.js",
+              "RelativeToolTip": "public\\js\\dartf.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-28T07:19:53.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "resign.js",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\resign.js",
+              "RelativeDocumentMoniker": "public\\js\\resign.js",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\resign.js",
+              "RelativeToolTip": "public\\js\\resign.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-28T07:19:52.055Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -36,9 +91,22 @@
               "RelativeDocumentMoniker": "public\\main.html",
               "ToolTip": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\main.html",
               "RelativeToolTip": "public\\main.html",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAFEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-11-21T09:49:43.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "draft.html",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\html-form\\draft.html",
+              "RelativeDocumentMoniker": "public\\html-form\\draft.html",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\html-form\\draft.html",
+              "RelativeToolTip": "public\\html-form\\draft.html",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-28T07:41:43.398Z",
               "EditorCaption": ""
             },
             {
@@ -49,27 +117,27 @@
               "RelativeDocumentMoniker": "public\\html-form\\resign.html",
               "ToolTip": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\html-form\\resign.html",
               "RelativeToolTip": "public\\html-form\\resign.html",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAAAJgAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAAI0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-11-28T03:32:45.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "script.js",
               "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\script.js",
               "RelativeDocumentMoniker": "public\\js\\script.js",
               "ToolTip": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\js\\script.js",
               "RelativeToolTip": "public\\js\\script.js",
-              "ViewState": "AgIAANMBAAAAAAAAAAAgwPIBAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAC8CAAAAAAAAAAAswEgCAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-11-21T07:54:34.578Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "profile.html",
               "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Desktop\\CS261\\cs261-group7-100001\\Frontend\\public\\profile.html",
               "RelativeDocumentMoniker": "public\\profile.html",
@@ -77,8 +145,7 @@
               "RelativeToolTip": "public\\profile.html",
               "ViewState": "AgIAAH0AAAAAAAAAAAAAAJUAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-11-21T07:54:02.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T07:54:02.202Z"
             }
           ]
         }

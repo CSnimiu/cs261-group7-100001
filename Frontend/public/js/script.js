@@ -423,16 +423,43 @@ function validateForm() {
 }
 
 function createPendingModal() {
+    fetch('http://localhost:8080/api/form', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            for (let i in data) {
+                const dataI = data[i];
+                if (dataI.stage === "Pending") {
+                    const modalHtml = `
+                        <div class="row req-status-menu-container" id="pending-status-menu-container">
+                            <div class="req-menu">
+                                <h4 id="pending-status-name">${dataI.type}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                            </div>
+                        </div>
+                        `;
+                    document.getElementById("pending").insertAdjacentHTML('afterend', modalHtml);
+                }
+                else if (dataI.stage === "Approve") {
+                    const modalHtml = `
+                        <div class="row req-status-menu-container" id="pending-status-menu-container">
+                            <div class="req-menu">
+                                <h4 id="pending-status-name">${dataI.type}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                            </div>
+                        </div>
+                        `;
+                    document.getElementById("approve").insertAdjacentHTML('afterend', modalHtml);
+                }
+            }
+        })
     
-    const modalHtml = `
-    <div class="row req-status-menu-container" id="pending-status-menu-container">
-        <div class="req-menu">
-            <h4 id="pending-status-name">คำร้องขอเพิ่ม-ถอน รายวิชา</h4>
-            <h4 class="req-status-date" id="pending-status-date">3000000000000000000000/10/2567</h4>
-        </div>
-    </div>
-    `;
-    document.getElementById("pending").insertAdjacentHTML('afterend', modalHtml);
 }
 
 function createSubmitModal() {
@@ -478,64 +505,113 @@ function confirmSubmit() {
 }
 
 function sendFormData() {
-    // ดึงข้อมูลจากฟอร์มด้วย id
-    const formElement = document.getElementById("resignForm");
 
-    if (!formElement) {
-        console.error("Form element not found.");
+    if (document.getElementById("resignForm")) {
+        const formData = {
+            th_name: document.getElementById("info-box-thname").value + " " + document.getElementById("info-box-thlname").value,
+            eng_name: document.getElementById("info-box-enname").value + " " + document.getElementById("info-box-enlname").value,
+            faculty: document.getElementById("info-box-faculty").value,
+            department: document.getElementById("info-box-major").value,
+            user_name: document.getElementById("info-box-id").value,
+            birthday: "",
+            year: document.getElementById("info-box-year").value,
+            address: document.getElementById("info-box-address").value,
+            moo: document.getElementById("info-box-moo").value,
+            road: document.getElementById("info-box-subdistrict").value,
+            district: document.getElementById("info-box-district").value,
+            province: document.getElementById("info-box-state").value,
+            zip_code: document.getElementById("info-box-postcode").value,
+            email: document.getElementById("info-box-email").value,
+            phone_num: document.getElementById("info-box-phone").value,
+            advisor: document.getElementById("info-box-advisor").value,
+            userId: 0,
+            requirement: "",
+            stage: "Pending",
+            courseCode: "",
+            courseName: "",
+            section: "",
+            courseTime: "",
+            courseUnit: "",
+            teacher: "",
+            note: "",
+            semester: "",
+            type: "Resign"
+        }
+
+        console.log(formData);
+
+        fetch("http://localhost:8080/api/form", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Form submitted successfully.");
+                } else {
+                    throw new Error("Failed to submit form.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("เกิดข้อผิดพลาดในการส่งคำร้อง กรุณาลองใหม่อีกครั้ง");
+            });
         return;
     }
-
-    const formData = {
-        th_name: document.getElementById("info-box-thname").value + " " + document.getElementById("info-box-thlname").value,
-        eng_name: document.getElementById("info-box-enname").value + " " + document.getElementById("info-box-enlname").value,
-        faculty: document.getElementById("info-box-faculty").value,
-        department: document.getElementById("info-box-major").value,
-        user_name: document.getElementById("info-box-id").value,
-        birthday: "",
-        year: document.getElementById("info-box-year").value,
-        address: document.getElementById("info-box-address").value,
-        moo: document.getElementById("info-box-moo").value,
-        road: document.getElementById("info-box-subdistrict").value,
-        district: document.getElementById("info-box-district").value,
-        province: document.getElementById("info-box-state").value,
-        zip_code: document.getElementById("info-box-postcode").value,
-        email: document.getElementById("info-box-email").value,
-        phone_num: document.getElementById("info-box-phone").value,
-        advisor: document.getElementById("info-box-advisor").value,
-        userId: 0,
-        requirement: "",
-        stage: "",
-        courseCode: "",
-        courseName: "",
-        section: "",
-        courseTime: "",
-        courseUnit: "",
-        teacher: "",
-        note: "",
-        semester: "",
-        type: ""
-    }
-
-    console.log(formData);
-
-    fetch("http://localhost:8080/api/form", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log("Form submitted successfully.");
-        } else {
-            throw new Error("Failed to submit form.");
+    else if (document.getElementById("requestForm")) {
+        const formData = {
+            th_name: document.getElementById("info-box-thname").value + " " + document.getElementById("info-box-thlname").value,
+            eng_name: document.getElementById("info-box-enname").value + " " + document.getElementById("info-box-enlname").value,
+            faculty: document.getElementById("info-box-faculty").value,
+            department: document.getElementById("info-box-major").value,
+            user_name: document.getElementById("info-box-id").value,
+            birthday: "",
+            year: document.getElementById("info-box-year").value,
+            address: document.getElementById("info-box-address").value,
+            moo: document.getElementById("info-box-moo").value,
+            road: document.getElementById("info-box-subdistrict").value,
+            district: document.getElementById("info-box-district").value,
+            province: document.getElementById("info-box-state").value,
+            zip_code: document.getElementById("info-box-postcode").value,
+            email: document.getElementById("info-box-email").value,
+            phone_num: document.getElementById("info-box-phone").value,
+            advisor: document.getElementById("info-box-advisor").value,
+            userId: 0,
+            requirement: "",
+            stage: "Pending",
+            courseCode: "",
+            courseName: "",
+            section: "",
+            courseTime: document.getElementById("time").value,
+            courseUnit: "",
+            teacher: "",
+            note: "",
+            semester: "",
+            type: "request"
         }
-    })
-    .catch(error => {
-        console.error("Error:", error);
-        alert("เกิดข้อผิดพลาดในการส่งคำร้อง กรุณาลองใหม่อีกครั้ง");
-    });
-}
 
+        console.log(formData);
+
+        fetch("http://localhost:8080/api/form", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Form submitted successfully.");
+                } else {
+                    throw new Error("Failed to submit form.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("เกิดข้อผิดพลาดในการส่งคำร้อง กรุณาลองใหม่อีกครั้ง");
+            });
+        return;
+    }
+}
