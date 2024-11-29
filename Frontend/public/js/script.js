@@ -312,11 +312,11 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'login.html';
     }
 
-    if (currentPath.includes('main.html')) {
-        createPendingModal(user.user_name);
-    }
-    if (currentPath.includes('professorMain.html')) {
+    
+    if (currentPath.includes('professormain.html')) {
         createProfessorModal();
+    } else if (currentPath.includes('main.html')) {
+        createPendingModal(user.user_name);
     }
 
     if (currentPath.includes('profile.html')) {
@@ -431,44 +431,45 @@ function createProfessorModal() {
             const user = JSON.parse(localStorage.getItem('user'));
             for (let i in data) {
                 const dataI = data[i];
-                if (dataI.advisor != user.username) { continue; }
+                if (dataI.advisor != user.user_name) { continue; }
                 console.log(dataI.stage);
                 if (dataI.stage === "Draft") { continue; }
                 if (dataI.type === "Request") {
                     dataI.type = dataI.requirement;
                 }
+                const formattedRequestTime = convertTimeFormat(dataI.courseTime);
                 if (dataI.requirement === "จดทะเบียนล่าช้า/เพิ่มล่าช้า") {
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
                             <div class="req-menu">
                                 <h4 id="pending-status-name">${dataI.type}</h4>
-                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
                         </div>
                         `;
-                    document.getElementById("จดทะเบียนล่าช้า/เพิ่มล่าช้า").insertAdjacentHTML('afterend', modalHtml);
+                    document.getElementById("req-item-late").insertAdjacentHTML('afterend', modalHtml);
                 }
                 else if (dataI.requirement === "ขอจดทะเบียนศึกษารายวิชาข้ามหลักสูตร") {
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
                             <div class="req-menu">
                                 <h4 id="pending-status-name">${dataI.type}</h4>
-                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
                         </div>
                         `;
-                    document.getElementById("ขอจดทะเบียนศึกษารายวิชาข้ามหลักสูตร").insertAdjacentHTML('afterend', modalHtml);
+                    document.getElementById("req-item-external").insertAdjacentHTML('afterend', modalHtml);
                 }
                 else if (dataI.requirement === "ขอถอนรายวิชา") {
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
                             <div class="req-menu">
-                                <h4 id="pending-status-name">${dataI.type}</h4>
-                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                                <h4 id="pending-status-name">ขอถอนรายวิชา</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
                         </div>
                         `;
-                    document.getElementById("ขอถอนรายวิชา").insertAdjacentHTML('afterend', modalHtml);
+                    document.getElementById("req-item-withdrawal").insertAdjacentHTML('afterend', modalHtml);
                 }
             }
         })
@@ -491,12 +492,13 @@ function createPendingModal(user_name) {
                 if (dataI.type === "Request") {
                     dataI.type = dataI.requirement;
                 }
+                const formattedRequestTime = convertTimeFormat(dataI.courseTime);
                 if (dataI.stage === "Pending") {                  
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
                             <div class="req-menu">
                                 <h4 id="pending-status-name">${dataI.type}</h4>
-                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
                         </div>
                         `;
@@ -507,7 +509,7 @@ function createPendingModal(user_name) {
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
                             <div class="req-menu">
                                 <h4 id="pending-status-name">${dataI.type}</h4>
-                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
                         </div>
                         `;
@@ -518,7 +520,7 @@ function createPendingModal(user_name) {
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
                             <div class="req-menu">
                                 <h4 id="pending-status-name">${dataI.type}</h4>
-                                <h4 class="req-status-date" id="pending-status-date">${dataI.courseTime}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
                         </div>
                         `;
@@ -567,6 +569,9 @@ function confirmSubmit() {
 function sendFormDraftData() {
 
     if (document.getElementById("resignForm")) {
+        const currentDate = new Date();
+        const formattedTime = currentDate.toISOString().slice(0, 16);
+        convertTimeFormat(currentTime);
         const formData = {
             th_name: document.getElementById("info-box-thname").value + " " + document.getElementById("info-box-thlname").value,
             eng_name: document.getElementById("info-box-enname").value + " " + document.getElementById("info-box-enlname").value,
@@ -590,7 +595,7 @@ function sendFormDraftData() {
             courseCode: "",
             courseName: "",
             section: "",
-            courseTime: "",
+            courseTime: formattedTime,
             courseUnit: "",
             teacher: "",
             note: document.getElementById("note").value,
@@ -678,6 +683,8 @@ function sendFormDraftData() {
 function sendFormData() {
 
     if (document.getElementById("resignForm")) {
+        const currentDate = new Date();
+        const formattedTime = currentDate.toISOString().slice(0, 16);
         const formData = {
             th_name: document.getElementById("info-box-thname").value + " " + document.getElementById("info-box-thlname").value,
             eng_name: document.getElementById("info-box-enname").value + " " + document.getElementById("info-box-enlname").value,
@@ -701,7 +708,7 @@ function sendFormData() {
             courseCode: "",
             courseName: "",
             section: "",
-            courseTime: "",
+            courseTime: formattedTime,
             courseUnit: "",
             teacher: "",
             note: document.getElementById("note").value,
@@ -829,4 +836,18 @@ function sendFormData() {
             modal.style.display = "none";
         }
         console.log("Profile updated...");
+    }
+
+    function convertTimeFormat(dateString) {
+        const date = new Date(dateString);
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        const year = date.getFullYear();
+        const month = months[date.getMonth()];
+        const day = date.getDate();
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+
+        const formattedDate = `${year} ${month} ${day} ${hours}:${minutes}`;
+        return formattedDate;
     }
