@@ -33,6 +33,13 @@ public class FormController {
         List<Form> forms = formRepository.findAll();
         return ResponseEntity.ok(forms);
     }
+    
+    // Get user forms
+    @GetMapping("/{user_name}")
+    public ResponseEntity<List<Form>> getForms(@PathVariable String user_name) {
+        List<Form> forms = formRepository.findByUserName(user_name);
+        return ResponseEntity.ok(forms);
+    }
 
     // Create a new form
     @PostMapping

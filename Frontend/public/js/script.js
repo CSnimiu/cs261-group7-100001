@@ -17,12 +17,12 @@ function togglePassword() {
  * ข้อมูล Mock สำหรับการพัฒนา
  *******************************/
 const mockStudents = [
-    { username: 'student', password: '123456', type: 'student' },
+    { user_name: '6609012345', username: 'student', password: '123456', type: 'student' },
 ];
 
 const mockProfessors = [
-    { username: 'professor1', password: '123456', type: 'professor' },
-    { username: 'professor2', password: '123456', type: 'professor' },
+    { user_name: 'professor1', password: '123456', type: 'professor' },
+    { user_name: 'professor2', password: '123456', type: 'professor' },
 ];
 
 
@@ -41,7 +41,7 @@ function submitLogin() {
 
    // ตรวจสอบ Mock Data ก่อน
    const validUser = mockStudents.find(user => user.username === userName && user.password === password)
-       || mockProfessors.find(user => user.username === userName && user.password === password);
+       || mockProfessors.find(user => user.user_name === userName && user.password === password);
 
    if (validUser) {
        console.log('Login Successful with Mock Data:', validUser);
@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (currentPath.includes('main.html')) {
-        createPendingModal();
+        createPendingModal(user.user_name);
     }
     if (currentPath.includes('professorMain.html')) {
         createProfessorModal();
@@ -475,8 +475,8 @@ function createProfessorModal() {
 
 }
 
-function createPendingModal() {
-    fetch('http://localhost:8080/api/form', {
+function createPendingModal(user_name) {
+    fetch(`http://localhost:8080/api/form/${user_name}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

@@ -198,7 +198,7 @@ public class Form {
     @Column(name = "advisor", nullable = true, columnDefinition = "NVARCHAR(255)")
     private String advisor;
 
-    @Column(name = "user_name", nullable = false, unique = true)
+    @Column(name = "user_name", nullable = false)
     private String user_name;
 	
 	// Getters and Setters

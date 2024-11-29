@@ -64,6 +64,33 @@ public class User {
     @Column(name = "user_name", nullable = false, unique = true)
     private String user_name;
 	
+ // Constructor
+    public User() {}
+    
+    public User(String th_name, String eng_name, String birthday, String email,
+                      String faculty, String department, String type, String year,
+                      String address, String moo, String road, String district,
+                      String province, String zip_code, String phone_num, String advisor,
+                      String user_name) {
+        this.th_name = th_name;
+        this.eng_name = eng_name;
+        this.birthday = birthday;
+        this.email = email;
+        this.faculty = faculty;
+        this.department = department;
+        this.type = type;
+        this.year = year;
+        this.address = address;
+        this.moo = moo;
+        this.road = road;
+        this.district = district;
+        this.province = province;
+        this.zip_code = zip_code;
+        this.phone_num = phone_num;
+        this.advisor = advisor;
+        this.user_name = user_name;
+    }
+    
 	// Getters and Setters
 
     public Long getId() {
