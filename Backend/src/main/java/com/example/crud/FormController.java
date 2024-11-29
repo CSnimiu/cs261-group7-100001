@@ -26,6 +26,23 @@ public class FormController {
 			
 		return formRepository.findAll();
 	}
+	
+	@DeleteMapping("/{id}")
+    public ResponseEntity<Void> delDraft(@PathVariable long id) {
+        Optional<Form> formToDelete = formRepository.findById(id);
+        
+        if (formToDelete.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        Form form = formToDelete.get();
+        if (!"Draft".equals(form.getStage())) {
+            return ResponseEntity.badRequest().build();
+        }
+        formRepository.deleteById(id);
+        
+        return ResponseEntity.ok().build();
+    }
 
     // Get all forms
     @GetMapping

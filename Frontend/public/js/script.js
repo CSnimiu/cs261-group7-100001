@@ -537,7 +537,7 @@ function createPendingModal(user_name) {
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
                             <div class="req-menu" onclick="loadRequest(${dataI.id})">
                                 <h4 id="pending-status-name">${dataI.type}</h4>
-                                <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
+                                <i class="bi bi-trash req-status-date" onclick="deleteDraft(${dataI.id});"></i>
                             </div>
                         </div>
                         `;
@@ -865,6 +865,18 @@ function sendFormData() {
             modal.style.display = "none";
         }
         console.log("Profile updated...");
+    }
+
+    function deleteDraft(reqID) {
+        fetch(`http://localhost:8080/api/form/${reqID}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(() => {
+            window.location.href = 'main.html';
+        })
     }
 
     function convertTimeFormat(dateString) {
