@@ -4,10 +4,10 @@
 Currently, this repository has 2 branches: *`'main' (Default)`*, *`'profile'`*  
 
 **--> Current completed task (project status):**
-- Login system that calls the TU API to verify identity + Logout
+- Login system that calls the TU API to verify identity (Professor use Mock) + Logout
 - Home page
 - Profile page
-- Form pages (in progress)
+- Form pages 
   
 ### **Navigation:**  
 [Branch Structure](#branch-structure "Branch information")  
