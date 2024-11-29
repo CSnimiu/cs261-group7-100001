@@ -464,7 +464,7 @@ function createProfessorModal() {
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
                             <div class="req-menu">
-                                <h4 id="pending-status-name">ขอถอนรายวิชา</h4>
+                                <h4 id="pending-status-name">${dataI.type}</h4>
                                 <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
                         </div>
@@ -491,6 +491,9 @@ function createPendingModal(user_name) {
                 const dataI = data[i];
                 if (dataI.type === "Request") {
                     dataI.type = dataI.requirement;
+                }
+                if (dataI.type === "Resign") {
+                    dataI.type = "ขอลาออก";
                 }
                 const formattedRequestTime = convertTimeFormat(dataI.courseTime);
                 if (dataI.stage === "Pending") {                  
