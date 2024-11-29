@@ -36,12 +36,12 @@ You can install the ~~latest version~~ *Default branch (main)* of this project b
 >`git clone https://github.com/CSnimiu/cs261-group7-100001`  
 
 To download ***only this*** sub-branch, please use the command:
->`git clone -b profile https://github.com/CSnimiu/cs261-group7-100001` 
+>`git clone -b main https://github.com/CSnimiu/cs261-group7-100001` 
 
 or select the download option via **Code > Download Zip** and then extract the zip file to access the working folder.  
   
 **If you already have this project branch on your device**, you can use the command to grab the updated version of the project using the command:  
->`git pull origin profile`  
+>`git pull origin main`  
 
 
 ## Install and Running server
