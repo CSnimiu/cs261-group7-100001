@@ -375,6 +375,15 @@ input#otherUniversity{
     cursor: pointer;
 }
 
+.modal-content .abort-btn {
+    background-color: #9e9e9e;
+    color: #ffffff;
+}
+
+.modal-content .abort-btn:hover {
+    background-color: #949494;
+}
+
 .modal-content .cancel-btn {
     background-color: #D41616;
     color: #ffffff;

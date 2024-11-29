@@ -52,6 +52,15 @@ public class Form {
     @Column(name = "year", nullable = true)
     private String year;
 
+    @Column(name = "embark", nullable = true)
+    private String embark;
+    
+    @Column(name = "debt", nullable = true, columnDefinition = "NVARCHAR(255)")
+    private String debt;
+    
+    @Column(name = "statement", nullable = true)
+    private String statement;
+    
     // Getter and Setter for id
     public Long getId() {
         return id;
@@ -151,6 +160,30 @@ public class Form {
 
     public void setYear(String year) {
         this.year = year;
+    }
+    
+    public String getEmbark() {
+        return embark;
+    }
+
+    public void setEmbark(String embark) {
+        this.embark = embark;
+    }
+    
+    public String getDebt() {
+        return debt;
+    }
+
+    public void setDebt(String debt) {
+        this.debt = debt;
+    }
+    
+    public String getStatement() {
+        return statement;
+    }
+
+    public void setStatement(String statement) {
+        this.statement = statement;
     }
     
     @Column(name = "th_name", nullable = false, columnDefinition = "NVARCHAR(255)")

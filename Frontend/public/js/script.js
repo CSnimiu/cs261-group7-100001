@@ -239,6 +239,19 @@ function fetchProfile(user_name) {
         });
 }
 
+function getRequestData(req_id) {
+    fetch(`http://localhost:8080/api/form/id/${req_id}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        localStorage.setItem('activeform', JSON.stringify(data));
+    })
+}
+
 
 /*******************************
  * บันทึกข้อมูลที่แก้ไขลงใน Database
@@ -434,6 +447,7 @@ function createProfessorModal() {
                 if (dataI.advisor != user.user_name) { continue; }
                 console.log(dataI.stage);
                 if (dataI.stage === "Draft") { continue; }
+                if (dataI.stage != "Pending" && user.type === "professor") { continue; }
                 if (dataI.type === "Request") {
                     dataI.type = dataI.requirement;
                 }
@@ -441,7 +455,7 @@ function createProfessorModal() {
                 if (dataI.requirement === "จดทะเบียนล่าช้า/เพิ่มล่าช้า") {
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
-                            <div class="req-menu">
+                            <div class="req-menu" onclick="loadRequest(${dataI.id})">
                                 <h4 id="pending-status-name">${dataI.type}</h4>
                                 <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
@@ -452,7 +466,7 @@ function createProfessorModal() {
                 else if (dataI.requirement === "ขอจดทะเบียนศึกษารายวิชาข้ามหลักสูตร") {
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
-                            <div class="req-menu">
+                            <div class="req-menu" onclick="loadRequest(${dataI.id})">
                                 <h4 id="pending-status-name">${dataI.type}</h4>
                                 <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
@@ -463,7 +477,7 @@ function createProfessorModal() {
                 else if (dataI.requirement === "ขอถอนรายวิชา") {
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
-                            <div class="req-menu">
+                            <div class="req-menu" onclick="loadRequest(${dataI.id})">
                                 <h4 id="pending-status-name">${dataI.type}</h4>
                                 <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
@@ -499,7 +513,7 @@ function createPendingModal(user_name) {
                 if (dataI.stage === "Pending") {                  
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
-                            <div class="req-menu">
+                            <div class="req-menu" onclick="loadRequest(${dataI.id})">
                                 <h4 id="pending-status-name">${dataI.type}</h4>
                                 <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
@@ -510,7 +524,7 @@ function createPendingModal(user_name) {
                 else if (dataI.stage === "Approve") {
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
-                            <div class="req-menu">
+                            <div class="req-menu" onclick="loadRequest(${dataI.id})">
                                 <h4 id="pending-status-name">${dataI.type}</h4>
                                 <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
@@ -521,7 +535,7 @@ function createPendingModal(user_name) {
                 else if (dataI.stage === "Draft") {
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
-                            <div class="req-menu">
+                            <div class="req-menu" onclick="loadRequest(${dataI.id})">
                                 <h4 id="pending-status-name">${dataI.type}</h4>
                                 <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
                             </div>
@@ -603,7 +617,10 @@ function sendFormDraftData() {
             teacher: "",
             note: document.getElementById("note").value,
             semester: document.getElementById("semester").value,
-            type: "Resign"
+            type: "Resign",
+            embark: "",
+            debt: "",
+            statement: ""
         }
 
         console.log(formData);
@@ -657,7 +674,10 @@ function sendFormDraftData() {
             teacher: document.getElementById("teacher").value,
             note: document.getElementById("note").value,
             semester: "",
-            type: "Request"
+            type: "Request",
+            embark: "",
+            debt: "",
+            statement: ""
         }
 
         console.log(formData);
@@ -716,7 +736,10 @@ function sendFormData() {
             teacher: "",
             note: document.getElementById("note").value,
             semester: document.getElementById("semester").value,
-            type: "Resign"
+            type: "Resign",
+            embark: "",
+            debt: "",
+            statement: ""
         }
 
         console.log(formData);
@@ -770,7 +793,10 @@ function sendFormData() {
             teacher: document.getElementById("teacher").value,
             note: document.getElementById("note").value,
             semester: "",
-            type: "Request"
+            type: "Request",
+            embark: "",
+            debt: "",
+            statement: ""
         }
 
         console.log(formData);
@@ -853,4 +879,14 @@ function sendFormData() {
 
         const formattedDate = `${year} ${month} ${day} ${hours}:${minutes}`;
         return formattedDate;
+    }
+
+    function loadRequest(reqID) {
+        const currentPath = window.location.pathname;
+        getRequestData(reqID);
+        if (currentPath.includes('professormain.html')) {
+            window.location.href = 'html-form/Pdraft.html';
+        } else {
+            window.location.href = 'html-form/draft.html';
+        }
     }
