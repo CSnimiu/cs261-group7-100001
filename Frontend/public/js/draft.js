@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function populateDraft(user) {
-    if(activeForm.stage === "Draft"){form = activeForm;} else {form = user;}
+    if(activeForm)
+    {if(activeForm.stage === "Draft"){form = activeForm;}} else {form = user;}
     document.getElementById("info-box-thname").value = form.th_name.split(" ")[0] || "";
     document.getElementById("info-box-thlname").value = form.th_name.split(" ")[1] || "";
     document.getElementById("info-box-enname").value = form.eng_name.split(" ")[0] || "";
@@ -37,6 +38,7 @@ function populateDraft(user) {
     document.getElementById("info-box-email").value = form.email || "";
     document.getElementById("info-box-phone").value = form.phone_num || "";
     document.getElementById("info-box-advisor").value = form.advisor || "";
+    if(activeForm)
     if(activeForm.stage === "Draft"){
         document.getElementById("requirement").value = form.requirement || "";
         document.getElementById("courseCode").value = form.courseCode || "";

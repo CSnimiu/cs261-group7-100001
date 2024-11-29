@@ -150,7 +150,7 @@ function closeLeaveModal() {
 
 function confirmApprove() {
     closeApproveModal();
-    updateStage('Accept');
+    updateStage('Approve');
     flush();
 }
 

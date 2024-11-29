@@ -533,6 +533,17 @@ function createPendingModal(user_name) {
                         `;
                     document.getElementById("approve").insertAdjacentHTML('afterend', modalHtml);
                 }
+                else if (dataI.stage === "Deny") {
+                    const modalHtml = `
+                        <div class="row req-status-menu-container" id="pending-status-menu-container">
+                            <div class="req-menu" onclick="loadRequest(${dataI.id})">
+                                <h4 id="pending-status-name">${dataI.type}</h4>
+                                <h4 class="req-status-date" id="pending-status-date">${formattedRequestTime}</h4>
+                            </div>
+                        </div>
+                        `;
+                    document.getElementById("deny").insertAdjacentHTML('afterend', modalHtml);
+                }
                 else if (dataI.stage === "Draft") {
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
@@ -580,6 +591,7 @@ function closeSubmitModal() {
 
 function confirmSubmit() {
     alert("Form submitted successfully!");
+    window.location.href = 'main.html';
     closeSubmitModal(); // Close the modal after confirming
     console.log("Form submission confirmed...");
 }

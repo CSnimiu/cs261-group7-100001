@@ -122,6 +122,7 @@ function send() {
         onConfirm: () => {
             sendFormData();  // Call sendFormData() only when the user confirms
             alert("Form submitted successfully!");
+            window.location.href = '../main.html';
             console.log("Form submission confirmed");
         },
         onCancel: () => {
@@ -138,6 +139,7 @@ function save() {
         onConfirm: () => {
             sendFormDraftData(); // Call sendFormDraftData() only when the user confirms
             alert("Draft saved successfully!");
+            window.location.href = '../main.html';
             console.log("Draft save confirmed");
         },
         onCancel: () => {
@@ -246,6 +248,7 @@ function updateProfile() {
         function confirmSubmit() {
             saveDraft();
             alert("Form submitted successfully!");
+            window.location.href = '../main.html';
             closeSubmitModal(); // Close the modal after confirming
             console.log("Form submission confirmed...");
         }

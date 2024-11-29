@@ -15,20 +15,25 @@ public class FormController {
 	@Autowired
 	private FormRepository formRepository;
 	
-	@DeleteMapping
-	public List<Form> delAllForms(@RequestBody Long Key){
-		if (Key == -1) {
-			formRepository.deleteAll();
-		}
-		else {
-			formRepository.delete(formRepository.getReferenceById(Key));
-		}
-			
-		return formRepository.findAll();
-	}
+//	@DeleteMapping
+//	public List<Form> delAllForms(@RequestBody Long Key){
+//		if (Key == -1) {
+//			formRepository.deleteAll();
+//		}
+//		else {
+//			formRepository.delete(formRepository.getReferenceById(Key));
+//		}
+//			
+//		return formRepository.findAll();
+//	}
 	
 	@DeleteMapping("/{id}")
     public ResponseEntity<Void> delDraft(@PathVariable long id) {
+		if (id == -1) {
+			formRepository.deleteAll();
+			return ResponseEntity.ok().build();
+		}
+		
         Optional<Form> formToDelete = formRepository.findById(id);
         
         if (formToDelete.isEmpty()) {
