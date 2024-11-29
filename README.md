@@ -3,7 +3,7 @@
 ### (Group 7 Section 100001)
 Currently, this repository has only one main branch: *`'main'`*
 
-**--> Current completed task (project status, Sprint 2):**
+**--> Current completed task (project status, Sprint 2):**  
 *Student:*  
 - Login system that calls the TU API to verify identity + Logout system (manually logout and session timeout).
 - The online's requests form system consists of a main page where application forms can be written, a request history page showing a list of applications currently in progress, and a personal history page containing student information.
@@ -25,18 +25,19 @@ The profile branch is now a repository for working projects. As of this writing,
 
 This branch contains 3 main folders:
 >
->* **Frontend/**
->>   * .html **/** .css **/** .js **/** .json **/** .png (images) **/** .gitignore
->> 
->* **Server-Setup/**
->>   * .dockerfile (docker image for build & run on Docker)  
->>
 >* **Backend/**
->>   * Database and API Management
+>>   * Folder for the backend part, which is related to the system's database and API system
+>> 
+>* **Frontend/**
+>>   * Contains files for web page display and user interaction. Including functions related to calling the backend system
+>>
+>* **server-setup/**
+>>   * To store docker files to run the docker image to create a NodeJS server in Docker app
 >
+and there are other folders and files related to system testing
   
 ## Download Project 
-You can install the ~~latest version~~ *Default branch (main)* of this project by **cloning project** using the command:  
+You can install the *Default branch (main)* of this project by **cloning project** using the command:  
 >`git clone https://github.com/CSnimiu/cs261-group7-100001`  
 
 To download ***only this*** sub-branch, please use the command:
