@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (currentPath.includes('professormain.html')) {
         createProfessorModal();
-    } else if (currentPath.includes('main.html')) {
+    } else if (currentPath.includes('main.html') || currentPath.includes('history.html')) {
         createPendingModal(user.user_name);
     }
 
