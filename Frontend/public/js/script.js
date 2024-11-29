@@ -544,7 +544,7 @@ function createPendingModal(user_name) {
                         `;
                     document.getElementById("deny").insertAdjacentHTML('afterend', modalHtml);
                 }
-                else if (dataI.stage === "Draft") {
+                else if (dataI.stage === "Draft" && window.location.pathname.includes("/main.html")) {
                     const modalHtml = `
                         <div class="row req-status-menu-container" id="pending-status-menu-container">
                             <div class="req-menu" onclick="loadRequest(${dataI.id})">
