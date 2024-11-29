@@ -239,8 +239,8 @@ function fetchProfile(user_name) {
         });
 }
 
-function getRequestData(req_id) {
-    fetch(`http://localhost:8080/api/form/id/${req_id}`, {
+async function getRequestData(req_id) {
+    await fetch(`http://localhost:8080/api/form/id/${req_id}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -868,7 +868,11 @@ function sendFormData() {
     }
 
     function convertTimeFormat(dateString) {
-        const date = new Date(dateString);
+        let date = new Date(dateString)
+        if (!dateString || isNaN(date.getDate())) {
+            return "";
+        }
+
         const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
         const year = date.getFullYear();
@@ -881,12 +885,18 @@ function sendFormData() {
         return formattedDate;
     }
 
-    function loadRequest(reqID) {
+    async function loadRequest(reqID) {
         const currentPath = window.location.pathname;
-        getRequestData(reqID);
+        await getRequestData(reqID);
         if (currentPath.includes('professormain.html')) {
             window.location.href = 'html-form/Pdraft.html';
         } else {
-            window.location.href = 'html-form/draft.html';
+            const requestObject = JSON.parse(localStorage.getItem('activeform'));
+            console.log(requestObject);
+            if(requestObject.stage != "Draft") {
+                window.location.href = 'html-form/formview.html';
+            } else {
+                window.location.href = 'html-form/draft.html';
+            }
         }
     }
