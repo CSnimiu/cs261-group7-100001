@@ -1,13 +1,17 @@
 
 # Repository for team project in CS261 course
 ### (Group 7 Section 100001)
-Currently, this repository has 2 branches: *`'main' (Default)`*, *`'profile'`*  
+Currently, this repository has only one main branch: *`'main'`*
 
-**--> Current completed task (project status):**
-- Login system that calls the TU API to verify identity (Professor use Mock) + Logout
-- Home page
-- Profile page
-- Form pages 
+**--> Current completed task (project status, Sprint 2):**
+*Student:*  
+- Login system that calls the TU API to verify identity + Logout system (manually logout and session timeout).
+- The online's requests form system consists of a main page where application forms can be written, a request history page showing a list of applications currently in progress, and a personal history page containing student information.
+- A database system that can record student information and written requests, including sending requests to the professor's side.
+*Professor:*  
+- Login in professors side with Mockup account for use in developing, testing and presenting (demo) systems + Logout system.
+- Online request system for professor, which can choose to approve or reject student's requests, and record the status of the request in the system, consisting of a main page and a request history page.
+- Database system for recording the processing of requests by professor.
   
 ### **Navigation:**  
 [Branch Structure](#branch-structure "Branch information")  
@@ -16,7 +20,7 @@ Currently, this repository has 2 branches: *`'main' (Default)`*, *`'profile'`*
 
 
 ## Branch Structure
-### This is the 'profile' branch
+### This is the 'main' branch
 The profile branch is now a repository for working projects. As of this writing, the project is still in development.  
 
 This branch contains 3 main folders:
