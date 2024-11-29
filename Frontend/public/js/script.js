@@ -329,6 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentPath.includes('professormain.html')) {
         createProfessorModal();
     } else if (currentPath.includes('main.html') || currentPath.includes('history.html')) {
+        localStorage.removeItem('activeform');
         createPendingModal(user.user_name);
     }
 
