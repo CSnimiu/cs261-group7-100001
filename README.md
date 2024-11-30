@@ -1,13 +1,16 @@
 
 # Repository for team project in CS261 course
 ### (Group 7 Section 100001)
-Currently, this repository has only one main branch: *`'main'`*
+Currently, this repository has only one main branch: *`'main' (Default)`*
+  
+**--> Current completed task (project status):**   
+> Sprint 2: v0.1.0
 
-**--> Current completed task (project status, Sprint 2):**  
 *Student:*  
 - Login system that calls the TU API to verify identity + Logout system (manually logout and session timeout).
 - The online's requests form system consists of a main page where application forms can be written, a request history page showing a list of applications currently in progress, and a personal history page containing student information.
 - A database system that can record student information and written requests, including sending requests to the professor's side.
+
 *Professor:*  
 - Login in professors side with Mockup account for use in developing, testing and presenting (demo) systems + Logout system.
 - Online request system for professor, which can choose to approve or reject student's requests, and record the status of the request in the system, consisting of a main page and a request history page.
@@ -20,9 +23,7 @@ Currently, this repository has only one main branch: *`'main'`*
 
 
 ## Branch Structure
-### This is the 'main' branch
-The profile branch is now a repository for working projects. As of this writing, the project is still in development.  
-
+**This is the 'main' branch**  
 This branch contains 3 main folders:
 >
 >* **Backend/**
@@ -34,7 +35,7 @@ This branch contains 3 main folders:
 >* **server-setup/**
 >>   * To store docker files to run the docker image to create a NodeJS server in Docker app
 >
-and there are other folders and files related to system testing
+and there are other folders and files related to system testing and other configuration.
   
 ## Download Project 
 You can install the *Default branch (main)* of this project by **cloning project** using the command:  
@@ -60,7 +61,3 @@ The last two lines of the **DockerContainer_NodeJS.dockerfile** file in `server-
 
 ***Note that:*** these commands only work properly if you build the docker file in the same location as the `frontend` and `server-setup` folders, so use the code with caution.  
 
-.  
-.  
-.  
-*The project will be updated continuously...*
